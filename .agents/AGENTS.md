@@ -25,5 +25,6 @@ Khi được yêu cầu chuyển hóa dữ liệu cho một **Mã số thuế (M
 ## Quy tắc bắt buộc (Rules)
 1. **Bảo vệ dữ liệu gốc:** KHÔNG ĐƯỢC tự ý sửa đổi, ghi đè hay xóa dữ liệu gốc trong thư mục `resources/`. Chỉ được phép ĐỌC (Read-only).
 2. **Bảo vệ file mẫu:** KHÔNG ĐƯỢC ghi đè hay làm hỏng các file trong thư mục `template/`. Chỉ lấy cấu trúc để xuất file mới.
-3. LUÔN LUÔN đọc các tài liệu liên quan trong `docs/` nếu gặp logic nghiệp vụ kế toán phức tạp hoặc chưa rõ ràng trước khi code.
+3. **Đọc tài liệu (Docs):** BẮT BUỘC phải đọc TOÀN BỘ các file tài liệu trong thư mục `docs/` trước khi thực hiện bất kỳ hành động code hay thao tác nào, để nắm vững 100% quy trình và logic nghiệp vụ.
 4. Mọi kết quả đầu ra bắt buộc phải được lưu vào thư mục `result/`.
+5. **Quy tắc tạo Script tạm:** Tất cả các file Node.js dùng để viết script kiểm tra (test), so sánh, hoặc chạy các tác vụ phụ trợ BẮT BUỘC phải được lưu vào thư mục `scripts/`. Sau khi chạy xong và hoàn thành một luồng (workflow), BẮT BUỘC phải tự động xóa toàn bộ các file script tạm này để giữ thư mục làm việc luôn sạch sẽ.
