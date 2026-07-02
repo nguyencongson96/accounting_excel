@@ -1,0 +1,13 @@
+| MÃ CHỨNG TỪ | NGÀY GHI SỔ | SỐ CHỨNG TỪ | BỘ PHẬN | HỢP ĐỒNG | MÃ SẢN PHẨM, CÔNG TRÌNH | MÃ ĐỐI TƯỢNG | DIỄN GIẢI | TÀI KHOẢN | &nbsp; | MÃ TIỀN TỆ | TỶ GIÁ |  NGUYÊN TỆ  |  THÀNH TIỀN  | &nbsp; | Không tìm thấy hóa đơn xuất |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | NỢ | CÓ | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
+| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | Mã | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | Status | STT |
+| PK | 15/09/2025 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 0312396766 | Tiền thuê văn phòng gói SAVE+ từ ngày 11/09/2025 đến hết ngày 04/09/2026 tại địa chỉ 38 Cộng Hoà, Phường Tân Sơn Nhất, Thành phố Hồ Chí Minh . Theo hợp đồng số 1025/VPA/38CH, Chiết khấu giảm 5% giá thuê HĐ số 387 | 64275 | 331 | VND | 1 | 6144600 | 6144600 | Done | &nbsp; |
+| PK | 18/09/2025 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 0302712571 | Phần mềm hóa đơn điện tử M-100 052300008705.matbao.in (1 năm) HĐ số 84780 | 64277 | 331 | VND | 1 | 99000 | 99000 | Done | &nbsp; |
+| PK | 19/09/2025 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 0302712571 | Lệ phí Chứng thư CKS Token-HKD-MBCA (1 năm), USB Token-DN/HKD-MBCA, Phí duy trì Chứng thư CKS Token-HKD-MBCA (1 năm) HĐ số 85172 | 64277 | 331 | VND | 1 | 860040 | 860040 | Done | &nbsp; |
+| PC | 15/09/2025 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 0312396766 | Thanh toán Tiền thuê văn phòng gói SAVE+ từ ngày 11/09/2025 đến hết ngày 04/09/2026 tại địa chỉ 38 Cộng Hoà, Phường Tân Sơn Nhất, Thành phố Hồ Chí Minh . Theo hợp đồng số 1025/VPA/38CH, Chiết khấu giảm 5% giá thuê HĐ số 387 | 331 | 1111 | VND | 1 | 6144600 | 6144600 | Done | &nbsp; |
+| PC | 18/09/2025 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 0302712571 | Thanh toán Phần mềm hóa đơn điện tử M-100 052300008705.matbao.in (1 năm) HĐ số 84780 | 331 | 1111 | VND | 1 | 99000 | 99000 | Done | &nbsp; |
+| PC | 19/09/2025 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 0302712571 | Thanh toán Lệ phí Chứng thư CKS Token-HKD-MBCA (1 năm), USB Token-DN/HKD-MBCA, Phí duy trì Chứng thư CKS Token-HKD-MBCA (1 năm) HĐ số 85172 | 331 | 1111 | VND | 1 | 860040 | 860040 | Done | &nbsp; |
+| PK | 45869 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 0000000000 | Chi phí bảo hiểm tháng 2025.07 | 64271 | 3383 | VND | 1 | 690300 | 690300 | Done | &nbsp; |
+| PK | 45900 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 0000000000 | Chi phí bảo hiểm tháng 2025.08 | 64271 | 3383 | VND | 1 | 690300 | 690300 | Done | &nbsp; |
+| PK | 45930 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 0000000000 | Chi phí bảo hiểm tháng 2025.09 | 64271 | 3383 | VND | 1 | 690300 | 690300 | Done | &nbsp; |

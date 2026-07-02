@@ -1,0 +1,27 @@
+| MÃ CHỨNG TỪ | NGÀY GHI SỔ | SỐ CHỨNG TỪ | BỘ PHẬN | HỢP ĐỒNG | MÃ SẢN PHẨM, CÔNG TRÌNH | MÃ ĐỐI TƯỢNG | DIỄN GIẢI | TÀI KHOẢN | &nbsp; | MÃ TIỀN TỆ | TỶ GIÁ |  NGUYÊN TỆ  |  THÀNH TIỀN  | &nbsp; |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | NỢ | CÓ | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
+| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | Mã | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | Status |
+| PK | 45852 | 1 | 1 | &nbsp; | &nbsp; | 0106773786 | Phí dịch vụ Affiliate 06/2025_17355060002 HĐ số 618160 | 64277 | 331 | VND | 1 | 1094 | 1094 | Done |
+| PK | 45869 | 2 | 1 | &nbsp; | &nbsp; | 0000000000 | Chi phí bảo hiểm tháng 2025.07 | 64271 | 3383 | VND | 1 | 690300 | 690300 | Done |
+| PK | 45874 | 3 | 1 | &nbsp; | &nbsp; | 0106773786 | Phí dịch vụ Affiliate 07/2025_17355060002 HĐ số 1192270 | 64277 | 331 | VND | 1 | 941 | 941 | Done |
+| PC | 45896 | 4 | 1 | &nbsp; | &nbsp; | 0106773786 | Thanh toán Phí dịch vụ Affiliate 06/2025_17355060002 HĐ số 618160 | 331 | 1111 | VND | 1 | 1094 | 1094 | Done |
+| PC | 45896 | 5 | 1 | &nbsp; | &nbsp; | 0106773786 | Thanh toán Phí dịch vụ Affiliate 07/2025_17355060002 HĐ số 1192270 | 331 | 1111 | VND | 1 | 941 | 941 | Done |
+| PK | 45900 | 6 | 1 | &nbsp; | &nbsp; | 0000000000 | Chi phí bảo hiểm tháng 2025.08 | 64271 | 3383 | VND | 1 | 690300 | 690300 | Done |
+| PK | 45904 | 7 | 1 | &nbsp; | &nbsp; | 0106773786 | Phí dịch vụ Affiliate 08/2025_17355060002 HĐ số 1407024 | 64277 | 331 | VND | 1 | 87 | 87 | Done |
+| PC | 45904 | 8 | 1 | &nbsp; | &nbsp; | 0106773786 | Thanh toán Phí dịch vụ Affiliate 08/2025_17355060002 HĐ số 1407024 | 331 | 1111 | VND | 1 | 87 | 87 | Done |
+| PK | 45916 | 9 | 1 | &nbsp; | &nbsp; | 0302712571 | Phần mềm hóa đơn điện tử M-100 014198000033.matbao.in (1 năm) HĐ số 84148 | 64276 | 331 | VND | 1 | 99000 | 99000 | Done |
+| PK | 45916 | 10 | 1 | &nbsp; | &nbsp; | 0302712571 | Lệ phí Chứng thư CKS Token-HKD-MBCA (3 năm), USB Token-DN/HKD-MBCA, Phí duy trì Chứng thư CKS Token-HKD-MBCA (3 năm) HĐ số 84339 | 64276 | 331 | VND | 1 | 1662120 | 1662120 | Done |
+| PC | 45916 | 11 | 1 | &nbsp; | &nbsp; | 0302712571 | Thanh toán Phần mềm hóa đơn điện tử M-100 014198000033.matbao.in (1 năm) HĐ số 84148 | 331 | 1111 | VND | 1 | 99000 | 99000 | Done |
+| PC | 45916 | 12 | 1 | &nbsp; | &nbsp; | 0302712571 | Thanh toán Lệ phí Chứng thư CKS Token-HKD-MBCA (3 năm), USB Token-DN/HKD-MBCA, Phí duy trì Chứng thư CKS Token-HKD-MBCA (3 năm) HĐ số 84339 | 331 | 1111 | VND | 1 | 1662120 | 1662120 | Done |
+| PK | 45924 | 13 | 1 | &nbsp; | &nbsp; | 0109990838 | Doanh thu Thanh toán theo Hợp đồng dịch vụ số HD01092025/D’ALBA_ASIACONSULTING_DOANVANANH ký ngày 01/09/2025 và Biên bản nghiệm thu ký ngày 24/09/2025 HĐ số 1 | 131 | 5113 | VND | 1 | 8064516 | 8064516 | Done |
+| PK | 45924 | 14 | 1 | &nbsp; | &nbsp; | 0109990838 | Điều chỉnh giảm Doanh thu Thanh toán theo Hợp đồng dịch vụ số HD01092025/D’ALBA_ASIACONSULTING_DOANVANANH ký ngày 01/09/2025 và Biên bản nghiệm thu ký ngày 24/09/2025 HĐ số 1 | 333821 | 131 | VND | 1 | 80645 | 80645 | Done |
+| PK | 45925 | 15 | 1 | &nbsp; | &nbsp; | 0318678340 | Doanh thu Thanh toán 100% phí dịch vụ GRN - KOC HUB Skin - Video - Scope 3 - 3009 SOW số 22015/2025/WPP-BTL-LO ID Tiktok: vanjinka HĐ số 2 | 131 | 5113 | VND | 1 | 10752688 | 10752688 | Done |
+| PK | 45926 | 16 | 1 | &nbsp; | &nbsp; | 0109612931 | Doanh thu Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 1709/2025/HDDV/WEI-DVA ký ngày 17/09/2025 và Biên bản nghiệm thu ký ngày 26/09/2025 HĐ số 3 | 131 | 5113 | VND | 1 | 8064516 | 8064516 | Done |
+| PK | 45926 | 17 | 1 | &nbsp; | &nbsp; | 0109612931 | Điều chỉnh giảm Doanh thu Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 1709/2025/HDDV/WEI-DVA ký ngày 17/09/2025 và Biên bản nghiệm thu ký ngày 26/09/2025 HĐ số 3 | 333821 | 131 | VND | 1 | 80645 | 80645 | Done |
+| PK | 45926 | 18 | 1 | &nbsp; | &nbsp; | 0901096917 | Doanh thu Dịch vụ quảng cáo và truyền thông theo Hợp đống số 0509/HDDV/ PARISTREE - VANJINKA /2025 ký ngày 05/09/2025 và Biên bản nghiệm thu ký ngày 26/09/2025 HĐ số 4 | 131 | 5113 | VND | 1 | 7526882 | 7526882 | Done |
+| PK | 45926 | 19 | 1 | &nbsp; | &nbsp; | 0901096917 | Điều chỉnh giảm Doanh thu Dịch vụ quảng cáo và truyền thông theo Hợp đống số 0509/HDDV/ PARISTREE - VANJINKA /2025 ký ngày 05/09/2025 và Biên bản nghiệm thu ký ngày 26/09/2025 HĐ số 4 | 333821 | 131 | VND | 1 | 75269 | 75269 | Done |
+| PK | 45926 | 20 | 1 | &nbsp; | &nbsp; | 0318678340 | Doanh thu Thanh toán 100% phí dịch vụ OAP - KOC Hub Hair Sep Video - Scope 3 - 3009 SOW số 23989/2025/WPP-BTL-LO ID Tiktok: vanjinka HĐ số 5 | 131 | 5113 | VND | 1 | 10215054 | 10215054 | Done |
+| BC | 45926 | 21 | 1 | &nbsp; | &nbsp; | 0901096917 | Nhận Doanh thu Dịch vụ quảng cáo và truyền thông theo Hợp đống số 0509/HDDV/ PARISTREE - VANJINKA /2025 ký ngày 05/09/2025 và Biên bản nghiệm thu ký ngày 26/09/2025 HĐ số 4 | 11211 | 131 | VND | 1 | 7451613 | 7451613 | Done |
+| PK | 45929 | 22 | 1 | &nbsp; | &nbsp; | 0318678340 | Doanh thu Thanh toán 100% phí dịch vụ GRN - KOC HUB Skin - Video - Scope 3 - 3009 - Add SOW số 22154/2025/WPP-BTL-LO ID Tiktok: vanjinka HĐ số 6 | 131 | 5113 | VND | 1 | 19354839 | 19354839 | Done |
+| PK | 45930 | 23 | 1 | &nbsp; | &nbsp; | 0000000000 | Chi phí bảo hiểm tháng 2025.09 | 64271 | 3383 | VND | 1 | 690300 | 690300 | Done |
