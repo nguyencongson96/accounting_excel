@@ -133,7 +133,17 @@ if (mode === '--directory') {
         });
 
         const parsedPath = path.parse(relativePath);
-        const targetFilePath = path.join(outputDir, parsedPath.dir, parsedPath.name + '.md');
+        let outName = parsedPath.name;
+        
+        // Auto map names to standard rule names
+        const lowerName = outName.toLowerCase();
+        if (lowerName.includes('danh sách hóa đơn')) outName = '1.danh_sach_hoa_don';
+        else if (lowerName.includes('sao kê')) outName = '2.sao_ke';
+        else if (lowerName.includes('bảng cân đối số phát sinh')) outName = '0.bang_can_doi_phat_sinh';
+        else if (lowerName.includes('bảng kê chứng từ')) outName = '1.bang_ke_chung_tu';
+        else if (lowerName.includes('sổ tổng hợp phải thu')) outName = '2.so_tong_hop_phai_thu_khach_hang';
+
+        const targetFilePath = path.join(outputDir, parsedPath.dir, outName + '.md');
         fs.mkdirSync(path.dirname(targetFilePath), { recursive: true });
         fs.writeFileSync(targetFilePath, content, 'utf-8');
         console.log(`Created ${targetFilePath}`);
@@ -212,7 +222,7 @@ else if (mode === '--split-sheets') {
         const outDir = path.join(srcDir, mst, 'test', folderName);
         fs.mkdirSync(outDir, { recursive: true });
         
-        const outFilePath = path.join(outDir, 'result.md');
+        const outFilePath = path.join(outDir, '0.result.md');
         fs.writeFileSync(outFilePath, mdContent, 'utf-8');
         console.log(`Created ${outFilePath}`);
 

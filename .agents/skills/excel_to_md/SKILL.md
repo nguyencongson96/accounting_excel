@@ -26,7 +26,7 @@ node .agents/skills/excel_to_md/scripts/excel_to_md.js --directory <inputDir_or_
 ```
 
 ### Mode 2: Split Sheets into Customer Folders
-Reads a master Excel file where each Sheet is a Customer Tax Code (MST), and writes `result.md` into `src/<MST>/test/<folderName>`.
+Reads a master Excel file where each Sheet is a Customer Tax Code (MST), and writes `0.result.md` into `src/<MST>/test/<folderName>`.
 
 **Command:**
 ```bash
