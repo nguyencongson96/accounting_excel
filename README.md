@@ -1,30 +1,40 @@
 # Dự Án Tự Động Hóa Kế Toán Excel (Accounting Automation)
 
-Dự án này giúp tự động hóa quá trình chuyển hóa dữ liệu thô kế toán (Hóa đơn, Sao kê ngân hàng) thành file Excel chuẩn `result.xlsx` để nhập liệu lên phần mềm kế toán.
+Dự án này giúp tự động hóa quá trình chuyển hóa dữ liệu thô kế toán (Hóa đơn, Sao kê ngân hàng) thành file kết quả chuẩn để nhập liệu lên phần mềm kế toán EZSOFT / 3TSoft.
 
 ## 1. Cấu trúc thư mục cốt lõi
-- `docs/`: Chứa các tài liệu hướng dẫn nghiệp vụ và quy luật sinh dữ liệu (VD: `1.Quy_trinh_tao_result.md`).
-- `test/`: Chứa dữ liệu chạy thử nghiệm của khách hàng (Mã số thuế: 8710040770-001). Bao gồm:
-  - `Danh sách hóa đơn.xlsx`
-  - `sao kê/sao kê.xlsx`
-  - `result_generated.xlsx` (File kết quả do script tự sinh).
-- `generate_excel.js`: Code script cốt lõi (Node.js) thực thi toàn bộ luồng quy trình nghiệp vụ kế toán.
+- **`src/<Mã_số_thuế>/`**: Mỗi khách hàng có một thư mục riêng, bao gồm:
+  - `docs/`: 4 file tài liệu `.md` (quy trình, template, danh mục tài khoản, danh mục đối tượng)
+  - `<Kỳ_kế_toán>/` (VD: `2026.Q1/`): Dữ liệu thô và kết quả xử lý của kỳ đó
+    - `last_quarter_data/`: Số dư và chứng từ kỳ trước
+- **`.agents/skills/`**: Hệ thống 7 skills AI để tự động hóa từng bước xử lý
+- **`scripts/`**: Script Node.js tiện ích
 
-## 2. Cách chạy ứng dụng
-Đảm bảo bạn đã cài đặt Node.js và thư viện `xlsx`:
-```bash
-npm install xlsx
-```
+## 2. Cách sử dụng (qua AI Agent)
 
-Sau đó chạy lệnh sau ở thư mục gốc:
-```bash
-node generate_excel.js
-```
-Script sẽ đọc file hóa đơn và file sao kê ngân hàng, áp dụng các business rules (tạo Phiếu Kế Toán, định khoản chi phí/thuế, sinh Phiếu Chi tiền mặt tự động, trích lập bảo hiểm...) và xuất ra file `result_generated.xlsx`.
+Dự án sử dụng AI Agent với hệ thống skills để tự động hóa. Các lệnh chính:
 
-## 3. Quy luật xử lý chính
-Luật xử lý nghiệp vụ được mô tả chi tiết trong file `docs/1.Quy_trinh_tao_result.md`. Một số điểm nổi bật:
-- Tự động tách bút toán **Giảm trừ doanh thu** (Nợ 511 / Có 131) nếu hóa đơn bán ra có giảm trước thuế.
-- Nhận diện **Hóa đơn ăn uống** (nhà hàng, cafe) để tự động rút gọn diễn giải thành "Chi phí tiếp khách, ngoại giao...".
-- **Đối soát thanh toán:** Hóa đơn nào không tìm thấy chứng từ thanh toán qua ngân hàng sẽ được tự động hạch toán thanh toán bằng tiền mặt (Sinh Phiếu Chi).
-- **Chi phí bảo hiểm:** Nhận diện số tiền bảo hiểm (bội số của 690,300) để tách 2 bút toán: Trích chi phí (Nợ 64271/Có 3383) và Thanh toán (Nợ 3383/Có 1121).
+| Tác vụ | Skill | Mô tả |
+|:---|:---|:---|
+| Chạy toàn bộ pipeline | `run_pipeline` | Tự động verify → convert → process |
+| Kiểm tra dữ liệu | `verify_data` | Quét file bắt buộc và file Excel |
+| Chuyển đổi Excel → MD | `excel_to_md` | Convert `.xls`/`.xlsx` sang Markdown |
+| Xử lý kế toán | `process_accounting` | Sinh `0.result.md` từ dữ liệu thô |
+| Tinh chỉnh quy trình | `refine_workflow` | So sánh kết quả với ground truth |
+| Khởi tạo khách hàng | `init_customer` | Tạo cấu trúc thư mục cho MST mới |
+
+**Cách dùng cơ bản:** Chỉ cần nói với AI Agent: *"Chạy pipeline cho MST 8443847047-001 kỳ 2026.Q2"*
+
+## 3. Quy trình xử lý chính
+
+1. **Verify**: Kiểm tra file đầu vào (`1.danh_sach_hoa_don.md`, `2.sao_ke.md`, `last_quarter_data/`)
+2. **Convert**: Chuyển đổi file Excel sang Markdown nếu cần
+3. **Process**: Đọc quy trình `0.quy_trinh_tao_result.md`, xử lý hóa đơn & sao kê, sinh kết quả
+
+### Các luật xử lý nổi bật:
+- Tự động tạo Phiếu Kế Toán (PK) cho từng hóa đơn mua vào/bán ra
+- Đối soát thanh toán: khớp sao kê ngân hàng với hóa đơn
+- Nhận diện hóa đơn ăn uống → rút gọn diễn giải
+- Xử lý bảo hiểm (bội số của 690,300đ)
+- Chuyển tiền nội bộ giữa các ngân hàng
+- Tự động phát hiện MST đối tác mới → tạo `0.danh_muc_doi_tuong.md`

@@ -1,6 +1,6 @@
 ---
 name: excel-to-md
-description: Extracts and transforms Excel files to nicely formatted Markdown tables without data loss.
+description: Extracts and transforms Excel files (.xls, .xlsx) to nicely formatted Markdown tables without data loss. Use this skill whenever the user mentions converting Excel files, needs to read spreadsheet data as markdown, or has .xls/.xlsx files that need to be processed — even if they say "convert file", "chuyển đổi excel", "read this spreadsheet", or mention any file with .xlsx extension. This skill handles date formatting, merged cells, and preserves all data integrity with auto-verification.
 ---
 
 # Skill: Excel to Markdown Transformation

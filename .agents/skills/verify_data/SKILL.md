@@ -1,6 +1,6 @@
 ---
 name: verify_data
-description: Scan a customer's quarter folder to verify all mandatory markdown files exist and check for unconverted excel files.
+description: Scan a customer's quarter folder to verify all mandatory markdown files exist and check for unconverted excel files. Use this whenever the user wants to check, verify, scan, or validate data before processing — even if they say "kiểm tra dữ liệu", "check files", "is the data ready?", or "verify input". This is the gatekeeper step before any accounting processing.
 ---
 
 # Instructions for verify_data
@@ -8,17 +8,29 @@ description: Scan a customer's quarter folder to verify all mandatory markdown f
 When triggered to verify data for a specific customer tax code (MST) and quarter:
 
 1. **Navigate to the Target Directories:** Go to `src/<MST>/<Quarter>/` and `src/<MST>/docs/`.
-2. **Check Mandatory Files:** Verify the existence of the following exact files:
+
+2. **Check Mandatory Input Files:** Verify existence of:
    - `src/<MST>/<Quarter>/1.danh_sach_hoa_don.md`
    - `src/<MST>/<Quarter>/2.sao_ke.md`
-   - `src/<MST>/<Quarter>/last_quarter_data/0.bang_can_doi_phat_sinh.md`
-   - `src/<MST>/<Quarter>/last_quarter_data/1.bang_ke_chung_tu.md`
-   - `src/<MST>/<Quarter>/last_quarter_data/2.so_tong_hop_phai_thu_khach_hang.md`
+   - `src/<MST>/<Quarter>/last_quarter_data/` (must contain at least one `.md` file — read what's actually there since file names may vary by customer)
+
+3. **Check Docs Files:** Verify existence of:
+   - `src/<MST>/docs/0.quy_trinh_tao_result.md`
    - `src/<MST>/docs/1.template_output.md`
    - `src/<MST>/docs/2.danh_muc_tai_khoan.md`
    - `src/<MST>/docs/3.danh_muc_doi_tuong.md`
-3. **Scan for Unconverted Excel Files:** Scan `src/<MST>/<Quarter>/` and its subdirectories, as well as `src/<MST>/docs/` for any `.xls` or `.xlsx` files.
-4. **Report Generation:** 
-   - Present a Markdown checklist (green/red) to the user showing which mandatory files are present and which are missing.
-   - If missing files are found, explicitly warn the user that the process cannot continue until they are provided.
-   - If unconverted Excel files are found, list them out and prompt the user: *"Do you want to run excel_to_md to convert these files before processing?"*
+
+4. **Check Existing Output Files:** Note if any of these already exist (to avoid overwrites):
+   - `0.result.md` or any `0.result_*.md` files — tells you if processing was already done
+   - `0.danh_muc_doi_tuong.md` — tells you if new MSTs were already detected
+
+5. **Scan for Unconverted Excel Files:** Scan ALL directories (`src/<MST>/<Quarter>/`, its subdirectories, and `src/<MST>/docs/`) for `.xls` or `.xlsx` files.
+
+6. **Report Generation:** 
+   - Present a Markdown checklist with ✅/❌ indicators showing:
+     - Which mandatory files are present/missing
+     - Which docs files are present/missing
+     - Which output files already exist (and their names)
+     - Which Excel files need conversion
+   - If any mandatory file is missing AND no corresponding Excel file exists to convert, warn: *"Không thể tiếp tục — thiếu file bắt buộc và không có file Excel để chuyển đổi."*
+   - If unconverted Excel files are found, prompt: *"Phát hiện file Excel chưa chuyển đổi. Bạn có muốn chạy excel_to_md để convert trước khi xử lý không?"*
