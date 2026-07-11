@@ -1,0 +1,23 @@
+{
+  "skill_name": "stats_completed",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "kiểm tra khách hàng nào đã hoàn thành quý 2026.Q1",
+      "expected_output": "Danh sách các MST trong src/ có folder 2026.Q1 và file 0.result.md bên trong. Tổng số KH có Q1 là 41.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "báo cáo tiến độ quý 2026.Q2",
+      "expected_output": "Danh sách các MST trong src/ có folder 2026.Q2 và file 0.result.md bên trong. Chỉ 9 KH có folder Q2.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "những ai đã xong quý 2025.Q3 rồi?",
+      "expected_output": "Danh sách các MST trong src/ có folder 2025.Q3 và file 0.result.md bên trong. Khoảng 23 KH có folder Q3.",
+      "files": []
+    }
+  ]
+}

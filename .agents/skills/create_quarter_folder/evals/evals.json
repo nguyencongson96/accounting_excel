@@ -1,0 +1,17 @@
+{
+  "skill_name": "create_quarter_folder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "tạo folder quý 2026.Q2 cho tất cả khách hàng",
+      "expected_output": "Tạo folder 2026.Q2 cho các KH chưa có (khoảng 32 KH). Bỏ qua 9 KH đã có. Mỗi folder mới có subfolder last_quarter_data/ bên trong.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "chuẩn bị quý 2026.Q3 cho toàn bộ khách hàng",
+      "expected_output": "Tạo folder 2026.Q3 cho tất cả 41 KH (chưa ai có). Mỗi folder mới có subfolder last_quarter_data/ bên trong.",
+      "files": []
+    }
+  ]
+}
