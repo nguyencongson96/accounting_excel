@@ -142,6 +142,8 @@ if (mode === '--directory') {
         else if (lowerName.includes('bảng cân đối số phát sinh')) outName = '0.bang_can_doi_phat_sinh';
         else if (lowerName.includes('bảng kê chứng từ')) outName = '1.bang_ke_chung_tu';
         else if (lowerName.includes('sổ tổng hợp phải thu')) outName = '2.so_tong_hop_phai_thu_khach_hang';
+        else if (lowerName.includes('danh mục đối tượng')) outName = '3.danh_muc_doi_tuong';
+        else if (lowerName.includes('danh mục tài khoản')) outName = '2.danh_muc_tai_khoan';
 
         const targetFilePath = path.join(outputDir, parsedPath.dir, outName + '.md');
         fs.mkdirSync(path.dirname(targetFilePath), { recursive: true });

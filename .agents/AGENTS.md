@@ -14,7 +14,7 @@ File này chứa các quy tắc và thông tin bối cảnh (memory) mà AI ph�
   - `refine_workflow` → So sánh & cập nhật quy trình
   - `init_customer` → Khởi tạo khách hàng mới
 - **Cấu trúc thư mục cốt lõi:**
-  - **`src/<Mã_số_thuế>/`**: Mỗi khách hàng (đại diện bằng Mã số thuế) sẽ có một thư mục riêng biệt. Trong mỗi thư mục khách hàng bao gồm:
+  - **`src/clients/<Mã_số_thuế>/`**: Mỗi khách hàng (đại diện bằng Mã số thuế) sẽ có một thư mục riêng biệt. Trong mỗi thư mục khách hàng bao gồm:
     - `docs/`: Chứa 4 file tài liệu `.md`: `0.quy_trinh_tao_result.md`, `1.template_output.md`, `2.danh_muc_tai_khoan.md`, `3.danh_muc_doi_tuong.md`.
     - `<Kỳ_kế_toán>/` (VD: `2026.Q1/`): Chứa dữ liệu thô và kết quả xử lý của kỳ đó.
       - `last_quarter_data/`: Chứa dữ liệu kỳ trước (số dư, bảng kê chứng từ, tổng hợp công nợ).
@@ -35,3 +35,4 @@ Khi được yêu cầu xử lý dữ liệu cho một **Mã số thuế (MST)**
 5. **Không ghi đè kết quả:** Nếu `0.result.md` ĐÃ TỒN TẠI, tạo file tăng dần: `0.result_1.md`, `0.result_2.md`...
 6. **Script tạm:** Tất cả script test/chạy tạm BẮT BUỘC lưu vào `scripts/` và PHẢI xóa sau khi hoàn thành.
 7. **Phát hiện MST mới:** Trong quá trình xử lý hóa đơn, nếu phát hiện MST đối tác chưa có trong `docs/3.danh_muc_doi_tuong.md`, PHẢI tạo file `0.danh_muc_doi_tuong.md` trong thư mục Kỳ kế toán với đầy đủ các cột: STT, Mã đối tượng, Tên đối tượng, Địa chỉ, Mã số thuế, Nhóm đối tượng (N002), Loại đối tượng (1=Khách hàng, 2=Nhà cung cấp).
+8. **Không viết script inline trong command line:** Nghiêm cấm viết code trực tiếp trong dòng lệnh (VD: `node -e "code..."`, `python -c "code..."`, PowerShell one-liner dài). Bash dễ bị lỗi với ký tự đặc biệt (`!`, `$`, backtick)... Luôn viết script vào file `.js`/`.py` trong `scripts/` trước, sau đó mới chạy file đó.

@@ -7,24 +7,24 @@ description: Scan a customer's quarter folder to verify all mandatory markdown f
 
 When triggered to verify data for a specific customer tax code (MST) and quarter:
 
-1. **Navigate to the Target Directories:** Go to `src/<MST>/<Quarter>/` and `src/<MST>/docs/`.
+1. **Navigate to the Target Directories:** Go to `src/clients/<MST>/<Quarter>/` and `src/clients/<MST>/docs/`.
 
 2. **Check Mandatory Input Files:** Verify existence of:
-   - `src/<MST>/<Quarter>/1.danh_sach_hoa_don.md`
-   - `src/<MST>/<Quarter>/2.sao_ke.md`
-   - `src/<MST>/<Quarter>/last_quarter_data/` (must contain at least one `.md` file — read what's actually there since file names may vary by customer)
+   - `src/clients/<MST>/<Quarter>/1.danh_sach_hoa_don.md`
+   - `src/clients/<MST>/<Quarter>/2.sao_ke.md`
+   - `src/clients/<MST>/<Quarter>/last_quarter_data/` (must contain at least one `.md` file — read what's actually there since file names may vary by customer)
 
 3. **Check Docs Files:** Verify existence of:
-   - `src/<MST>/docs/0.quy_trinh_tao_result.md`
-   - `src/<MST>/docs/1.template_output.md`
-   - `src/<MST>/docs/2.danh_muc_tai_khoan.md`
-   - `src/<MST>/docs/3.danh_muc_doi_tuong.md`
+   - `src/clients/<MST>/docs/0.quy_trinh_tao_result.md`
+   - `src/clients/<MST>/docs/1.template_output.md`
+   - `src/clients/<MST>/docs/2.danh_muc_tai_khoan.md`
+   - `src/clients/<MST>/docs/3.danh_muc_doi_tuong.md`
 
 4. **Check Existing Output Files:** Note if any of these already exist (to avoid overwrites):
    - `0.result.md` or any `0.result_*.md` files — tells you if processing was already done
    - `0.danh_muc_doi_tuong.md` — tells you if new MSTs were already detected
 
-5. **Scan for Unconverted Excel Files:** Scan ALL directories (`src/<MST>/<Quarter>/`, its subdirectories, and `src/<MST>/docs/`) for `.xls` or `.xlsx` files.
+5. **Scan for Unconverted Excel Files:** Scan ALL directories (`src/clients/<MST>/<Quarter>/`, its subdirectories, and `src/clients/<MST>/docs/`) for `.xls` or `.xlsx` files.
 
 6. **Report Generation:** 
    - Present a Markdown checklist with ✅/❌ indicators showing:

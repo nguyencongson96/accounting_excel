@@ -9,13 +9,13 @@ This skill performs a comprehensive audit of the `0.result.md` file produced by 
 
 ## Input Requirements
 
-- `src/<MST>/<Quarter>/0.result.md` (or `0.result_N.md`) — the file to validate
-- `src/<MST>/<Quarter>/1.danh_sach_hoa_don.md` — invoice source data
-- `src/<MST>/<Quarter>/2.sao_ke.md` — bank statement source data
-- `src/<MST>/docs/2.danh_muc_tai_khoan.md` — chart of accounts
-- `src/<MST>/docs/3.danh_muc_doi_tuong.md` — vendor/customer directory
-- `src/<MST>/<Quarter>/0.danh_muc_doi_tuong.md` — newly detected MSTs (if exists)
-- `src/<MST>/<Quarter>/last_quarter_data/` — prior quarter data for continuity checks
+- `src/clients/<MST>/<Quarter>/0.result.md` (or `0.result_N.md`) — the file to validate
+- `src/clients/<MST>/<Quarter>/1.danh_sach_hoa_don.md` — invoice source data
+- `src/clients/<MST>/<Quarter>/2.sao_ke.md` — bank statement source data
+- `src/clients/<MST>/docs/2.danh_muc_tai_khoan.md` — chart of accounts
+- `src/clients/<MST>/docs/3.danh_muc_doi_tuong.md` — vendor/customer directory
+- `src/clients/<MST>/<Quarter>/0.danh_muc_doi_tuong.md` — newly detected MSTs (if exists)
+- `src/clients/<MST>/<Quarter>/last_quarter_data/` — prior quarter data for continuity checks
 
 ## Validation Steps
 

@@ -9,7 +9,7 @@ This is the Master Orchestration Skill. When triggered to run the pipeline for a
 
 ## Step 1: Verify Data
 Execute the logic from `verify_data` skill:
-- Scan `src/<MST>/<Quarter>/` and `docs/` for mandatory files.
+- Scan `src/clients/<MST>/<Quarter>/` and `docs/` for mandatory files.
 - **Decision tree:**
   - ✅ All `.md` files present → Go to Step 3 directly.
   - ⚠️ Some `.md` files missing but `.xls`/`.xlsx` files exist → Proceed to Step 2.
@@ -17,9 +17,9 @@ Execute the logic from `verify_data` skill:
 
 ## Step 2: Convert Excel to MD
 Only execute if unconverted Excel files were found in Step 1:
-- Run the `excel_to_md` skill's script: `node .agents/skills/excel_to_md/scripts/excel_to_md.js --directory "src/<MST>/<Quarter>" "src/<MST>/<Quarter>"`
+- Run the `excel_to_md` skill's script: `node .agents/skills/excel_to_md/scripts/excel_to_md.js --directory "src/clients/<MST>/<Quarter>" "src/clients/<MST>/<Quarter>"`
 - This converts ALL `.xls`/`.xlsx` files in the quarter folder to `.md` in-place.
-- Also check `src/<MST>/docs/` for any Excel files that need conversion.
+- Also check `src/clients/<MST>/docs/` for any Excel files that need conversion.
 - After conversion, re-verify that expected `.md` files now exist. If still missing, stop and tell user which files couldn't be generated.
 
 ## Step 3: Process Accounting

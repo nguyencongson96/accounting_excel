@@ -26,13 +26,13 @@ node .agents/skills/excel_to_md/scripts/excel_to_md.js --directory <inputDir_or_
 ```
 
 ### Mode 2: Split Sheets into Customer Folders
-Reads a master Excel file where each Sheet is a Customer Tax Code (MST), and writes `0.result.md` into `src/<MST>/test/<folderName>`.
+Reads a master Excel file where each Sheet is a Customer Tax Code (MST), and writes `0.result.md` into `src/clients/<MST>/test/<folderName>`.
 
 **Command:**
 ```bash
 node .agents/skills/excel_to_md/scripts/excel_to_md.js --split-sheets <inputFile> <srcDir> <folderName>
 ```
-*Example:* `node .agents/skills/excel_to_md/scripts/excel_to_md.js "Nhập liệu HKD 2026.Q1.xlsx" "src" "2026.Q1"`
+*Example:* `node .agents/skills/excel_to_md/scripts/excel_to_md.js "Nhập liệu HKD 2026.Q1.xlsx" "src/clients" "2026.Q1"`
 
 ## Key Logic Inside
 - Computes `maxCols` based on the maximum length of any row in the entire sheet to ensure no columns are skipped.

@@ -9,8 +9,8 @@ When triggered to initialize or create a new customer workspace, follow these st
 
 1. **Identify the Customer Tax Code (MST):** Extract the MST from the user's prompt. If the user also provides the customer's business name, note it for use in templates.
 2. **Create Directories:**
-   - Go to `src/` and create a directory named after the `<MST>`.
-   - Inside `src/<MST>/`, create a subdirectory named `docs/`.
+   - Go to `src/clients/` and create a directory named after the `<MST>`.
+   - Inside `src/clients/<MST>/`, create a subdirectory named `docs/`.
 3. **Generate Standard Template Files** with meaningful starter content (NOT empty files):
    - **`0.quy_trinh_tao_result.md`**: Create with this skeleton structure:
      ```markdown

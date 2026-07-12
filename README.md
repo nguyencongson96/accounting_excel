@@ -3,7 +3,7 @@
 Dự án này giúp tự động hóa quá trình chuyển hóa dữ liệu thô kế toán (Hóa đơn, Sao kê ngân hàng) thành file kết quả chuẩn để nhập liệu lên phần mềm kế toán EZSOFT / 3TSoft.
 
 ## 1. Cấu trúc thư mục cốt lõi
-- **`src/<Mã_số_thuế>/`**: Mỗi khách hàng có một thư mục riêng, bao gồm:
+- **`src/clients/<Mã_số_thuế>/`**: Mỗi khách hàng có một thư mục riêng, bao gồm:
   - `docs/`: 4 file tài liệu `.md` (quy trình, template, danh mục tài khoản, danh mục đối tượng)
   - `<Kỳ_kế_toán>/` (VD: `2026.Q1/`): Dữ liệu thô và kết quả xử lý của kỳ đó
     - `last_quarter_data/`: Số dư và chứng từ kỳ trước

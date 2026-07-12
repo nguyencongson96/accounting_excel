@@ -7,13 +7,13 @@ description: Trigger this to process accounting data and generate 0.result.md fo
 
 When triggered to process accounting data for a specific customer (MST) and Quarter:
 
-1. **Prerequisite Check:** Before processing, verify all input files exist in `src/<MST>/<Quarter>/`:
+1. **Prerequisite Check:** Before processing, verify all input files exist in `src/clients/<MST>/<Quarter>/`:
    - `1.danh_sach_hoa_don.md`
    - `2.sao_ke.md`
    - `last_quarter_data/` with all `.md` files inside
    If any are missing, stop and tell the user exactly what's missing.
 
-2. **Read All Docs:** Read ALL 4 files in `src/<MST>/docs/`:
+2. **Read All Docs:** Read ALL 4 files in `src/clients/<MST>/docs/`:
    - `0.quy_trinh_tao_result.md` — The step-by-step processing logic (THIS IS THE MOST IMPORTANT FILE)
    - `1.template_output.md` — Data Dictionary defining the 14-column output structure (A–N). **This is the blueprint for the markdown table header** in `0.result.md`. The template defines the exact column names, order, types, and formatting rules (e.g. spaces in ` NGUYÊN TỆ `, ` THÀNH TIỀN ` must be preserved).
    - `2.danh_muc_tai_khoan.md` — Chart of accounts for this customer

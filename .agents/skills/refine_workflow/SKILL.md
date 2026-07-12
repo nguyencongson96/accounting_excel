@@ -9,9 +9,9 @@ This is the primary workflow for establishing and perfecting the `0.quy_trinh_ta
 
 When triggered to refine the workflow for a specific customer (MST) and Quarter:
 
-1. **Check for Ground Truth:** Ensure that the original/historical `0.result.md` file exists in `src/<MST>/<Quarter>/`. This acts as your ground truth. Also check for `0.danh_muc_doi_tuong.md` if it exists.
+1. **Check for Ground Truth:** Ensure that the original/historical `0.result.md` file exists in `src/clients/<MST>/<Quarter>/`. This acts as your ground truth. Also check for `0.danh_muc_doi_tuong.md` if it exists.
 
-2. **Execute Headless Processing:** Run the accounting automation logic (same as `process_accounting`) based entirely on the CURRENT logic in `src/<MST>/docs/0.quy_trinh_tao_result.md`. Output the generated data to a temporary file (do NOT overwrite the ground truth).
+2. **Execute Headless Processing:** Run the accounting automation logic (same as `process_accounting`) based entirely on the CURRENT logic in `src/clients/<MST>/docs/0.quy_trinh_tao_result.md`. Output the generated data to a temporary file (do NOT overwrite the ground truth).
 
 3. **Compare and Audit:** Compare the newly generated data against the historical `0.result.md` ground truth:
    - Line-by-line comparison of all rows
@@ -29,5 +29,5 @@ When triggered to refine the workflow for a specific customer (MST) and Quarter:
 6. **Apply Updates:** If the user agrees:
    - For each discrepancy, analyze WHY it happened (missing rule? wrong mapping? edge case not handled?)
    - Infer the implicit accounting rule that was applied in the ground truth
-   - Update `src/<MST>/docs/0.quy_trinh_tao_result.md` with the new rules, clearly documented under the appropriate section
+   - Update `src/clients/<MST>/docs/0.quy_trinh_tao_result.md` with the new rules, clearly documented under the appropriate section
    - Re-run the comparison to verify the fix improved the match rate

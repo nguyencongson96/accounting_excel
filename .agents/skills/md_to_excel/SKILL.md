@@ -181,7 +181,7 @@ If the auto-detection doesn't produce the right output (e.g., dates in a differe
 For converting `0.result.md` (accounting output) → Excel import file, use the dedicated script:
 
 ```bash
-node scripts/md_to_excel_result.js "src/<MST>/<Quarter>/0.result.md"
+node scripts/md_to_excel_result.js "src/clients/<MST>/<Quarter>/0.result.md"
 ```
 
 This script handles the exact EZSOFT/3TSoft template with:
@@ -194,7 +194,7 @@ This script handles the exact EZSOFT/3TSoft template with:
 ### Batch conversion (all customers, one quarter)
 
 ```bash
-for f in src/*/2026.Q1/0.result.md; do
+for f in src/clients/*/2026.Q1/0.result.md; do
   node scripts/md_to_excel_result.js "$f"
 done
 ```
@@ -203,7 +203,7 @@ done
 
 ### Pattern 1: Simple data table
 ```bash
-node scripts/md_to_excel_generic.js "src/<MST>/<Quarter>/1.danh_sach_hoa_don.md"
+node scripts/md_to_excel_generic.js "src/clients/<MST>/<Quarter>/1.danh_sach_hoa_don.md"
 ```
 Converts any invoice/bank statement MD to Excel. Each table becomes one sheet.
 
@@ -229,7 +229,7 @@ for (let start = 0; start < rows.length; start += CHUNK_SIZE) {
 ### Pattern 4: Converting multiple related files
 To batch-convert all MD files in a directory:
 ```bash
-for f in src/*/2026.Q1/*.md; do
+for f in src/clients/*/2026.Q1/*.md; do
   if [[ "$f" != *"0.result"* ]]; then  # skip result files
     node scripts/md_to_excel_generic.js "$f"
   fi

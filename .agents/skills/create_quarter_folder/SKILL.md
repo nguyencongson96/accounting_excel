@@ -15,17 +15,17 @@ Nếu user không specify quý, hỏi lại.
 
 ## 2. Quét danh sách khách hàng
 
-1. Đi đến thư mục `src/` trong workspace.
+1. Đi đến thư mục `src/clients/` trong workspace.
 2. Lấy danh sách tất cả các subfolder (mỗi folder là một MST của khách hàng).
 3. Lọc ra các folder là MST hợp lệ (không phải folder đặc biệt như `docs` — mặc dù hiện tại không có).
 
 ## 3. Tạo subfolder
 
 Với mỗi khách hàng:
-1. Kiểm tra xem subfolder `src/<MST>/<Quarter>/` đã tồn tại chưa.
+1. Kiểm tra xem subfolder `src/clients/<MST>/<Quarter>/` đã tồn tại chưa.
 2. **Nếu đã tồn tại**: Bỏ qua, không làm gì thêm. Thông báo trong báo cáo.
 3. **Nếu chưa tồn tại**: 
-   - Tạo folder `src/<MST>/<Quarter>/`.
+   - Tạo folder `src/clients/<MST>/<Quarter>/`.
    - Bên trong folder vừa tạo, tạo tiếp subfolder `last_quarter_data/`.
    - Thông báo trong báo cáo.
 
@@ -43,8 +43,8 @@ Xuất kết quả dưới dạng Markdown:
 
 ## Danh sách khách hàng đã tạo mới
 
-<MST-1> → src/<MST-1>/<Quarter>/last_quarter_data/ ✅
-<MST-2> → src/<MST-2>/<Quarter>/last_quarter_data/ ✅
+<MST-1> → src/clients/<MST-1>/<Quarter>/last_quarter_data/ ✅
+<MST-2> → src/clients/<MST-2>/<Quarter>/last_quarter_data/ ✅
 ...
 
 ## Danh sách khách hàng đã có sẵn (bỏ qua)

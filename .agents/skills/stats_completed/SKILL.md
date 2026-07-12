@@ -15,10 +15,10 @@ Nếu user không specify quý, hỏi lại.
 
 ## 2. Quét toàn bộ danh sách khách hàng
 
-1. Đi đến thư mục `src/` trong workspace.
+1. Đi đến thư mục `src/clients/` trong workspace.
 2. Lấy danh sách tất cả các subfolder (mỗi folder là một MST của khách hàng).
 3. Với mỗi folder khách hàng:
-   - Kiểm tra xem có subfolder tên đúng bằng quý đang xét không (ví dụ: `src/<MST>/2026.Q1/`).
+   - Kiểm tra xem có subfolder tên đúng bằng quý đang xét không (ví dụ: `src/clients/<MST>/2026.Q1/`).
    - Nếu có, kiểm tra tiếp trong subfolder đó có file `0.result.md` không.
    - Nếu có cả 2 → khách hàng đó đã **hoàn thành**.
 4. Đếm tổng số khách hàng đã hoàn thành và tổng số khách hàng.
