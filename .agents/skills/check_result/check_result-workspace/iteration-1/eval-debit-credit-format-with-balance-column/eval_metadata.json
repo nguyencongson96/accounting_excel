@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "debit-credit-format-with-balance-column",
+  "prompt": "Run check_result on MST 033198001673 for 2026.Q2. The bank statement (2.sao_ke.md) has a 'Số dư sau giao dịch (VNĐ)' column with separate debit ('Số tiền ghi nợ (VNĐ)') and credit ('Số tiền ghi có (VNĐ)') columns. Validate the running balance consistency per check 3.7.",
+  "assertions": [
+    "Detects the balance column 'Số dư sau giao dịch (VNĐ)' in the bank statement header",
+    "Identifies separate debit and credit columns",
+    "Correctly computes net_amount = credit - debit for each row",
+    "Verifies running balances for all rows",
+    "Reports any discrepancies found"
+  ]
+}

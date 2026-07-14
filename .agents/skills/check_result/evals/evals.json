@@ -1,0 +1,26 @@
+{
+  "skill_name": "check_result",
+  "evals": [
+    {
+      "id": 1,
+      "name": "signed-amount-with-balance-column",
+      "prompt": "Run check_result on MST 052300008705 for 2026.Q2. The bank statement has a 'Số dư sau giao dịch (VND)' column with signed amounts (positive = inflow, negative = outflow). Validate the running balance consistency.",
+      "expected_output": "Should detect the balance column, verify running balances for all rows, and report whether all balances are consistent or list any discrepancies.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "debit-credit-format-with-balance-column",
+      "prompt": "Run check_result on MST 033198001673 for 2026.Q2. The bank statement has a 'Số dư sau giao dịch (VNĐ)' column with separate debit/credit columns. Validate the running balance consistency.",
+      "expected_output": "Should detect the balance column, identify debit and credit columns, verify running balances, and report results.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "no-balance-column",
+      "prompt": "Run check_result on MST 8307704000-002 for 2026.Q2. The bank statement has NO balance column (only STT, Ngày & Giờ, Mã giao dịch, Số tiền, Phí). Verify that check 3.7 correctly reports 'Skipped'.",
+      "expected_output": "Should report 'ℹ️ Skipped — no balance column found in bank statement' for check 3.7.",
+      "files": []
+    }
+  ]
+}

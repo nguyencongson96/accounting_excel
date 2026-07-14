@@ -1,0 +1,10 @@
+{
+  "eval_id": 3,
+  "eval_name": "no-balance-column",
+  "prompt": "Run check_result on MST 8307704000-002 for 2026.Q2. The bank statement (2.sao_ke.md) has NO balance column (columns: STT, Ngày & Giờ giao dịch, Mã giao dịch, Số tiền giao dịch (VND), Phí người chuyển trả (VND)). Verify that check 3.7 correctly reports 'Skipped'.",
+  "assertions": [
+    "Correctly detects that no balance column exists in the bank statement",
+    "Reports 'ℹ️ Skipped — no balance column found in bank statement' for check 3.7",
+    "Does not raise false errors about missing balance column"
+  ]
+}

@@ -83,6 +83,51 @@ For each data row, check:
    - **TikTok revenue**: If `MÃ ĐỐI TƯỢNG` = `0000000001`, should use `131 / 5118` or `333821 / 131` for adjustments.
    - **Refund entries**: If `DIỄN GIẢI` contains "chuyển nhầm" or "hoàn", should have matching BC+BN pair with `0000000002`.
 
+3.7 **Bank Statement Running Balance Validation**:
+   - **Purpose**: Verify that the running balance (số dư) column in `2.sao_ke.md` is mathematically consistent — every transaction's stated balance must equal the previous balance plus the current transaction's net amount. This catches missing transactions, incorrect amounts, or data entry errors in the source bank statement.
+   
+   - **Step 1 — Detect balance column**: Parse the header row of `2.sao_ke.md`. Search each column header (case-insensitive, ignoring `<br>` HTML tags) for the keywords `số dư` or `balance`. This handles ALL known variants:
+     - `Số dư`, `Số dư (VND)`, `Số dư (Balance)`
+     - `Số dư cuối`, `Số dư cuối (VND)`, `Số dư cuối/Running balance`
+     - `Số dư sau giao dịch (VND)`, `Số dư sau GD (VND)`, `Số dư sau (VND)`
+     - `Số dư hiện tại (VND)`
+     - `Số dư/Balance`
+   
+   - **Step 2 — Detect amount column(s)**: Determine how the transaction amount is represented:
+     - **Case A — Separate Debit/Credit columns**: If column headers contain `nợ`/`debit` (debit) and `có`/`credit` (credit), the net amount = `credit_value - debit_value`. Empty cells are treated as 0.
+     - **Case B — Single signed amount column**: If no separate debit/credit columns exist, look for a column with `số tiền`, `tiền`, `giao dịch`, or `amount` in its header. The amount may already be signed (negative = outflow/debit, positive = inflow/credit).
+   
+   - **Step 3 — Parse numeric values**:
+     - Remove thousands separators (commas and/or dots depending on format — Vietnamese format uses `.` as thousands separator and `,` as decimal, but many files use comma as thousands separator).
+     - Convert cleaned strings to numbers.
+     - Handle empty/blank cells as `0`.
+   
+   - **Step 4 — Verify running balance**:
+     - Skip row 1 (no prior balance to compare against).
+     - For each row `i` from 2 to N:
+       ```
+       expected_balance[i] = stated_balance[i-1] + net_amount[i]
+       ```
+       Where:
+       - `stated_balance[i]` = the balance column value at row i
+       - `stated_balance[i-1]` = the balance column value at row i-1
+       - `net_amount[i]` = 
+         - In debit/credit format: `credit[i] - debit[i]`
+         - In single signed amount format: `amount[i]` (already signed)
+     - Allow a tolerance of ±1 VND for rounding differences.
+     - **Important:** The balance flows continuously even if the `STT` column resets mid-quarter. Always use the previous row's stated balance, NOT the previous STT's row.
+   
+   - **Step 5 — Report findings**:
+     - If **no balance column** is detected: `ℹ️ Skipped — no balance column found in bank statement`
+     - If balance column **exists and all consistent**: `✅ All N-1 running balances verified (N rows checked)`
+     - If **discrepancies found**: list each discrepancy with:
+       - Row number
+       - Transaction date/description (for context)
+       - Stated balance
+       - Expected balance
+       - Difference
+       - Transaction amount
+
 ### Phase 4: New MST Detection Check
 
 4.1 If `0.danh_muc_doi_tuong.md` exists in the quarter folder:
@@ -139,6 +184,7 @@ Present results in a structured Markdown report:
 | 3.4 | Debit/Credit balance | ✅ | Balanced |
 | 3.5 | Số chứng từ continuity | ✅ | Starts at 252 (max prior=251) |
 | 3.6 | Special patterns | ✅ | All patterns valid |
+| 3.7 | Bank statement running balance | ✅ | 33/33 running balances verified (34 rows checked) |
 
 ## Phase 4: New MST Detection
 | # | Check | Status | Details |
@@ -160,3 +206,18 @@ Present results in a structured Markdown report:
 - If errors are found, tell the user exactly which rows and what's wrong so they can fix the source data or the processing logic.
 - Distinguish clearly between ❌ ERROR (data will fail import) and ⚠️ WARN (should review but may still import).
 - For any cross-reference check, if source data files are missing, skip that check and note it as "⚠️ Skipped — source file missing".
+
+## Bank Statement Running Balance — Practical Notes
+
+### Why this check matters
+A running balance inconsistency in the bank statement means either:
+1. A transaction is missing from the statement (the bank didn't record it)
+2. An amount was entered incorrectly
+3. The balance column itself has a data entry error
+
+Any of these would cause the accounting entries generated from that statement to be wrong. Catching this early avoids cascading errors.
+
+### How to read the results
+- If the check is `ℹ️ Skipped`, it simply means the bank statement doesn't have a balance column — no action needed.
+- If `❌` discrepancies are found, examine the specific rows flagged. A small, consistent rounding difference (1-2 VND) across many rows is normal (bank rounding). A large spike at one row suggests a real error.
+- If ALL balances are `✅` consistent, you can trust that the bank statement is internally complete and no transactions were dropped.

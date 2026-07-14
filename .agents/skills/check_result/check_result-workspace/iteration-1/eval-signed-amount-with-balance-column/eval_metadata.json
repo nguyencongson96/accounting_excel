@@ -1,0 +1,11 @@
+{
+  "eval_id": 1,
+  "eval_name": "signed-amount-with-balance-column",
+  "prompt": "Run check_result on MST 052300008705 for 2026.Q2. The bank statement (2.sao_ke.md) has a 'Số dư sau giao dịch (VND)' column with signed amounts (positive = inflow, negative = outflow). Validate the running balance consistency per check 3.7.",
+  "assertions": [
+    "Detects the balance column 'Số dư sau giao dịch (VND)' in the bank statement header",
+    "Identifies 'Nội dung/Số tiền chuyển (VND)' as the signed amount column",
+    "Verifies running balances for all rows correctly (balance[i] = balance[i-1] + amount[i])",
+    "Reports any discrepancies found in the running balance"
+  ]
+}
