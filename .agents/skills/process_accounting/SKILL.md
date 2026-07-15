@@ -37,11 +37,11 @@ When triggered to process accounting data for a specific customer (MST) and Quar
 5. **Draft Result — Based on Template:** 
    - **Read `1.template_output.md`** and parse the Data Dictionary table (the "Bảng Cấu trúc Cột" section). Extract the exact column order, names (including trailing/leading spaces), and formatting rules from columns A through N.
    - Build the markdown table header for `0.result.md` using these 14 columns in this exact order (mapping the Excel columns to markdown pipe-delimited columns):
-     `MÃ CHỨNG TỪ | NGÀY GHI SỔ | SỐ CHỨNG TỪ | BỘ PHẬN | HỢP ĐỒNG | MÃ SẢN PHẨM CÔNG TRÌNH | MÃ ĐỐI TƯỢNG | DIỄN GIẢI | TÀI KHOẢN | &nbsp; | MÃ TIỀN TỆ | TỶ GIÁ |  NGUYÊN TỆ  |  THÀNH TIỀN  |`
-     - Column I (`TÀI KHOẢN`) = Tài khoản Nợ
-     - Column J (`&nbsp;`) = Tài khoản Có → render as `&nbsp;` (no-break space) in the header
+     `MÃ CHỨNG TỪ | NGÀY GHI SỔ | SỐ CHỨNG TỪ | BỘ PHẬN | HỢP ĐỒNG | MÃ SẢN PHẨM CÔNG TRÌNH | MÃ ĐỐI TƯỢNG | DIỄN GIẢI | TÀI KHOẢN NỢ | TÀI KHOẢN CÓ | MÃ TIỀN TỆ | TỶ GIÁ |  NGUYÊN TỆ  |  THÀNH TIỀN  |`
+     - Column I (`TÀI KHOẢN`) = `TÀI KHOẢN NỢ`
+     - Column J (`&nbsp;`) = `TÀI KHOẢN CÓ`
      - Columns M and N: preserve the leading/trailing spaces exactly as in the template (` NGUYÊN TỆ `, ` THÀNH TIỀN `)
-   - Then add a second header row: `NỢ | CÓ` under the `TÀI KHOẢN | &nbsp;` columns.
+   - Then add the standard markdown table delimiter row: `|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|`
    - Write output to `0.result.md` in the Quarter folder.
    - **CRITICAL SAFETY RULE:** If `0.result.md` already exists, NEVER overwrite it. Save as `0.result_1.md`, `0.result_2.md`, etc. (find the next available number).
    - Every data row must follow the column structure defined in `1.template_output.md`: no extra columns, no missing columns, no reordering.
