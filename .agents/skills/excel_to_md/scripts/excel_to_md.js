@@ -39,7 +39,7 @@ function verifyIntegrity(excelData, maxCols, mdFilePath, sheetName) {
         for (let c = 0; c < maxCols; c++) {
             let cell = row[c];
             let val = (cell !== undefined && cell !== null) ? String(cell) : '';
-            val = val.replace(/\|/g, '\\|').replace(/\n/g, '<br>');
+            val = val.replace(/\|/g, '&#124;').replace(/\n/g, '<br>');
             if (val.trim() === '') val = '&nbsp;';
             rowData.push(val);
         }
@@ -115,7 +115,7 @@ if (mode === '--directory') {
                 for (let c = 0; c < maxCols; c++) {
                     let cell = row[c];
                     let val = (cell !== undefined && cell !== null) ? String(cell) : '';
-                    val = val.replace(/\|/g, '\\|').replace(/\n/g, '<br>');
+                    val = val.replace(/\|/g, '&#124;').replace(/\n/g, '<br>');
                     if (val.trim() === '') val = '&nbsp;';
                     rowData.push(val);
                 }
@@ -205,7 +205,7 @@ else if (mode === '--split-sheets') {
             for (let c = 0; c < maxCols; c++) {
                 let cell = row[c];
                 let val = (cell !== undefined && cell !== null) ? String(cell) : '';
-                val = val.replace(/\|/g, '\\|').replace(/\n/g, '<br>');
+                val = val.replace(/\|/g, '&#124;').replace(/\n/g, '<br>');
                 if (val.trim() === '') val = '&nbsp;';
                 rowData.push(val);
             }
