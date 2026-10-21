@@ -1,0 +1,149 @@
+# File: VIB_SaoKeTaiKhoan.xlsx
+
+## Sheet: Sao_ke_tai_khoan
+
+| GIAO DỊCH TÀI KHOẢN | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
+| --- | --- | --- | --- | --- |
+| ACCOUNT STATEMENT | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
+| Số tài khoản (Account number) | : 186738 | &nbsp; | &nbsp; | &nbsp; |
+| Loại tiền (Currency) | : VND | &nbsp; | &nbsp; | &nbsp; |
+| Chủ tài khoản (Account holder) | : HKD TÂM TÀI TRÍ | &nbsp; | &nbsp; | &nbsp; |
+| Số GPKD (Business license) | : 034192000639 | &nbsp; | &nbsp; | &nbsp; |
+| Địa chỉ (Address) | : 60 NÚI THÀNH, PHƯỜNG TÂN BÌNH, HỒ C HÍ MINH  | &nbsp; | &nbsp; | &nbsp; |
+| Ngày in sao kê (Statement date) | : 09/10/2026 | &nbsp; | &nbsp; | &nbsp; |
+| Thời gian sao kê (Period covered) | : 01/07/2026 - 28/09/2026 | &nbsp; | &nbsp; | &nbsp; |
+| Phát sinh nợ (Total debit) | : 788,091,000 VND | Số dư đầu kỳ (Opening balance) | : 363,956,047 VND | &nbsp; |
+| Phát sinh có (Total credit) | : 475,058,597 VND | Số dư cuối kỳ (Closing balance) | : 50,923,644 VND | &nbsp; |
+| Ngày giao dịch/Transaction date | Nội dung/Description | Ghi nợ/Debit | Ghi có/Credit | Số dư cuối/Running balance |
+| 25/09/2026 | Rut tien mat nhap quy | 5,000,000 | &nbsp; | 50,934,644 |
+| 25/09/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 50,924,644 |
+| 25/09/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 50,923,644 |
+| 24/09/2026 | Elva tt dot 2 goi STND Integ theo BBNT 010426BBNT EF | &nbsp; | 10,219,355 | 55,934,644 |
+| 23/09/2026 | Rut tien mat nhap quy | 5,000,000 | &nbsp; | 45,726,289 |
+| 23/09/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 45,716,289 |
+| 23/09/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 45,715,289 |
+| 20/09/2026 | Rut tien mat nhap quy | 5,000,000 | &nbsp; | 50,737,289 |
+| 20/09/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 50,727,289 |
+| 20/09/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 50,726,289 |
+| 19/09/2026 | Rut tien mat nhap quy | 5,000,000 | &nbsp; | 55,748,289 |
+| 19/09/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 55,738,289 |
+| 19/09/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 55,737,289 |
+| 18/09/2026 | Rut tien mat nhap quy | 10,000,000 | &nbsp; | 60,759,289 |
+| 18/09/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 60,749,289 |
+| 18/09/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 60,748,289 |
+| 16/09/2026 | IBVCB.202609165087097878.21.CTY COPHAN Y&B TT 100% GIA TRI PHU LUC CUA HOP DONG SO 20260225/PL/YB-KOL (HD 52 - CAMP RUA 2026) | &nbsp; | 16,500,000 | 70,759,289 |
+| 10/09/2026 | Rut tien mat nhap quy | 70,000,000 | &nbsp; | 54,270,289 |
+| 10/09/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 54,260,289 |
+| 10/09/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 54,259,289 |
+| 09/09/2026 | Thanh toan phi tu van (HKD Tam Tai Tri) | 3,240,000 | &nbsp; | 124,281,289 |
+| 09/09/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 124,271,289 |
+| 09/09/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 124,270,289 |
+| 08/09/2026 | GEMARI THANH TOAN DICH VU TU VAN QUAN LY T08.2026 - HKD TAM TAI TRI-080926-09:07:24 6251ASCB024PKW8M | &nbsp; | 6,351,000 | 127,521,289 |
+| 06/09/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 121,170,289 |
+| 06/09/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 121,171,289 |
+| 06/09/2026 | Rut tien mat nhap quy | 20,000,000 | &nbsp; | 121,181,289 |
+| 05/09/2026 | CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ GLAMI chuyen tien den HKD  TÂM TÀI TRÍ - thanh toan dot 1 theo hop dong so 01092026 | &nbsp; | 39,919,355 | 141,181,289 |
+| 05/09/2026 | CTY HOAI THU TH TT TIEN DV CHO HKD TAM TAI TRI | &nbsp; | 25,335,483 | 101,261,934 |
+| 31/08/2026 | Rut tien mat nhap quy | 40,000,000 | &nbsp; | 75,937,451 |
+| 31/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 75,927,451 |
+| 31/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 75,926,451 |
+| 31/08/2026 | HKD  TAM TAI TRI chuyen tien luong T8 | 10,000,000 | &nbsp; | 115,948,451 |
+| 31/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 115,938,451 |
+| 31/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 115,937,451 |
+| 31/08/2026 | HKD  TAM TAI TRI chuyen tien luong T8 | 7,500,000 | &nbsp; | 125,959,451 |
+| 31/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 125,949,451 |
+| 31/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 125,948,451 |
+| 31/08/2026 | HKD  TAM TAI TRI chuyen tien luong T8 | 11,000,000 | &nbsp; | 133,470,451 |
+| 31/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 133,460,451 |
+| 31/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 133,459,451 |
+| 31/08/2026 | HKD  TAM TAI TRI chuyen tien luong T8 | 12,000,000 | &nbsp; | 144,481,451 |
+| 31/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 144,471,451 |
+| 31/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 144,470,451 |
+| 30/08/2026 | Chuyen tien mat nhap quy | 5,000,000 | &nbsp; | 156,492,451 |
+| 30/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 156,482,451 |
+| 30/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 156,481,451 |
+| 29/08/2026 | Rut tien mat nhap quy | 20,000,000 | &nbsp; | 161,503,451 |
+| 29/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 161,493,451 |
+| 29/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 161,492,451 |
+| 27/08/2026 | Rut tien mat nhap quy | 10,000,000 | &nbsp; | 181,514,451 |
+| 27/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 181,504,451 |
+| 27/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 181,503,451 |
+| 27/08/2026 | Rut tien mat nhap quy | 10,000,000 | &nbsp; | 191,525,451 |
+| 27/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 191,515,451 |
+| 27/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 191,514,451 |
+| 23/08/2026 | Rut tien mat nhap quy | 40,000,000 | &nbsp; | 201,536,451 |
+| 23/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 201,526,451 |
+| 23/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 201,525,451 |
+| 14/08/2026 | HKD TAM TAI TRI (MVD: CT0269O) nop BHXH 7.2026 | 8,496,000 | &nbsp; | 241,547,451 |
+| 14/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 241,537,451 |
+| 14/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 241,536,451 |
+| 14/08/2026 | HKD TAM TAI TRI (MVD: KQ0113O) nop BHXH 7.2026 | 2,950,000 | &nbsp; | 250,054,451 |
+| 14/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 250,044,451 |
+| 14/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 250,043,451 |
+| 13/08/2026 | HKD  TAM TAI TRI tt phi thue van phong tu 08.2026 den 02.2027 | 3,300,000 | &nbsp; | 253,004,451 |
+| 12/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 256,305,451 |
+| 12/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 256,304,451 |
+| 10/08/2026 | SVR TT PHI DICH VU HD48 CHO TAM TAI TRI-100826-17:27:27 6222ASCB02T6CFHA | &nbsp; | 72,500,000 | 256,315,451 |
+| 09/08/2026 | Rut tien mat nhap quy | 100,000,000 | &nbsp; | 183,815,451 |
+| 08/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 283,816,451 |
+| 08/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 283,815,451 |
+| 08/08/2026 | HKD  TAM TAI TRI chuyen tien den CTY TNHH TU VAN VA KE TOAN T VA C thang 8 | 3,240,000 | &nbsp; | 283,837,451 |
+| 08/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 283,827,451 |
+| 08/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 283,826,451 |
+| 07/08/2026 | Elva tt dot 2 goi dich vu truyen thong integ | &nbsp; | 47,903,226 | 287,077,451 |
+| 05/08/2026 | CTY HOAI THU TH TT TIEN DV CHO HKD TAM TAI TRI | &nbsp; | 20,225,806 | 239,174,225 |
+| 05/08/2026 | GEMARI THANH TOAN DICH VU TU VAN QUAN LY T07.2026 - HKD TAM TAI TRI-050826-12:05:09 6217ASCB02TJVK9T | &nbsp; | 7,176,000 | 218,948,419 |
+| 03/08/2026 | Rut tien mat nhap quy | 50,000,000 | &nbsp; | 211,772,419 |
+| 02/08/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 261,773,419 |
+| 02/08/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 261,772,419 |
+| 31/07/2026 | HKD  TAM TAI TRI chuyen tien luong t7 | 3,750,000 | &nbsp; | 261,794,419 |
+| 31/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 261,784,419 |
+| 31/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 261,783,419 |
+| 31/07/2026 | CTY SANA XANH GROUP thanh toan cho HKD TAM TAI TRI | &nbsp; | 36,350,565 | 265,544,419 |
+| 31/07/2026 | HKD  TAM TAI TRI chuyen tien luong t7 | 12,000,000 | &nbsp; | 229,204,854 |
+| 31/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 229,194,854 |
+| 31/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 229,193,854 |
+| 31/07/2026 | HKD  TAM TAI TRI chuyen tien luong t7 | 7,500,000 | &nbsp; | 241,215,854 |
+| 31/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 241,205,854 |
+| 31/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 241,204,854 |
+| 31/07/2026 | HKD  TAM TAI TRI chuyen tien luong t7 | 10,000,000 | &nbsp; | 248,726,854 |
+| 31/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 248,716,854 |
+| 31/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 248,715,854 |
+| 31/07/2026 | HKD  TAM TAI TRI chuyen tien luong T7 | 11,000,000 | &nbsp; | 258,737,854 |
+| 31/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 258,727,854 |
+| 31/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 258,726,854 |
+| 28/07/2026 | Rut tien mat nhap quy | 100,000,000 | &nbsp; | 269,748,854 |
+| 28/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 269,738,854 |
+| 28/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 269,737,854 |
+| 27/07/2026 | Cty hoai thu th tt tien dv cho hkd tam tai tri | &nbsp; | 63,870,968 | 369,748,854 |
+| 27/07/2026 | Rut tien mat nhap quy | 35,000,000 | &nbsp; | 305,888,886 |
+| 27/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 305,878,886 |
+| 27/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 305,877,886 |
+| 22/07/2026 | Rut tien mat nhap quy | 20,000,000 | &nbsp; | 340,899,886 |
+| 22/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 340,889,886 |
+| 22/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 340,888,886 |
+| 17/07/2026 | Rut tien mat nhap quy | 17,000,000 | &nbsp; | 360,910,886 |
+| 17/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 360,900,886 |
+| 17/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 360,899,886 |
+| 13/07/2026 | Rut tien mat nhap quy | 15,000,000 | &nbsp; | 377,921,886 |
+| 13/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 377,911,886 |
+| 13/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 377,910,886 |
+| 11/07/2026 | FGH COC DICH VU THEO HOP DONG SO 260626.HD.SH-TTT NGAY 26.6.26 CHO TAM TAI TRI | &nbsp; | 100,000,000 | 392,921,886 |
+| 11/07/2026 | Rut tien mat nhap quy | 25,000,000 | &nbsp; | 292,932,886 |
+| 11/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 292,922,886 |
+| 11/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 292,921,886 |
+| 07/07/2026 | CTY HOAI THU TH TT TIEN DV CHO HKD TAM TAI TRI-070726-20:43:19 6188ASCB028PPNBB | &nbsp; | 22,354,839 | 317,932,886 |
+| 06/07/2026 | Thanh toan phi tu van (HKD TAM TAI TRI) | 3,240,000 | &nbsp; | 295,589,047 |
+| 06/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 295,579,047 |
+| 06/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 295,578,047 |
+| 06/07/2026 | HKD TAM TAI TRI (MVD: CT0269O) nop BHXH 06.2026 | 8,496,000 | &nbsp; | 298,840,047 |
+| 06/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 298,830,047 |
+| 06/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 298,829,047 |
+| 06/07/2026 | HKD TAM TAI TRI (MVD: KQ0113O) nop BHXH 06.2026 | 2,950,000 | &nbsp; | 307,347,047 |
+| 06/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 307,337,047 |
+| 06/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 307,336,047 |
+| 05/07/2026 | GEMARI THANH TOAN DICH VU TU VAN QUAN LY T06.2026 - HKD TAM TAI TRI-050726-11:07:26 6186ASCB0283DT6G | &nbsp; | 6,352,000 | 310,297,047 |
+| 03/07/2026 | Rut tien mat nhap quy | 60,000,000 | &nbsp; | 303,956,047 |
+| 03/07/2026 | PHI CT NAPAS VIB CHECKOUT | 10,000 | &nbsp; | 303,946,047 |
+| 03/07/2026 | THU THUE VAT TU GD THU PHI | 1,000 | &nbsp; | 303,945,047 |
+

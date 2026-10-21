@@ -32,7 +32,7 @@ Khi được yêu cầu xử lý dữ liệu cho một **Mã số thuế (MST)**
 2. **Kiểm tra đầu vào:** Trước khi xử lý, phải kiểm tra đủ các file bắt buộc. Nếu thiếu, BẮT BUỘC DỪNG và báo User.
 3. **Bảo vệ file docs:** KHÔNG ĐƯỢC ghi đè hay làm hỏng các file trong `docs/`. Không lưu file `.xls` vào `docs/`.
 4. **Đọc toàn bộ docs:** BẮT BUỘC đọc TOÀN BỘ 4 file trong `docs/` trước khi xử lý.
-5. **Không ghi đè kết quả:** Nếu `0.result.md` ĐÃ TỒN TẠI, tạo file tăng dần: `0.result_1.md`, `0.result_2.md`...
+5. **Chỉ giữ kết quả mới nhất:** Lưu kết quả và báo cáo kèm trong `result/` với tên chuẩn không hậu tố (ví dụ `0.result.md`). Khi chạy lại hoặc sửa kết quả, ghi đè bộ hiện hành; không tạo phiên bản tăng dần. Kiểm tra bộ mới và cập nhật liên kết trước khi xóa các tệp kết quả cũ; không tác động dữ liệu gốc. Theo quy tắc lưu kết quả của `run_pipeline`.
 6. **Script tạm:** Tất cả script test/chạy tạm BẮT BUỘC lưu vào `scripts/` và PHẢI xóa sau khi hoàn thành.
 7. **Phát hiện MST mới:** Trong quá trình xử lý hóa đơn, nếu phát hiện MST đối tác chưa có trong `docs/3.danh_muc_doi_tuong.md`, PHẢI tạo file `0.danh_muc_doi_tuong.md` trong thư mục Kỳ kế toán với đầy đủ các cột: STT, Mã đối tượng, Tên đối tượng, Địa chỉ, Mã số thuế, Nhóm đối tượng (N002), Loại đối tượng (1=Khách hàng, 2=Nhà cung cấp).
 8. **Không viết script inline trong command line:** Nghiêm cấm viết code trực tiếp trong dòng lệnh (VD: `node -e "code..."`, `python -c "code..."`, PowerShell one-liner dài). Bash dễ bị lỗi với ký tự đặc biệt (`!`, `$`, backtick)... Luôn viết script vào file `.js`/`.py` trong `scripts/` trước, sau đó mới chạy file đó.

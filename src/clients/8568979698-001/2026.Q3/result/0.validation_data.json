@@ -1,0 +1,28 @@
+{
+  "rows": 149,
+  "counts": {
+    "BN": 14,
+    "PK": 84,
+    "PC": 20,
+    "BC": 31
+  },
+  "total": 1565695162,
+  "newObjects": 17,
+  "bankIn": 507843209,
+  "bankOut": 506212700,
+  "closing131": {
+    "dr": 254292485,
+    "cr": 101200000
+  },
+  "checks": 44,
+  "errors": 2,
+  "warnings": 6,
+  "bhxh": {
+    "monthly": 690300,
+    "accrual": 2070900,
+    "payment": 1492700,
+    "closingCredit": 546100,
+    "paymentDifferenceJulAug": 112100,
+    "basis": "Theo lịch sử tháng 01–06 và chỉ định người dùng 17/10/2026"
+  }
+}

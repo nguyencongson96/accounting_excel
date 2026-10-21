@@ -25,6 +25,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# temporary accounting helpers and local application caches
+/scripts/tmp_*
+~$*
+__pycache__/
+
 # local env files
 .env*.local
 

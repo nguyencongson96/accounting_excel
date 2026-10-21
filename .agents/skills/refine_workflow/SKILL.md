@@ -11,7 +11,7 @@ When triggered to refine the workflow for a specific customer (MST) and Quarter:
 
 1. **Check for Ground Truth:** Ensure that the original/historical `0.result.md` file exists in `src/clients/<MST>/<Quarter>/`. This acts as your ground truth. Also check for `0.danh_muc_doi_tuong.md` if it exists.
 
-2. **Execute Headless Processing:** Run the accounting automation logic (same as `process_accounting`) based entirely on the CURRENT logic in `src/clients/<MST>/docs/0.quy_trinh_tao_result.md`. Output the generated data to a temporary file (do NOT overwrite the ground truth).
+2. **Reprocess by Reviewing Each Entry:** Read and follow `process_accounting` directly: the Agent determines each entry from source evidence and the CURRENT customer-specific rules in `src/clients/<MST>/docs/0.quy_trinh_tao_result.md`. Do not run `scripts/process_accounting.js`, `scripts/process.py`, another accounting generation script or a temporary replacement. Mechanical conversion, calculation, formatting and comparison tools are allowed; accounting decisions remain with the Agent. Output the reviewed entries to a temporary file (do NOT overwrite the historical result). Check discrepancies against source documents because the historical result may itself contain errors.
 
 3. **Compare and Audit:** Compare the newly generated data against the historical `0.result.md` ground truth:
    - Line-by-line comparison of all rows

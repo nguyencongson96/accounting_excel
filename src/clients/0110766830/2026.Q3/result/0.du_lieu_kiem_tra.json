@@ -1,0 +1,599 @@
+{
+  "databaseRange": [
+    {
+      "FirstDate": "2024-06-27 00:00:00",
+      "LastDate": "2026-06-30 00:00:00",
+      "EntryRows": 1023,
+      "RowsFromJuly": 0
+    }
+  ],
+  "priorRows": 1023,
+  "maxPriorVoucherNumber": 1850,
+  "invoiceCount": 22,
+  "invoiceTotal": 88784919,
+  "bankRows": 19,
+  "excludedQ4": 3,
+  "bankIn": 1181000937,
+  "bankOut": 1180517000,
+  "opening": 482275,
+  "closing": 966212,
+  "balanceErrors": [],
+  "openingAccounts": [
+    {
+      "tk": "1111",
+      "net": 6744402796
+    },
+    {
+      "tk": "41111",
+      "net": -5000000000
+    },
+    {
+      "tk": "64272",
+      "net": 46800000
+    },
+    {
+      "tk": "331",
+      "net": -2056422955
+    },
+    {
+      "tk": "112111",
+      "net": 482275
+    },
+    {
+      "tk": "131",
+      "net": -1199893610
+    },
+    {
+      "tk": "64271",
+      "net": 170000
+    },
+    {
+      "tk": "1331",
+      "net": 57687822
+    },
+    {
+      "tk": "1531",
+      "net": 0
+    },
+    {
+      "tk": "2422",
+      "net": 23422841
+    },
+    {
+      "tk": "1521",
+      "net": 860440961
+    },
+    {
+      "tk": "621",
+      "net": 0
+    },
+    {
+      "tk": "5154",
+      "net": -152341
+    },
+    {
+      "tk": "6273",
+      "net": 10606700
+    },
+    {
+      "tk": "622",
+      "net": 357811111
+    },
+    {
+      "tk": "3341",
+      "net": 0
+    },
+    {
+      "tk": "9112",
+      "net": 0
+    },
+    {
+      "tk": "154",
+      "net": 311973864
+    },
+    {
+      "tk": "9111",
+      "net": 0
+    },
+    {
+      "tk": "4212",
+      "net": 0
+    },
+    {
+      "tk": "6423",
+      "net": 5498490
+    },
+    {
+      "tk": "6425",
+      "net": 0
+    },
+    {
+      "tk": "33392",
+      "net": 0
+    },
+    {
+      "tk": "4211",
+      "net": -216233948
+    },
+    {
+      "tk": "6233",
+      "net": 34000000
+    },
+    {
+      "tk": "6428",
+      "net": 38234814
+    },
+    {
+      "tk": "5111",
+      "net": 0
+    },
+    {
+      "tk": "33311",
+      "net": 0
+    },
+    {
+      "tk": "6321",
+      "net": 0
+    },
+    {
+      "tk": "7118",
+      "net": -615
+    },
+    {
+      "tk": "3335",
+      "net": -24725555
+    },
+    {
+      "tk": "8118",
+      "net": 1350
+    },
+    {
+      "tk": "6277",
+      "net": 5896000
+    },
+    {
+      "tk": "3388",
+      "net": 0
+    }
+  ],
+  "openingDebts": [
+    {
+      "key": "131|0000000001",
+      "net": -850000000
+    },
+    {
+      "key": "131|0101437389",
+      "net": -349893610
+    },
+    {
+      "key": "331|0106747867",
+      "net": -113832000
+    },
+    {
+      "key": "331|2500642947",
+      "net": 14000000
+    },
+    {
+      "key": "331|0900686751",
+      "net": 36525000
+    },
+    {
+      "key": "331|0901162750",
+      "net": 70000000
+    },
+    {
+      "key": "331|0106851931",
+      "net": -2261406895
+    },
+    {
+      "key": "331|0000000001",
+      "net": 134590940
+    },
+    {
+      "key": "331|0901205771",
+      "net": 55000000
+    },
+    {
+      "key": "331|0901160087",
+      "net": 8700000
+    }
+  ],
+  "invoices": [
+    {
+      "STT": 1,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "02/07/2026",
+      "Số hóa đơn": 404816,
+      "Ký hiệu": "K26TYL",
+      "Mã số thuế": "0901146759",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX HƯNG YÊN",
+      "Diễn giải": "Xăng E10 RON 95 Mức 5 HĐ số 404816",
+      "Trước thuế": 1030127,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1030127,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 2,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "05/07/2026",
+      "Số hóa đơn": 410649,
+      "Ký hiệu": "K26TYL",
+      "Mã số thuế": "0901146759",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX HƯNG YÊN",
+      "Diễn giải": "Xăng E10 RON 95 Mức 5 HĐ số 410649",
+      "Trước thuế": 830062,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 830062,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 3,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "07/07/2026",
+      "Số hóa đơn": 385411,
+      "Ký hiệu": "K26TTM",
+      "Mã số thuế": "2800114779",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX THANH HOÁ",
+      "Diễn giải": "Xăng E10 RON 95 Mức 3 HĐ số 385411",
+      "Trước thuế": 900095,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 900095,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 4,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "08/07/2026",
+      "Số hóa đơn": 418528,
+      "Ký hiệu": "K26TYL",
+      "Mã số thuế": "0901146759",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX HƯNG YÊN",
+      "Diễn giải": "Xăng E10 RON 95 Mức 5 HĐ số 418528",
+      "Trước thuế": 870019,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 870019,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 5,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "14/07/2026",
+      "Số hóa đơn": 399617,
+      "Ký hiệu": "K26TTM",
+      "Mã số thuế": "2800114779",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX THANH HOÁ",
+      "Diễn giải": "Xăng E10 RON 95 Mức 3 HĐ số 399617",
+      "Trước thuế": 950089,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 950089,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 6,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "17/07/2026",
+      "Số hóa đơn": 152759,
+      "Ký hiệu": "K26TBB",
+      "Mã số thuế": "0100111948-078",
+      "Tên đối tác": "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN CÔNG THƯƠNG VIỆT NAM - CHI NHÁNH ĐÔNG HÀ NỘI",
+      "Diễn giải": "Thu dịch vụ Ngân hàng HĐ số 152759",
+      "Trước thuế": 150000,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 15000,
+      "Sau thuế": 165000,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 7,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "18/07/2026",
+      "Số hóa đơn": 2600539,
+      "Ký hiệu": "K26THT",
+      "Mã số thuế": "0100107564",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX HÀ NỘI",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 2600539",
+      "Trước thuế": 1840027,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1840027,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 8,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "22/07/2026",
+      "Số hóa đơn": 35051,
+      "Ký hiệu": "K26TAB",
+      "Mã số thuế": "0100111948-136",
+      "Tên đối tác": "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN CÔNG THƯƠNG VIỆT NAM - CHI NHÁNH TÂY THĂNG LONG",
+      "Diễn giải": "Thu phi dich vu Ngan hang HĐ số 35051",
+      "Trước thuế": 20000,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 2000,
+      "Sau thuế": 22000,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 9,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "24/07/2026",
+      "Số hóa đơn": 466133,
+      "Ký hiệu": "K26TBL",
+      "Mã số thuế": "5700101690",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX QUẢNG NINH",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 466133",
+      "Trước thuế": 1570106,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1570106,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 10,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "31/07/2026",
+      "Số hóa đơn": 443632,
+      "Ký hiệu": "K26TTM",
+      "Mã số thuế": "2800114779",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX THANH HOÁ",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 443632",
+      "Trước thuế": 1350371,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1350371,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 11,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "07/08/2026",
+      "Số hóa đơn": 458918,
+      "Ký hiệu": "K26TTM",
+      "Mã số thuế": "2800114779",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX THANH HOÁ",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 458918",
+      "Trước thuế": 2180006,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 2180006,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 12,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "14/08/2026",
+      "Số hóa đơn": 3003495,
+      "Ký hiệu": "K26THT",
+      "Mã số thuế": "0100107564",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX HÀ NỘI",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 3003495",
+      "Trước thuế": 1830016,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1830016,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 13,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "16/08/2026",
+      "Số hóa đơn": 3028039,
+      "Ký hiệu": "K26THT",
+      "Mã số thuế": "0100107564",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX HÀ NỘI",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 3028039",
+      "Trước thuế": 1900144,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1900144,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 14,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "17/08/2026",
+      "Số hóa đơn": 176098,
+      "Ký hiệu": "K26TBB",
+      "Mã số thuế": "0100111948-078",
+      "Tên đối tác": "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN CÔNG THƯƠNG VIỆT NAM - CHI NHÁNH ĐÔNG HÀ NỘI",
+      "Diễn giải": "Thu dịch vụ Ngân hàng HĐ số 176098",
+      "Trước thuế": 150000,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 15000,
+      "Sau thuế": 165000,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 15,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "24/08/2026",
+      "Số hóa đơn": 495086,
+      "Ký hiệu": "K26TTM",
+      "Mã số thuế": "2800114779",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX THANH HOÁ",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 495086",
+      "Trước thuế": 1750094,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1750094,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 16,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Đã cấp mã hóa đơn",
+      "Thời gian lập": "25/08/2026",
+      "Số hóa đơn": 66,
+      "Ký hiệu": "C26TAP",
+      "Mã số thuế": "0901160087",
+      "Tên đối tác": "CÔNG TY TNHH ĐẦU TƯ VÀ THƯƠNG MẠI BẢO AN PHÁT",
+      "Diễn giải": "Bình nước nóng QQ EVO 30L chống giật 2.500W ME\nMáy nước nóng trực tiếp RITA FS - TE 4.500W HĐ số 66",
+      "Trước thuế": 3599074,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": 0,
+      "Thuế": 287926,
+      "Sau thuế": 3887000,
+      "Kết quả xử lý": "Đã cấp mã hóa đơn"
+    },
+    {
+      "STT": 17,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Đã cấp mã hóa đơn",
+      "Thời gian lập": "27/08/2026",
+      "Số hóa đơn": 33,
+      "Ký hiệu": "C26TAB",
+      "Mã số thuế": "0108657898",
+      "Tên đối tác": "CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ XÂY DỰNG VÀ DỊCH VỤ THƯƠNG MẠI TRƯỜNG AN",
+      "Diễn giải": "Thi công lắp đặt cửa nhôm kính 6.38mm , phụ kiện đồng bộ kèm theo HĐ số 33",
+      "Trước thuế": 58202696,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 4656216,
+      "Sau thuế": 62858912,
+      "Kết quả xử lý": "Đã cấp mã hóa đơn"
+    },
+    {
+      "STT": 18,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "28/08/2026",
+      "Số hóa đơn": 503201,
+      "Ký hiệu": "K26TTM",
+      "Mã số thuế": "2800114779",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX THANH HOÁ",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 503201",
+      "Trước thuế": 1280075,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1280075,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 19,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "02/09/2026",
+      "Số hóa đơn": 569807,
+      "Ký hiệu": "K26TBL",
+      "Mã số thuế": "5700101690",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX QUẢNG NINH",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 569807",
+      "Trước thuế": 1240080,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1240080,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 20,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "06/09/2026",
+      "Số hóa đơn": 3295532,
+      "Ký hiệu": "K26THT",
+      "Mã số thuế": "0100107564",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX HÀ NỘI",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 3295532",
+      "Trước thuế": 900143,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 900143,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 21,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "17/09/2026",
+      "Số hóa đơn": 198807,
+      "Ký hiệu": "K26TBB",
+      "Mã số thuế": "0100111948-078",
+      "Tên đối tác": "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN CÔNG THƯƠNG VIỆT NAM - CHI NHÁNH ĐÔNG HÀ NỘI",
+      "Diễn giải": "Thu dịch vụ Ngân hàng HĐ số 198807",
+      "Trước thuế": 150000,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 15000,
+      "Sau thuế": 165000,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    },
+    {
+      "STT": 22,
+      "Loại": "Mua vào",
+      "Trạng thái": "Hóa đơn mới",
+      "Trạng thái xử lý": "Cục Thuế đã nhận không mã",
+      "Thời gian lập": "18/09/2026",
+      "Số hóa đơn": 3459212,
+      "Ký hiệu": "K26THT",
+      "Mã số thuế": "0100107564",
+      "Tên đối tác": "CÔNG TY TNHH MTV PETROLIMEX HÀ NỘI",
+      "Diễn giải": "Dầu Điêzen 0,001S Mức 5 HĐ số 3459212",
+      "Trước thuế": 1100553,
+      "Giảm trước thuế": 0,
+      "Chiết khấu thương mại": null,
+      "Thuế": 0,
+      "Sau thuế": 1100553,
+      "Kết quả xử lý": "Cục Thuế đã nhận không mã"
+    }
+  ]
+}

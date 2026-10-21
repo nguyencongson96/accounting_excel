@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kết nối database 3TSoft"
+  short_description: "Kết nối và đọc dữ liệu khách hàng trong 3TSoft"
+  default_prompt: "Dùng $connect-3tsoft để kết nối database khách hàng tôi cung cấp và kiểm tra khả năng đọc dữ liệu."

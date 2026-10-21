@@ -1,0 +1,44 @@
+{
+  "rows": 153,
+  "counts": {
+    "PK": 79,
+    "PC": 14,
+    "BC": 32,
+    "BN": 28
+  },
+  "total": 2003898514,
+  "bank": 58,
+  "inflow": 642780279,
+  "outflow": 550170300,
+  "newMST": 23,
+  "gaps": [],
+  "confirmedInterest": 97682,
+  "confirmedInterestEntries": 3,
+  "inflowIncludingConfirmedInterest": 642877961,
+  "resolvedGaps": [
+    {
+      "id": 14,
+      "date": "28/07/2026",
+      "amount": 8800000,
+      "stated": 233953391,
+      "expected": 233919921,
+      "diff": 33470
+    },
+    {
+      "id": 28,
+      "date": "26/08/2026",
+      "amount": 11000000,
+      "stated": 166700120,
+      "expected": 166666393,
+      "diff": 33727
+    },
+    {
+      "id": 56,
+      "date": "27/09/2026",
+      "amount": -26000000,
+      "stated": 260231001,
+      "expected": 260200516,
+      "diff": 30485
+    }
+  ]
+}

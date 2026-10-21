@@ -16,6 +16,7 @@ This skill performs a comprehensive audit of the `0.result.md` file produced by 
 - `src/clients/<MST>/docs/3.danh_muc_doi_tuong.md` — vendor/customer directory
 - `src/clients/<MST>/<Quarter>/0.danh_muc_doi_tuong.md` — newly detected MSTs (if exists)
 - `src/clients/<MST>/<Quarter>/last_quarter_data/` — prior quarter data for continuity checks
+- `src/clients/<MST>/<Quarter>/0.doi_chieu_cong_no.md` (or version matching the result) — opening debts, payment allocations and closing debt reconciliation
 
 ## Validation Steps
 
@@ -128,6 +129,16 @@ For each data row, check:
        - Difference
        - Transaction amount
 
+3.8 **Opening Debts and Payment Allocation (Required)**:
+   - Read [Công nợ đầu kỳ và phân bổ thanh toán](../process_accounting/references/cong_no_dau_ky.md). Verify the opening cutoff from actual report dates, not the directory name; confirm the balances by counterparty and their source references. Do not assume missing opening balances are zero.
+   - Verify that every receipt identified as settlement of prior-period debt reduces 131 for the correct counterparty without generating revenue again. The absence of a matching current-quarter invoice is not an error when prior-period debt and payer identity support the settlement.
+   - Cross-check payment allocations against bank entries and remaining debt. Include partial/grouped payments and explicit payment references; reject duplicate allocations and unexplained over-allocation to old debts. Distinguish advances, deposits, refunds and unassigned receipts using source evidence.
+   - Verify the list of individual invoices comprising each opening counterparty balance: original receivable, adjustments, prior allocated receipts and remaining debt at cutoff. Reconcile explained invoice balances and separately listed advances/unallocated items with the counterparty balance. Do not accept a single synthetic invoice representing an aggregate balance.
+   - For each allocated receipt, verify the specific invoice identifiers, payment evidence, available balance before receipt and remaining balance afterward. Check repeated invoice numbers across years/series, multiple equal-amount invoices, partial receipts and grouped payments. Neither total-balance equality nor invoice-amount equality alone proves allocation. Counterparty-level receipts with unresolved invoice allocation must remain visibly unallocated and must not mark any particular invoice as paid; report invoice-level reconciliation as incomplete even when counterparty control totals agree.
+   - For each counterparty/account/currency, verify opening net balance + current-period debit movements - current-period credit movements = closing net balance; review debit/credit balances separately and reconcile control totals at the same cutoff. Do not offset unrelated counterparties or double-count parent/child accounts.
+   - Check that no PT collects an invoice already settled through a bank receipt allocated to old debt. Flag receipts posted to the company's own object on 131 unless source evidence justifies that object.
+   - Report opening debt source, verified allocations, closing debt, and unresolved transactions. Missing/insufficient source evidence must be reported as an incomplete reconciliation, not PASS. For legacy results without a reconciliation file, reconstruct the check from available source documents where possible and record the limitation.
+
 ### Phase 4: New MST Detection Check
 
 4.1 If `0.danh_muc_doi_tuong.md` exists in the quarter folder:
@@ -185,6 +196,7 @@ Present results in a structured Markdown report:
 | 3.5 | Số chứng từ continuity | ✅ | Starts at 252 (max prior=251) |
 | 3.6 | Special patterns | ✅ | All patterns valid |
 | 3.7 | Bank statement running balance | ✅ | 33/33 running balances verified (34 rows checked) |
+| 3.8 | Opening/closing debts and payment allocation | <status> | <cutoff, counterparty balances, verified allocations, unresolved items> |
 
 ## Phase 4: New MST Detection
 | # | Check | Status | Details |

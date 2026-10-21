@@ -1,0 +1,1051 @@
+{
+  "method": "Các tài khoản, đối tượng, nội dung và từng dòng dưới đây do Agent xác định từ chứng từ/quy trình và xác nhận người dùng. Công cụ chỉ ghi, tính tổng và kiểm tra các quyết định đã nêu.",
+  "startNumber": 1851,
+  "vouchers": [
+    {
+      "source": "I01",
+      "date": "02/07/2026",
+      "type": "PK",
+      "object": "0901146759",
+      "description": "Chi phí đi lại - Xăng E10 RON 95 Mức 5 HĐ số 404816",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1030127
+        ]
+      ]
+    },
+    {
+      "source": "I02",
+      "date": "05/07/2026",
+      "type": "PK",
+      "object": "0901146759",
+      "description": "Chi phí đi lại - Xăng E10 RON 95 Mức 5 HĐ số 410649",
+      "lines": [
+        [
+          "6428",
+          "331",
+          830062
+        ]
+      ]
+    },
+    {
+      "source": "I03",
+      "date": "07/07/2026",
+      "type": "PK",
+      "object": "2800114779",
+      "description": "Chi phí đi lại - Xăng E10 RON 95 Mức 3 HĐ số 385411",
+      "lines": [
+        [
+          "6428",
+          "331",
+          900095
+        ]
+      ]
+    },
+    {
+      "source": "I04",
+      "date": "08/07/2026",
+      "type": "PK",
+      "object": "0901146759",
+      "description": "Chi phí đi lại - Xăng E10 RON 95 Mức 5 HĐ số 418528",
+      "lines": [
+        [
+          "6428",
+          "331",
+          870019
+        ]
+      ]
+    },
+    {
+      "source": "I05",
+      "date": "14/07/2026",
+      "type": "PK",
+      "object": "2800114779",
+      "description": "Chi phí đi lại - Xăng E10 RON 95 Mức 3 HĐ số 399617",
+      "lines": [
+        [
+          "6428",
+          "331",
+          950089
+        ]
+      ]
+    },
+    {
+      "source": "I06",
+      "date": "17/07/2026",
+      "type": "PK",
+      "object": "0100111948-078",
+      "description": "Chi phí ngân hàng HĐ số 152759",
+      "lines": [
+        [
+          "64271",
+          "331",
+          150000
+        ],
+        [
+          "1331",
+          "331",
+          15000
+        ]
+      ]
+    },
+    {
+      "source": "B01",
+      "date": "17/07/2026",
+      "type": "BN",
+      "object": "0100111948-078",
+      "description": "Thanh toán phí ngân hàng HĐ số 152759",
+      "lines": [
+        [
+          "331",
+          "112111",
+          150000
+        ]
+      ]
+    },
+    {
+      "source": "B02",
+      "date": "17/07/2026",
+      "type": "BN",
+      "object": "0100111948-078",
+      "description": "Thanh toán VAT phí ngân hàng HĐ số 152759",
+      "lines": [
+        [
+          "331",
+          "112111",
+          15000
+        ]
+      ]
+    },
+    {
+      "source": "B03",
+      "date": "17/07/2026",
+      "type": "BC",
+      "object": "0101437389",
+      "project": "CT2",
+      "description": "Nhận tiền thi công xây dựng Trạm trộn Hưng Yên",
+      "lines": [
+        [
+          "112111",
+          "131",
+          500000000
+        ]
+      ]
+    },
+    {
+      "source": "B04",
+      "date": "17/07/2026",
+      "type": "BN",
+      "object": "0106851931",
+      "description": "Thanh toán vật tư Công ty Việt Tiệp",
+      "lines": [
+        [
+          "331",
+          "112111",
+          500000000
+        ]
+      ]
+    },
+    {
+      "source": "I07",
+      "date": "18/07/2026",
+      "type": "PK",
+      "object": "0100107564",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 2600539",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1840027
+        ]
+      ]
+    },
+    {
+      "source": "B05",
+      "date": "21/07/2026",
+      "type": "BC",
+      "object": "0101437389",
+      "description": "Nhận tiền xây dựng trạm từ Sông Đà - Việt Đức",
+      "lines": [
+        [
+          "112111",
+          "131",
+          600000000
+        ]
+      ]
+    },
+    {
+      "source": "B06",
+      "date": "21/07/2026",
+      "type": "BN",
+      "object": "0106851931",
+      "description": "Thanh toán vật tư Công ty Việt Tiệp",
+      "lines": [
+        [
+          "331",
+          "112111",
+          600000000
+        ]
+      ]
+    },
+    {
+      "source": "I08",
+      "date": "22/07/2026",
+      "type": "PK",
+      "object": "0100111948-136",
+      "description": "Chi phí ngân hàng HĐ số 35051",
+      "lines": [
+        [
+          "64271",
+          "331",
+          20000
+        ],
+        [
+          "1331",
+          "331",
+          2000
+        ]
+      ]
+    },
+    {
+      "source": "B07",
+      "date": "22/07/2026",
+      "type": "BC",
+      "object": "0110766830",
+      "description": "Nộp tiền mặt vào tài khoản ngân hàng",
+      "lines": [
+        [
+          "112111",
+          "1111",
+          1000000
+        ]
+      ]
+    },
+    {
+      "source": "B08",
+      "date": "22/07/2026",
+      "type": "BN",
+      "object": "0100111948-136",
+      "description": "Thanh toán phí ngân hàng HĐ số 35051",
+      "lines": [
+        [
+          "331",
+          "112111",
+          22000
+        ]
+      ]
+    },
+    {
+      "source": "I09",
+      "date": "24/07/2026",
+      "type": "PK",
+      "object": "5700101690",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 466133",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1570106
+        ]
+      ]
+    },
+    {
+      "source": "I10",
+      "date": "31/07/2026",
+      "type": "PK",
+      "object": "2800114779",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 443632",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1350371
+        ]
+      ]
+    },
+    {
+      "source": "B09",
+      "date": "31/07/2026",
+      "type": "BC",
+      "object": "0100111948-078",
+      "description": "Lãi tiền gửi ngân hàng tháng 07/2026",
+      "lines": [
+        [
+          "112111",
+          "5154",
+          117
+        ]
+      ]
+    },
+    {
+      "source": "R07",
+      "date": "31/07/2026",
+      "type": "PK",
+      "object": "001154001434",
+      "description": "Chi phí thuê văn phòng 2026.07",
+      "lines": [
+        [
+          "64272",
+          "331",
+          7800000
+        ]
+      ]
+    },
+    {
+      "source": "I11",
+      "date": "07/08/2026",
+      "type": "PK",
+      "object": "2800114779",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 458918",
+      "lines": [
+        [
+          "6428",
+          "331",
+          2180006
+        ]
+      ]
+    },
+    {
+      "source": "I12",
+      "date": "14/08/2026",
+      "type": "PK",
+      "object": "0100107564",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 3003495",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1830016
+        ]
+      ]
+    },
+    {
+      "source": "I13",
+      "date": "16/08/2026",
+      "type": "PK",
+      "object": "0100107564",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 3028039",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1900144
+        ]
+      ]
+    },
+    {
+      "source": "I14",
+      "date": "17/08/2026",
+      "type": "PK",
+      "object": "0100111948-078",
+      "description": "Chi phí ngân hàng HĐ số 176098",
+      "lines": [
+        [
+          "64271",
+          "331",
+          150000
+        ],
+        [
+          "1331",
+          "331",
+          15000
+        ]
+      ]
+    },
+    {
+      "source": "B10",
+      "date": "17/08/2026",
+      "type": "BN",
+      "object": "0100111948-078",
+      "description": "Thanh toán phí ngân hàng HĐ số 176098",
+      "lines": [
+        [
+          "331",
+          "112111",
+          150000
+        ]
+      ]
+    },
+    {
+      "source": "B11",
+      "date": "17/08/2026",
+      "type": "BN",
+      "object": "0100111948-078",
+      "description": "Thanh toán VAT phí ngân hàng HĐ số 176098",
+      "lines": [
+        [
+          "331",
+          "112111",
+          15000
+        ]
+      ]
+    },
+    {
+      "source": "B12",
+      "date": "20/08/2026",
+      "type": "BC",
+      "object": "0110766830",
+      "description": "Nộp tiền mặt vào tài khoản ngân hàng",
+      "lines": [
+        [
+          "112111",
+          "1111",
+          80000000
+        ]
+      ]
+    },
+    {
+      "source": "B13",
+      "date": "21/08/2026",
+      "type": "BN",
+      "department": "B003",
+      "object": "",
+      "description": "Ứng lương tổ đội Lâm",
+      "lines": [
+        [
+          "3341",
+          "112111",
+          41000000
+        ]
+      ]
+    },
+    {
+      "source": "B14",
+      "date": "21/08/2026",
+      "type": "BN",
+      "department": "B003",
+      "object": "",
+      "description": "Ứng lương Tiềm",
+      "lines": [
+        [
+          "3341",
+          "112111",
+          10000000
+        ]
+      ]
+    },
+    {
+      "source": "B15",
+      "date": "21/08/2026",
+      "type": "BN",
+      "department": "B003",
+      "object": "",
+      "description": "Ứng lương tổ đội Lâm",
+      "lines": [
+        [
+          "3341",
+          "112111",
+          29000000
+        ]
+      ]
+    },
+    {
+      "source": "I15",
+      "date": "24/08/2026",
+      "type": "PK",
+      "object": "2800114779",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 495086",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1750094
+        ]
+      ]
+    },
+    {
+      "source": "I16",
+      "date": "25/08/2026",
+      "type": "PNMH",
+      "department": "B003",
+      "project": "CT1",
+      "object": "0901160087",
+      "description": "Mua bình, máy nước nóng cho Trạm trộn Đông Anh HĐ số 66",
+      "lines": [
+        [
+          "1521",
+          "331",
+          3599074
+        ],
+        [
+          "1331",
+          "331",
+          287926
+        ]
+      ],
+      "output": "warehouse",
+      "warehouse": "HH",
+      "movement": "331TN",
+      "invoiceNumber": "66",
+      "invoiceSeries": "C26TAP",
+      "items": [
+        {
+          "code": "0000111",
+          "name": "Bình nước nóng QQ EVO 30L chống giật 2.500W ME",
+          "qty": 1,
+          "unit": 2300000,
+          "net": 2300000,
+          "vat": 184000,
+          "importDescription": "Bình nước nóng QQ EVO 30L chống giật 2.500W ME"
+        },
+        {
+          "code": "0000112",
+          "name": "Máy nước nóng trực tiếp RITA FS - TE 4.500W",
+          "qty": 1,
+          "unit": 1299074,
+          "net": 1299074,
+          "vat": 103926,
+          "importDescription": "Máy nước nóng trực tiếp RITA FS - TE 4.500W"
+        }
+      ],
+      "quantityEvidence": "Người dùng xác nhận: mỗi mặt hàng số lượng 1, đơn giá trước VAT lần lượt 2.300.000 và 1.299.074; 21/10/2026.",
+      "materialStatus": "Hai mã vật tư đề nghị mới, chưa tạo trong SQL. Tạo đúng mã và Tk_Vt=1521 trước khi import.",
+      "importDescriptionRule": "Chỉ ghi tên mặt hàng; không thêm mã/tên công trình theo yêu cầu người dùng ngày 21/10/2026."
+    },
+    {
+      "source": "I17",
+      "date": "27/08/2026",
+      "type": "PK",
+      "department": "B003",
+      "project": "CT1",
+      "object": "0108657898",
+      "description": "Thi công lắp đặt cửa nhôm kính Trạm trộn Đông Anh HĐ số 33",
+      "lines": [
+        [
+          "6277",
+          "331",
+          58202696
+        ],
+        [
+          "1331",
+          "331",
+          4656216
+        ]
+      ]
+    },
+    {
+      "source": "A20",
+      "date": "27/08/2026",
+      "type": "PK",
+      "project": "CT1",
+      "output": "two_objects",
+      "description": "Chuyển khoản ứng trước 29/04/2026 sang Trường An, thanh toán HĐ số 33",
+      "debit": "331",
+      "debitObject": "0108657898",
+      "credit": "331",
+      "creditObject": "0000000001",
+      "amount": 20000000
+    },
+    {
+      "source": "I18",
+      "date": "28/08/2026",
+      "type": "PK",
+      "object": "2800114779",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 503201",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1280075
+        ]
+      ]
+    },
+    {
+      "source": "B16",
+      "date": "31/08/2026",
+      "type": "BC",
+      "object": "0100111948-078",
+      "description": "Lãi tiền gửi ngân hàng tháng 08/2026",
+      "lines": [
+        [
+          "112111",
+          "5154",
+          646
+        ]
+      ]
+    },
+    {
+      "source": "L08",
+      "date": "31/08/2026",
+      "type": "PK",
+      "department": "B003",
+      "object": "",
+      "description": "Chi phí lương nhân viên thi công 2026.08",
+      "lines": [
+        [
+          "622",
+          "3341",
+          88888889
+        ],
+        [
+          "3341",
+          "3335",
+          8888889,
+          "Thuế TNCN lương nhân viên thi công 2026.08"
+        ]
+      ]
+    },
+    {
+      "source": "R08",
+      "date": "31/08/2026",
+      "type": "PK",
+      "object": "001154001434",
+      "description": "Chi phí thuê văn phòng 2026.08",
+      "lines": [
+        [
+          "64272",
+          "331",
+          7800000
+        ]
+      ]
+    },
+    {
+      "source": "I19",
+      "date": "02/09/2026",
+      "type": "PK",
+      "object": "5700101690",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 569807",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1240080
+        ]
+      ]
+    },
+    {
+      "source": "I20",
+      "date": "06/09/2026",
+      "type": "PK",
+      "object": "0100107564",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 3295532",
+      "lines": [
+        [
+          "6428",
+          "331",
+          900143
+        ]
+      ]
+    },
+    {
+      "source": "I21",
+      "date": "17/09/2026",
+      "type": "PK",
+      "object": "0100111948-078",
+      "description": "Chi phí ngân hàng HĐ số 198807",
+      "lines": [
+        [
+          "64271",
+          "331",
+          150000
+        ],
+        [
+          "1331",
+          "331",
+          15000
+        ]
+      ]
+    },
+    {
+      "source": "B17",
+      "date": "17/09/2026",
+      "type": "BN",
+      "object": "0100111948-078",
+      "description": "Thanh toán phí ngân hàng HĐ số 198807",
+      "lines": [
+        [
+          "331",
+          "112111",
+          150000
+        ]
+      ]
+    },
+    {
+      "source": "B18",
+      "date": "17/09/2026",
+      "type": "BN",
+      "object": "0100111948-078",
+      "description": "Thanh toán VAT phí ngân hàng HĐ số 198807",
+      "lines": [
+        [
+          "331",
+          "112111",
+          15000
+        ]
+      ]
+    },
+    {
+      "source": "I22",
+      "date": "18/09/2026",
+      "type": "PK",
+      "object": "0100107564",
+      "description": "Chi phí đi lại - Dầu Điêzen 0,001S Mức 5 HĐ số 3459212",
+      "lines": [
+        [
+          "6428",
+          "331",
+          1100553
+        ]
+      ]
+    },
+    {
+      "source": "B19",
+      "date": "30/09/2026",
+      "type": "BC",
+      "object": "0100111948-078",
+      "description": "Lãi tiền gửi ngân hàng tháng 09/2026",
+      "lines": [
+        [
+          "112111",
+          "5154",
+          174
+        ]
+      ]
+    },
+    {
+      "source": "R09",
+      "date": "30/09/2026",
+      "type": "PK",
+      "object": "001154001434",
+      "description": "Chi phí thuê văn phòng 2026.09",
+      "lines": [
+        [
+          "64272",
+          "331",
+          7800000
+        ]
+      ]
+    },
+    {
+      "source": "PC_I01",
+      "paymentOf": "I01",
+      "date": "02/07/2026",
+      "type": "PC",
+      "object": "0901146759",
+      "description": "Thanh toán tiền mặt HĐ 404816 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1030127
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I02",
+      "paymentOf": "I02",
+      "date": "05/07/2026",
+      "type": "PC",
+      "object": "0901146759",
+      "description": "Thanh toán tiền mặt HĐ 410649 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          830062
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I03",
+      "paymentOf": "I03",
+      "date": "07/07/2026",
+      "type": "PC",
+      "object": "2800114779",
+      "description": "Thanh toán tiền mặt HĐ 385411 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          900095
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I04",
+      "paymentOf": "I04",
+      "date": "08/07/2026",
+      "type": "PC",
+      "object": "0901146759",
+      "description": "Thanh toán tiền mặt HĐ 418528 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          870019
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I05",
+      "paymentOf": "I05",
+      "date": "14/07/2026",
+      "type": "PC",
+      "object": "2800114779",
+      "description": "Thanh toán tiền mặt HĐ 399617 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          950089
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I07",
+      "paymentOf": "I07",
+      "date": "18/07/2026",
+      "type": "PC",
+      "object": "0100107564",
+      "description": "Thanh toán tiền mặt HĐ 2600539 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1840027
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I09",
+      "paymentOf": "I09",
+      "date": "24/07/2026",
+      "type": "PC",
+      "object": "5700101690",
+      "description": "Thanh toán tiền mặt HĐ 466133 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1570106
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I10",
+      "paymentOf": "I10",
+      "date": "31/07/2026",
+      "type": "PC",
+      "object": "2800114779",
+      "description": "Thanh toán tiền mặt HĐ 443632 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1350371
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_R07",
+      "paymentOf": "R07",
+      "date": "31/07/2026",
+      "type": "PC",
+      "object": "001154001434",
+      "description": "Thanh toán tiền mặt thuê văn phòng 2026.07",
+      "lines": [
+        [
+          "331",
+          "1111",
+          7800000
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I11",
+      "paymentOf": "I11",
+      "date": "07/08/2026",
+      "type": "PC",
+      "object": "2800114779",
+      "description": "Thanh toán tiền mặt HĐ 458918 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          2180006
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I12",
+      "paymentOf": "I12",
+      "date": "14/08/2026",
+      "type": "PC",
+      "object": "0100107564",
+      "description": "Thanh toán tiền mặt HĐ 3003495 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1830016
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I13",
+      "paymentOf": "I13",
+      "date": "16/08/2026",
+      "type": "PC",
+      "object": "0100107564",
+      "description": "Thanh toán tiền mặt HĐ 3028039 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1900144
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I15",
+      "paymentOf": "I15",
+      "date": "24/08/2026",
+      "type": "PC",
+      "object": "2800114779",
+      "description": "Thanh toán tiền mặt HĐ 495086 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1750094
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I18",
+      "paymentOf": "I18",
+      "date": "28/08/2026",
+      "type": "PC",
+      "object": "2800114779",
+      "description": "Thanh toán tiền mặt HĐ 503201 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1280075
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_R08",
+      "paymentOf": "R08",
+      "date": "31/08/2026",
+      "type": "PC",
+      "object": "001154001434",
+      "description": "Thanh toán tiền mặt thuê văn phòng 2026.08",
+      "lines": [
+        [
+          "331",
+          "1111",
+          7800000
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I19",
+      "paymentOf": "I19",
+      "date": "02/09/2026",
+      "type": "PC",
+      "object": "5700101690",
+      "description": "Thanh toán tiền mặt HĐ 569807 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1240080
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I20",
+      "paymentOf": "I20",
+      "date": "06/09/2026",
+      "type": "PC",
+      "object": "0100107564",
+      "description": "Thanh toán tiền mặt HĐ 3295532 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          900143
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_I22",
+      "paymentOf": "I22",
+      "date": "18/09/2026",
+      "type": "PC",
+      "object": "0100107564",
+      "description": "Thanh toán tiền mặt HĐ 3459212 - xăng xe, đi lại",
+      "lines": [
+        [
+          "331",
+          "1111",
+          1100553
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    },
+    {
+      "source": "PC_R09",
+      "paymentOf": "R09",
+      "date": "30/09/2026",
+      "type": "PC",
+      "object": "001154001434",
+      "description": "Thanh toán tiền mặt thuê văn phòng 2026.09",
+      "lines": [
+        [
+          "331",
+          "1111",
+          7800000
+        ]
+      ],
+      "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+      "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác."
+    }
+  ],
+  "cashConfirmation": {
+    "evidence": "Người dùng ngày 21/10/2026 xác nhận: các chi phí đầu vào, như xăng xe, đi lại, thuê văn phòng đều thanh toán bằng tiền mặt.",
+    "dateBasis": "Chưa có ngày thực chi riêng: tạm dùng ngày hóa đơn cho nhiên liệu/đi lại, ngày cuối tháng cho thuê văn phòng; cần đối chiếu sổ quỹ trước khi nhập nếu ngày thực tế khác.",
+    "unpaidInvoice33": "Người dùng xác nhận chưa trả phần còn lại 42.858.912, giữ công nợ HĐ33.",
+    "inventoryInvoice66": "Không thêm PC cho HĐ66 nhập kho; khoản ứng cũ 8.700.000 chưa có chỉ định phân bổ."
+  }
+}

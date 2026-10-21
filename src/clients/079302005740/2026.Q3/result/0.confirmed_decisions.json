@@ -1,0 +1,2385 @@
+{
+  "confirmation": "Người dùng chỉ định: E01 bổ sung HĐ âm cho Techcombank (0100230800); E02 là rút tiền mặt; W01 dùng 1111 thay 1388; W02 ghi thẳng 64277; E03 người dùng tự xử lý; W04 là đối tượng nước ngoài không có MST Việt Nam. Áp dụng riêng 2026.Q3, giữ công nợ đầu kỳ 0 và 112111 VietinBank đã xác nhận.",
+  "explicitAdditions": [
+    [
+      "PK",
+      "23/07/2026",
+      "0100230800",
+      "Ghi giảm chi phí Techcombank HĐ 27320986 K26DGC",
+      "331",
+      "64277",
+      599000,
+      "[Hóa đơn STT 11](../1.danh_sach_hoa_don.md#L17); người dùng chỉ định E01, đảo chiều khoản âm"
+    ],
+    [
+      "BN",
+      "10/08/2026",
+      "079302005740",
+      "Rút tiền mặt nhập quỹ; GD 8 chuyển NGUYEN Y PHUNG",
+      "1111",
+      "112111",
+      5500000,
+      "[Sao kê GD 8](../2.sao_ke.md#L14); người dùng xác nhận E02 là rút tiền mặt"
+    ],
+    [
+      "BN",
+      "13/08/2026",
+      "079302005740",
+      "Rút tiền mặt nhập quỹ; GD 11 chuyển TRAN THAO NGUYEN",
+      "1111",
+      "112111",
+      1420000,
+      "[Sao kê GD 11](../2.sao_ke.md#L17); người dùng xác nhận E02 là rút tiền mặt"
+    ],
+    [
+      "BN",
+      "17/08/2026",
+      "079302005740",
+      "Rút tiền mặt nhập quỹ; GD 13 chuyển NGUYEN THANH TAI",
+      "1111",
+      "112111",
+      313000,
+      "[Sao kê GD 13](../2.sao_ke.md#L19); người dùng xác nhận E02 là rút tiền mặt"
+    ],
+    [
+      "BN",
+      "18/08/2026",
+      "079302005740",
+      "Rút tiền mặt nhập quỹ; GD 14 chuyển CTY CP QUAN LY NHA VIET",
+      "1111",
+      "112111",
+      852108,
+      "[Sao kê GD 14](../2.sao_ke.md#L20); người dùng xác nhận E02 là rút tiền mặt"
+    ],
+    [
+      "BN",
+      "19/08/2026",
+      "079302005740",
+      "Rút tiền mặt nhập quỹ; GD 15 chuyển TRAN BICH UYEN",
+      "1111",
+      "112111",
+      430000,
+      "[Sao kê GD 15](../2.sao_ke.md#L21); người dùng xác nhận E02 là rút tiền mặt"
+    ]
+  ],
+  "entries": [
+    {
+      "row": [
+        "PK",
+        "01/07/2026",
+        "001",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 23945767",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "47224",
+        "47224"
+      ],
+      "source": "[Hóa đơn STT 1](../1.danh_sach_hoa_don.md#L7)"
+    },
+    {
+      "row": [
+        "PK",
+        "02/07/2026",
+        "002",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 24054781",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "35547",
+        "35547"
+      ],
+      "source": "[Hóa đơn STT 2](../1.danh_sach_hoa_don.md#L8)"
+    },
+    {
+      "row": [
+        "PK",
+        "02/07/2026",
+        "003",
+        "",
+        "",
+        "",
+        "0318595126",
+        "Chi phí tiếp khách, ngoại giao HĐ số 7916",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "2555280",
+        "2555280"
+      ],
+      "source": "[Hóa đơn STT 3](../1.danh_sach_hoa_don.md#L9)"
+    },
+    {
+      "row": [
+        "PK",
+        "03/07/2026",
+        "004",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 24224782",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "9900",
+        "9900"
+      ],
+      "source": "[Hóa đơn STT 4](../1.danh_sach_hoa_don.md#L10)"
+    },
+    {
+      "row": [
+        "PK",
+        "10/07/2026",
+        "005",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 25350318",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "287684",
+        "287684"
+      ],
+      "source": "[Hóa đơn STT 5](../1.danh_sach_hoa_don.md#L11)"
+    },
+    {
+      "row": [
+        "PK",
+        "11/07/2026",
+        "006",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 25479642",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "131713",
+        "131713"
+      ],
+      "source": "[Hóa đơn STT 6](../1.danh_sach_hoa_don.md#L12)"
+    },
+    {
+      "row": [
+        "PK",
+        "11/07/2026",
+        "007",
+        "",
+        "",
+        "",
+        "0314240161",
+        "AO THUN; AO JACKET CHONG GI; Túi giấy M HĐ số 39397",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "932000",
+        "932000"
+      ],
+      "source": "[Hóa đơn STT 7](../1.danh_sach_hoa_don.md#L13)"
+    },
+    {
+      "row": [
+        "PK",
+        "16/07/2026",
+        "008",
+        "",
+        "",
+        "",
+        "0302712571",
+        "Phần mềm hóa đơn điện tử M-100 079302005740.matbao.in (1 năm) HĐ số 60705",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "99000",
+        "99000"
+      ],
+      "source": "[Hóa đơn STT 8](../1.danh_sach_hoa_don.md#L14)"
+    },
+    {
+      "row": [
+        "PK",
+        "20/07/2026",
+        "009",
+        "",
+        "",
+        "",
+        "REDCHAMBER",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng dịch vụ truyền thông ký ngày 13/07/2026 Advertising and media services under the New Media Service Agreement signed on July 13, 2026. HĐ số 1",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "13333333",
+        "13333333"
+      ],
+      "source": "[Hóa đơn STT 26](../1.danh_sach_hoa_don.md#L32)"
+    },
+    {
+      "row": [
+        "PK",
+        "20/07/2026",
+        "010",
+        "",
+        "",
+        "",
+        "REDCHAMBER",
+        "Giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng dịch vụ truyền thông ký ngày 13/07/2026 Advertising and media services under the New Media Service Agreement signed on July 13, 2026. HĐ số 1",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "133333",
+        "133333"
+      ],
+      "source": "[Hóa đơn STT 26](../1.danh_sach_hoa_don.md#L32)"
+    },
+    {
+      "row": [
+        "PK",
+        "20/07/2026",
+        "011",
+        "",
+        "",
+        "",
+        "0302712571",
+        "USB Token-DN/HKD-MBCA; Phí duy trì Chứng thư CKS Token-HKD-MBCA (3 năm) HĐ số 61744",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "1662120",
+        "1662120"
+      ],
+      "source": "[Hóa đơn STT 9](../1.danh_sach_hoa_don.md#L15)"
+    },
+    {
+      "row": [
+        "PK",
+        "21/07/2026",
+        "012",
+        "",
+        "",
+        "",
+        "0313355963",
+        "Chi phí tiếp khách, ngoại giao HĐ số 316",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "1170288",
+        "1170288"
+      ],
+      "source": "[Hóa đơn STT 10](../1.danh_sach_hoa_don.md#L16)"
+    },
+    {
+      "row": [
+        "PK",
+        "23/07/2026",
+        "013",
+        "",
+        "",
+        "",
+        "0302286281-010",
+        "BÀN ỦI HƠI NƯỚC ĐỨNG TEFAL IXEO VISION QT1811E0 HĐ số 22252",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "6819000",
+        "6819000"
+      ],
+      "source": "[Hóa đơn STT 12](../1.danh_sach_hoa_don.md#L18)"
+    },
+    {
+      "row": [
+        "PK",
+        "23/07/2026",
+        "014",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Ghi giảm chi phí Techcombank HĐ 27320986 K26DGC",
+        "331",
+        "64277",
+        "VND",
+        "1",
+        "599000",
+        "599000"
+      ],
+      "source": "[Hóa đơn STT 11](../1.danh_sach_hoa_don.md#L17); người dùng chỉ định E01, đảo chiều khoản âm"
+    },
+    {
+      "row": [
+        "PK",
+        "24/07/2026",
+        "015",
+        "",
+        "",
+        "",
+        "0307787891",
+        "RESORT S TEE W HĐ số 19493",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "1600000",
+        "1600000"
+      ],
+      "source": "[Hóa đơn STT 13](../1.danh_sach_hoa_don.md#L19)"
+    },
+    {
+      "row": [
+        "PK",
+        "24/07/2026",
+        "016",
+        "",
+        "",
+        "",
+        "0316729247",
+        "Chi phí tiếp khách, ngoại giao HĐ số 19923",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "260820",
+        "260820"
+      ],
+      "source": "[Hóa đơn STT 14](../1.danh_sach_hoa_don.md#L20)"
+    },
+    {
+      "row": [
+        "PK",
+        "27/07/2026",
+        "017",
+        "",
+        "",
+        "",
+        "0318846034",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số YEEE - HĐDV-202607-017 ký ngày 11/07/2026 HĐ số 2",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "12777778",
+        "12777778"
+      ],
+      "source": "[Hóa đơn STT 27](../1.danh_sach_hoa_don.md#L33)"
+    },
+    {
+      "row": [
+        "PK",
+        "27/07/2026",
+        "018",
+        "",
+        "",
+        "",
+        "0318846034",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số YEEE - HĐDV-202607-017 ký ngày 11/07/2026 HĐ số 2",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "127778",
+        "127778"
+      ],
+      "source": "[Hóa đơn STT 27](../1.danh_sach_hoa_don.md#L33)"
+    },
+    {
+      "row": [
+        "PK",
+        "28/07/2026",
+        "019",
+        "",
+        "",
+        "",
+        "0318476993",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 15072026/ DELIGHT CONNECTION VN – SANDY ký ngày 15/07/2026 kèm Biên bản nghiệm thu ký ngày 28/07/2026 HĐ số 3",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Hóa đơn STT 28](../1.danh_sach_hoa_don.md#L34)"
+    },
+    {
+      "row": [
+        "PK",
+        "28/07/2026",
+        "020",
+        "",
+        "",
+        "",
+        "0318476993",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 15072026/ DELIGHT CONNECTION VN – SANDY ký ngày 15/07/2026 kèm Biên bản nghiệm thu ký ngày 28/07/2026 HĐ số 3",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "100000",
+        "100000"
+      ],
+      "source": "[Hóa đơn STT 28](../1.danh_sach_hoa_don.md#L34)"
+    },
+    {
+      "row": [
+        "PK",
+        "31/07/2026",
+        "021",
+        "",
+        "",
+        "",
+        "TIKTOK",
+        "Hoa hồng tiếp thị liên kết (Affiliate Marketing Commission) HĐ số 4",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "2729168",
+        "2729168"
+      ],
+      "source": "[Hóa đơn STT 29](../1.danh_sach_hoa_don.md#L35)"
+    },
+    {
+      "row": [
+        "PK",
+        "31/07/2026",
+        "022",
+        "",
+        "",
+        "",
+        "TIKTOK",
+        "Điều chỉnh giảm Hoa hồng tiếp thị liên kết (Affiliate Marketing Commission) HĐ số 4",
+        "333822",
+        "131",
+        "VND",
+        "1",
+        "27292",
+        "27292"
+      ],
+      "source": "[Hóa đơn STT 29](../1.danh_sach_hoa_don.md#L35)"
+    },
+    {
+      "row": [
+        "BC",
+        "31/07/2026",
+        "023",
+        "",
+        "",
+        "",
+        "0318476993",
+        "So GD goc: 10008280 TT VNMN3N8AF N 2C26TQA - 3",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "9900000",
+        "9900000"
+      ],
+      "source": "[Sao kê GD 1](../2.sao_ke.md#L7)"
+    },
+    {
+      "row": [
+        "BC",
+        "31/07/2026",
+        "024",
+        "",
+        "",
+        "",
+        "TIKTOK",
+        "TikTok Shop",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "2671618",
+        "2671618"
+      ],
+      "source": "[Sao kê GD 2](../2.sao_ke.md#L8)"
+    },
+    {
+      "row": [
+        "PK",
+        "01/08/2026",
+        "025",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 28433370",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "9900",
+        "9900"
+      ],
+      "source": "[Hóa đơn STT 15](../1.danh_sach_hoa_don.md#L21)"
+    },
+    {
+      "row": [
+        "PK",
+        "01/08/2026",
+        "026",
+        "",
+        "",
+        "",
+        "0109998900",
+        "Phí dịch vụ tư vấn kế toán tháng 07/2026 HĐ số 277",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "3240000",
+        "3240000"
+      ],
+      "source": "[Hóa đơn STT 16](../1.danh_sach_hoa_don.md#L22)"
+    },
+    {
+      "row": [
+        "PK",
+        "03/08/2026",
+        "027",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 28547714",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "9900",
+        "9900"
+      ],
+      "source": "[Hóa đơn STT 17](../1.danh_sach_hoa_don.md#L23)"
+    },
+    {
+      "row": [
+        "PK",
+        "04/08/2026",
+        "028",
+        "",
+        "",
+        "",
+        "0317172618",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 22062026SANDY/SEAMAKEUP/HDDVTT ký ngày 22/06/2026 kèm Biên bản nghiệm thu ký ngày 04/08/2026 HĐ số 5",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "21111111",
+        "21111111"
+      ],
+      "source": "[Hóa đơn STT 30](../1.danh_sach_hoa_don.md#L36)"
+    },
+    {
+      "row": [
+        "PK",
+        "04/08/2026",
+        "029",
+        "",
+        "",
+        "",
+        "0317172618",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 22062026SANDY/SEAMAKEUP/HDDVTT ký ngày 22/06/2026 kèm Biên bản nghiệm thu ký ngày 04/08/2026 HĐ số 5",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "211111",
+        "211111"
+      ],
+      "source": "[Hóa đơn STT 30](../1.danh_sach_hoa_don.md#L36)"
+    },
+    {
+      "row": [
+        "PK",
+        "05/08/2026",
+        "030",
+        "",
+        "",
+        "",
+        "0318485130",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 01082026/HDDV/Quanhdayo ký ngày 01/08/2026 kèm Biên bản nghiệm thu và thanh lý ký ngày 05/08/2026 HĐ số 6",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10555556",
+        "10555556"
+      ],
+      "source": "[Hóa đơn STT 31](../1.danh_sach_hoa_don.md#L37)"
+    },
+    {
+      "row": [
+        "PK",
+        "05/08/2026",
+        "031",
+        "",
+        "",
+        "",
+        "0318485130",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 01082026/HDDV/Quanhdayo ký ngày 01/08/2026 kèm Biên bản nghiệm thu và thanh lý ký ngày 05/08/2026 HĐ số 6",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "105556",
+        "105556"
+      ],
+      "source": "[Hóa đơn STT 31](../1.danh_sach_hoa_don.md#L37)"
+    },
+    {
+      "row": [
+        "BN",
+        "05/08/2026",
+        "032",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 3",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Sao kê GD 3](../2.sao_ke.md#L9); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "05/08/2026",
+        "033",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 4",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "2000000",
+        "2000000"
+      ],
+      "source": "[Sao kê GD 4](../2.sao_ke.md#L10); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BC",
+        "07/08/2026",
+        "034",
+        "",
+        "",
+        "",
+        "0318485130",
+        "928D60807A9BLEAJ dvtt",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "10450000",
+        "10450000"
+      ],
+      "source": "[Sao kê GD 5](../2.sao_ke.md#L11)"
+    },
+    {
+      "row": [
+        "PK",
+        "08/08/2026",
+        "035",
+        "",
+        "",
+        "",
+        "0314756823",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số TB - SANDY- 24072026 ký ngày 24/07/2026 kèm Biên bản nghiệm thu & thanh lý ký ngày 08/08/2026 HĐ số 7",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Hóa đơn STT 32](../1.danh_sach_hoa_don.md#L38)"
+    },
+    {
+      "row": [
+        "PK",
+        "08/08/2026",
+        "036",
+        "",
+        "",
+        "",
+        "0314756823",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số TB - SANDY- 24072026 ký ngày 24/07/2026 kèm Biên bản nghiệm thu & thanh lý ký ngày 08/08/2026 HĐ số 7",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "100000",
+        "100000"
+      ],
+      "source": "[Hóa đơn STT 32](../1.danh_sach_hoa_don.md#L38)"
+    },
+    {
+      "row": [
+        "BC",
+        "08/08/2026",
+        "037",
+        "",
+        "",
+        "",
+        "0318751209",
+        "928D608089M8JR7H CTY GLORIE BEAUTY TT HOP DONG SO 1007- 2026HDDV.GL-HQA",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "9900000",
+        "9900000"
+      ],
+      "source": "[Sao kê GD 6](../2.sao_ke.md#L12)"
+    },
+    {
+      "row": [
+        "BN",
+        "09/08/2026",
+        "038",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 7",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Sao kê GD 7](../2.sao_ke.md#L13); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "10/08/2026",
+        "039",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; GD 8 chuyển NGUYEN Y PHUNG",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "5500000",
+        "5500000"
+      ],
+      "source": "[Sao kê GD 8](../2.sao_ke.md#L14); người dùng xác nhận E02 là rút tiền mặt"
+    },
+    {
+      "row": [
+        "BC",
+        "11/08/2026",
+        "040",
+        "",
+        "",
+        "",
+        "0318846034",
+        "CONG TY TNHH YEEE THANH TOAN PHI HOP TAC CHO HO KINH DOANH SANDY QUYNH ANH",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "12650000",
+        "12650000"
+      ],
+      "source": "[Sao kê GD 9](../2.sao_ke.md#L15)"
+    },
+    {
+      "row": [
+        "BN",
+        "11/08/2026",
+        "041",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 10",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "8000000",
+        "8000000"
+      ],
+      "source": "[Sao kê GD 10](../2.sao_ke.md#L16); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "13/08/2026",
+        "042",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; GD 11 chuyển TRAN THAO NGUYEN",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "1420000",
+        "1420000"
+      ],
+      "source": "[Sao kê GD 11](../2.sao_ke.md#L17); người dùng xác nhận E02 là rút tiền mặt"
+    },
+    {
+      "row": [
+        "PK",
+        "14/08/2026",
+        "043",
+        "",
+        "",
+        "",
+        "0318678340",
+        "Thanh toán 100% phí dịch vụ chiến dịch 3CE - KOC Hub Aug - Video - Scope 3 - 100826 SOW số 56338/2025/WPP-BTL-LO ID Tiktok: quanhdayo HĐ số 8",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "6666667",
+        "6666667"
+      ],
+      "source": "[Hóa đơn STT 33](../1.danh_sach_hoa_don.md#L39)"
+    },
+    {
+      "row": [
+        "PK",
+        "14/08/2026",
+        "044",
+        "",
+        "",
+        "",
+        "0318678340",
+        "Điều chỉnh giảm Thanh toán 100% phí dịch vụ chiến dịch 3CE - KOC Hub Aug - Video - Scope 3 - 100826 SOW số 56338/2025/WPP-BTL-LO ID Tiktok: quanhdayo HĐ số 8",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "66667",
+        "66667"
+      ],
+      "source": "[Hóa đơn STT 33](../1.danh_sach_hoa_don.md#L39)"
+    },
+    {
+      "row": [
+        "PK",
+        "15/08/2026",
+        "045",
+        "",
+        "",
+        "",
+        "0318678340",
+        "Thanh toán 100% phí dịch vụ chiến dịch MNY - FitMe - Video - Scope 2 - 1008 SOW số 59010/2025/WPP-BTL-LO ID Tiktok: quanhdayo HĐ số 9",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "31111111",
+        "31111111"
+      ],
+      "source": "[Hóa đơn STT 34](../1.danh_sach_hoa_don.md#L40)"
+    },
+    {
+      "row": [
+        "PK",
+        "15/08/2026",
+        "046",
+        "",
+        "",
+        "",
+        "0318678340",
+        "Điều chỉnh giảm Thanh toán 100% phí dịch vụ chiến dịch MNY - FitMe - Video - Scope 2 - 1008 SOW số 59010/2025/WPP-BTL-LO ID Tiktok: quanhdayo HĐ số 9",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "311111",
+        "311111"
+      ],
+      "source": "[Hóa đơn STT 34](../1.danh_sach_hoa_don.md#L40)"
+    },
+    {
+      "row": [
+        "BN",
+        "15/08/2026",
+        "047",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 12",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "4575000",
+        "4575000"
+      ],
+      "source": "[Sao kê GD 12](../2.sao_ke.md#L18); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "17/08/2026",
+        "048",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; GD 13 chuyển NGUYEN THANH TAI",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "313000",
+        "313000"
+      ],
+      "source": "[Sao kê GD 13](../2.sao_ke.md#L19); người dùng xác nhận E02 là rút tiền mặt"
+    },
+    {
+      "row": [
+        "PK",
+        "18/08/2026",
+        "049",
+        "",
+        "",
+        "",
+        "0318678340",
+        "Thanh toán 100% phí dịch vụ chiến dịch 3CE - KOC Hub Aug - Video - Scope 3 - 300826 SOW số 58985/2025/WPP-BTL-LO ID Tiktok: quanhdayo HĐ số 10",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "16030222",
+        "16030222"
+      ],
+      "source": "[Hóa đơn STT 35](../1.danh_sach_hoa_don.md#L41)"
+    },
+    {
+      "row": [
+        "PK",
+        "18/08/2026",
+        "050",
+        "",
+        "",
+        "",
+        "0318678340",
+        "Điều chỉnh giảm Thanh toán 100% phí dịch vụ chiến dịch 3CE - KOC Hub Aug - Video - Scope 3 - 300826 SOW số 58985/2025/WPP-BTL-LO ID Tiktok: quanhdayo HĐ số 10",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "160302",
+        "160302"
+      ],
+      "source": "[Hóa đơn STT 35](../1.danh_sach_hoa_don.md#L41)"
+    },
+    {
+      "row": [
+        "BN",
+        "18/08/2026",
+        "051",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; GD 14 chuyển CTY CP QUAN LY NHA VIET",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "852108",
+        "852108"
+      ],
+      "source": "[Sao kê GD 14](../2.sao_ke.md#L20); người dùng xác nhận E02 là rút tiền mặt"
+    },
+    {
+      "row": [
+        "PK",
+        "19/08/2026",
+        "052",
+        "",
+        "",
+        "",
+        "0318970313",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 030826/HDDV/V&ABEAUTY-SANDY ký ngày 03/08/2026 kèm Biên bản nghiệm thu và thanh lý ký ngày 19/08/2026 HĐ số 11",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "9444444",
+        "9444444"
+      ],
+      "source": "[Hóa đơn STT 36](../1.danh_sach_hoa_don.md#L42)"
+    },
+    {
+      "row": [
+        "PK",
+        "19/08/2026",
+        "053",
+        "",
+        "",
+        "",
+        "0318970313",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 030826/HDDV/V&ABEAUTY-SANDY ký ngày 03/08/2026 kèm Biên bản nghiệm thu và thanh lý ký ngày 19/08/2026 HĐ số 11",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "94444",
+        "94444"
+      ],
+      "source": "[Hóa đơn STT 36](../1.danh_sach_hoa_don.md#L42)"
+    },
+    {
+      "row": [
+        "BN",
+        "19/08/2026",
+        "054",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; GD 15 chuyển TRAN BICH UYEN",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "430000",
+        "430000"
+      ],
+      "source": "[Sao kê GD 15](../2.sao_ke.md#L21); người dùng xác nhận E02 là rút tiền mặt"
+    },
+    {
+      "row": [
+        "BC",
+        "20/08/2026",
+        "055",
+        "",
+        "",
+        "",
+        "0110683084",
+        "928D60820616FV23 Tc Beauty ck sandy Quynh Anh theo hd so 3006.2026.hddv.hqa",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "7700000",
+        "7700000"
+      ],
+      "source": "[Sao kê GD 16](../2.sao_ke.md#L22)"
+    },
+    {
+      "row": [
+        "PK",
+        "21/08/2026",
+        "056",
+        "",
+        "",
+        "",
+        "0315909712",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 556/2026/HDDV/OQR ký ngày 06/08/2026 kèm Biên bản nghiệm thu và thanh lý số 556.01/2026/BBNT/OQR ký ngày 21/08/2026 HĐ số 13",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "9444444",
+        "9444444"
+      ],
+      "source": "[Hóa đơn STT 37](../1.danh_sach_hoa_don.md#L43)"
+    },
+    {
+      "row": [
+        "PK",
+        "21/08/2026",
+        "057",
+        "",
+        "",
+        "",
+        "0315909712",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 556/2026/HDDV/OQR ký ngày 06/08/2026 kèm Biên bản nghiệm thu và thanh lý số 556.01/2026/BBNT/OQR ký ngày 21/08/2026 HĐ số 13",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "94444",
+        "94444"
+      ],
+      "source": "[Hóa đơn STT 37](../1.danh_sach_hoa_don.md#L43)"
+    },
+    {
+      "row": [
+        "PK",
+        "21/08/2026",
+        "058",
+        "",
+        "",
+        "",
+        "0110683084",
+        "Chia sẻ trải nghiệm sử dụng má hồng 4U2 Dear me Liquid Blush theo PL số 01 của Hợp đồng cung cấp dịch vụ quảng bá sản phẩm số 3006/2026/HĐDV-HQA. HĐ số 12",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "7777778",
+        "7777778"
+      ],
+      "source": "[Hóa đơn STT 38](../1.danh_sach_hoa_don.md#L44)"
+    },
+    {
+      "row": [
+        "PK",
+        "21/08/2026",
+        "059",
+        "",
+        "",
+        "",
+        "0110683084",
+        "Điều chỉnh giảm Chia sẻ trải nghiệm sử dụng má hồng 4U2 Dear me Liquid Blush theo PL số 01 của Hợp đồng cung cấp dịch vụ quảng bá sản phẩm số 3006/2026/HĐDV-HQA. HĐ số 12",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "77778",
+        "77778"
+      ],
+      "source": "[Hóa đơn STT 38](../1.danh_sach_hoa_don.md#L44)"
+    },
+    {
+      "row": [
+        "BC",
+        "21/08/2026",
+        "060",
+        "",
+        "",
+        "",
+        "0318970313",
+        "928D608215UW4KP7 L5G THANH TOAN HOP DONG SO 030826 /HDDV/VABEAUTY- SANDY",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "9350000",
+        "9350000"
+      ],
+      "source": "[Sao kê GD 17](../2.sao_ke.md#L23)"
+    },
+    {
+      "row": [
+        "BC",
+        "21/08/2026",
+        "061",
+        "",
+        "",
+        "",
+        "0317172618",
+        "928D60821R6X8760 SEA MAKEUP THANH TOAN HOP DONG so hai hai khong sau hai khong hai sau sandy",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "20900000",
+        "20900000"
+      ],
+      "source": "[Sao kê GD 18](../2.sao_ke.md#L24)"
+    },
+    {
+      "row": [
+        "BN",
+        "21/08/2026",
+        "062",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 19",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "20000000",
+        "20000000"
+      ],
+      "source": "[Sao kê GD 19](../2.sao_ke.md#L25); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "24/08/2026",
+        "063",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 20",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Sao kê GD 20](../2.sao_ke.md#L26); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "PK",
+        "26/08/2026",
+        "064",
+        "",
+        "",
+        "",
+        "0316368946",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 2026/8/17-01/HDHT/HEBEVN-AGE20’S ký ngày 17/08/2026 HĐ số 14",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10555556",
+        "10555556"
+      ],
+      "source": "[Hóa đơn STT 39](../1.danh_sach_hoa_don.md#L45)"
+    },
+    {
+      "row": [
+        "PK",
+        "26/08/2026",
+        "065",
+        "",
+        "",
+        "",
+        "0316368946",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 2026/8/17-01/HDHT/HEBEVN-AGE20’S ký ngày 17/08/2026 HĐ số 14",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "105556",
+        "105556"
+      ],
+      "source": "[Hóa đơn STT 39](../1.danh_sach_hoa_don.md#L45)"
+    },
+    {
+      "row": [
+        "BC",
+        "27/08/2026",
+        "066",
+        "",
+        "",
+        "",
+        "0316368946",
+        "So GD goc: 10005676 IBBIZ. 50870010613345270826.1 1.HEBE THANH TOAN HOP DONG 2026 8 17 01 HDHT HEBEVN AGE20S HO KINH DOANH SANDY QUYNH ANH",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "10450000",
+        "10450000"
+      ],
+      "source": "[Sao kê GD 21](../2.sao_ke.md#L27)"
+    },
+    {
+      "row": [
+        "PK",
+        "28/08/2026",
+        "067",
+        "",
+        "",
+        "",
+        "TIKTOK",
+        "Hoa hồng tiếp thị liên kết (Affiliate Marketing Commission) HĐ số 15",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "3681058",
+        "3681058"
+      ],
+      "source": "[Hóa đơn STT 40](../1.danh_sach_hoa_don.md#L46)"
+    },
+    {
+      "row": [
+        "PK",
+        "28/08/2026",
+        "068",
+        "",
+        "",
+        "",
+        "TIKTOK",
+        "Điều chỉnh giảm Hoa hồng tiếp thị liên kết (Affiliate Marketing Commission) HĐ số 15",
+        "333822",
+        "131",
+        "VND",
+        "1",
+        "36811",
+        "36811"
+      ],
+      "source": "[Hóa đơn STT 40](../1.danh_sach_hoa_don.md#L46)"
+    },
+    {
+      "row": [
+        "BC",
+        "28/08/2026",
+        "069",
+        "",
+        "",
+        "",
+        "TIKTOK",
+        "928D60828CN2FL7X TikTok Shop; thoi gian GD:28/08/2026 00:59:27",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "3604587",
+        "3604587"
+      ],
+      "source": "[Sao kê GD 22](../2.sao_ke.md#L28)"
+    },
+    {
+      "row": [
+        "BN",
+        "29/08/2026",
+        "070",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 23",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "8000000",
+        "8000000"
+      ],
+      "source": "[Sao kê GD 23](../2.sao_ke.md#L29); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BC",
+        "31/08/2026",
+        "071",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Thu lãi tiền gửi DDA",
+        "112111",
+        "5154",
+        "VND",
+        "1",
+        "954",
+        "954"
+      ],
+      "source": "[Sao kê GD 24](../2.sao_ke.md#L30)"
+    },
+    {
+      "row": [
+        "BN",
+        "01/09/2026",
+        "072",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 25",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "9000000",
+        "9000000"
+      ],
+      "source": "[Sao kê GD 25](../2.sao_ke.md#L31); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "PK",
+        "03/09/2026",
+        "073",
+        "",
+        "",
+        "",
+        "0109361325",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 2208.2026/HĐDV/UPBASE-CATHY DOLL-quanhdayo ký ngày 22/08/2026 kèm Biên bản nghiệm thu ký ngày 03/09/2026 HĐ số 16",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10555556",
+        "10555556"
+      ],
+      "source": "[Hóa đơn STT 41](../1.danh_sach_hoa_don.md#L47)"
+    },
+    {
+      "row": [
+        "PK",
+        "03/09/2026",
+        "074",
+        "",
+        "",
+        "",
+        "0109361325",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 2208.2026/HĐDV/UPBASE-CATHY DOLL-quanhdayo ký ngày 22/08/2026 kèm Biên bản nghiệm thu ký ngày 03/09/2026 HĐ số 16",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "105556",
+        "105556"
+      ],
+      "source": "[Hóa đơn STT 41](../1.danh_sach_hoa_don.md#L47)"
+    },
+    {
+      "row": [
+        "PK",
+        "03/09/2026",
+        "075",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 33110887",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "9900",
+        "9900"
+      ],
+      "source": "[Hóa đơn STT 18](../1.danh_sach_hoa_don.md#L24)"
+    },
+    {
+      "row": [
+        "PK",
+        "03/09/2026",
+        "076",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 32966155",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "9900",
+        "9900"
+      ],
+      "source": "[Hóa đơn STT 19](../1.danh_sach_hoa_don.md#L25)"
+    },
+    {
+      "row": [
+        "BC",
+        "03/09/2026",
+        "077",
+        "",
+        "",
+        "",
+        "0318678340",
+        "928D6090312PS95E 3CE - KOC Hub Aug - Video - Scope 3 - 300826 - quanhdayo - HO KINH DOA",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "15869920",
+        "15869920"
+      ],
+      "source": "[Sao kê GD 26](../2.sao_ke.md#L32)"
+    },
+    {
+      "row": [
+        "BC",
+        "03/09/2026",
+        "078",
+        "",
+        "",
+        "",
+        "0318678340",
+        "928D60903KZUCMWU 3CE - KOC Hub Aug - Video - Scope 3 - 100826 - quanhdayo - HKD SANDY Q",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "6600000",
+        "6600000"
+      ],
+      "source": "[Sao kê GD 27](../2.sao_ke.md#L33)"
+    },
+    {
+      "row": [
+        "BC",
+        "03/09/2026",
+        "079",
+        "",
+        "",
+        "",
+        "0315909712",
+        "928D60903ZVH57RY CTY TNHH OQR TT HOP DONG 556 2026 MEDIFORCELL HO KINH DOANH SANDY QUYNH ANH RQ2857531",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "9350000",
+        "9350000"
+      ],
+      "source": "[Sao kê GD 29](../2.sao_ke.md#L35)"
+    },
+    {
+      "row": [
+        "BN",
+        "03/09/2026",
+        "080",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 28",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Sao kê GD 28](../2.sao_ke.md#L34); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "03/09/2026",
+        "081",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 30",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "9000000",
+        "9000000"
+      ],
+      "source": "[Sao kê GD 30](../2.sao_ke.md#L36); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BC",
+        "04/09/2026",
+        "082",
+        "",
+        "",
+        "",
+        "0314756823",
+        "CT DEN: 928T26905JJQR9PE CTY TRENDY BEAUTY TT KOC TIKTOK T08 THEO HDONG SANDY 24072026",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "9900000",
+        "9900000"
+      ],
+      "source": "[Sao kê GD 32](../2.sao_ke.md#L38)"
+    },
+    {
+      "row": [
+        "BN",
+        "04/09/2026",
+        "083",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 33",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "15000000",
+        "15000000"
+      ],
+      "source": "[Sao kê GD 33](../2.sao_ke.md#L39); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "04/09/2026",
+        "084",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Thu hộ phí bảo hiểm ISAFE kỳ 02, maGCN BKFW7F4RVRX",
+        "64277",
+        "112111",
+        "VND",
+        "1",
+        "5000",
+        "5000"
+      ],
+      "source": "[Sao kê GD 31](../2.sao_ke.md#L37)"
+    },
+    {
+      "row": [
+        "PK",
+        "05/09/2026",
+        "085",
+        "",
+        "",
+        "",
+        "0317172618",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 06082026QA/SEAMAKEUP/HDDVTT ký ngày 06/08/2026 kèm Biên bản nghiệm thu ký ngày 05/09/2026 HĐ số 17",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "18333333",
+        "18333333"
+      ],
+      "source": "[Hóa đơn STT 42](../1.danh_sach_hoa_don.md#L48)"
+    },
+    {
+      "row": [
+        "PK",
+        "05/09/2026",
+        "086",
+        "",
+        "",
+        "",
+        "0317172618",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 06082026QA/SEAMAKEUP/HDDVTT ký ngày 06/08/2026 kèm Biên bản nghiệm thu ký ngày 05/09/2026 HĐ số 17",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "183333",
+        "183333"
+      ],
+      "source": "[Hóa đơn STT 42](../1.danh_sach_hoa_don.md#L48)"
+    },
+    {
+      "row": [
+        "PK",
+        "05/09/2026",
+        "087",
+        "",
+        "",
+        "",
+        "0109998900",
+        "Phí dịch vụ tư vấn kế toán tháng 08/2026 HĐ số 341",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "3240000",
+        "3240000"
+      ],
+      "source": "[Hóa đơn STT 20](../1.danh_sach_hoa_don.md#L26)"
+    },
+    {
+      "row": [
+        "PK",
+        "05/09/2026",
+        "088",
+        "",
+        "",
+        "",
+        "0100230800",
+        "Phí dịch vụ ngân hàng HĐ 33493977",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "24530",
+        "24530"
+      ],
+      "source": "[Hóa đơn STT 21](../1.danh_sach_hoa_don.md#L27)"
+    },
+    {
+      "row": [
+        "BC",
+        "07/09/2026",
+        "089",
+        "",
+        "",
+        "",
+        "0109361325",
+        "928D60907BX8BKJ2 UpBase thanh toan cho KOC Cathy Doll thang 8 BO260860127",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "10450000",
+        "10450000"
+      ],
+      "source": "[Sao kê GD 34](../2.sao_ke.md#L40)"
+    },
+    {
+      "row": [
+        "BN",
+        "07/09/2026",
+        "090",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 35",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "5000000",
+        "5000000"
+      ],
+      "source": "[Sao kê GD 35](../2.sao_ke.md#L41); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "PK",
+        "08/09/2026",
+        "091",
+        "",
+        "",
+        "",
+        "0313168515-004",
+        "Chi phí tiếp khách, ngoại giao HĐ số 50474",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "2028800",
+        "2028800"
+      ],
+      "source": "[Hóa đơn STT 22](../1.danh_sach_hoa_don.md#L28)"
+    },
+    {
+      "row": [
+        "BN",
+        "08/09/2026",
+        "092",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 36",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "3000000",
+        "3000000"
+      ],
+      "source": "[Sao kê GD 36](../2.sao_ke.md#L42); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "PK",
+        "10/09/2026",
+        "093",
+        "",
+        "",
+        "",
+        "0304384823",
+        "\"SAY HI\" PLAYHITS - Live Concert, thuộc Vũ Trụ \"Say Hi\" - CAT 2A HĐ số 59189",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "1500000",
+        "1500000"
+      ],
+      "source": "[Hóa đơn STT 23](../1.danh_sach_hoa_don.md#L29)"
+    },
+    {
+      "row": [
+        "BC",
+        "10/09/2026",
+        "094",
+        "",
+        "",
+        "",
+        "0317172618",
+        "928D609101XZSC1L Sea Makeup thanh toan dich vu booking KOL hop dong 06082026QA. SEAMAKEUP.HDDVTT hoa don so 17",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "18150000",
+        "18150000"
+      ],
+      "source": "[Sao kê GD 37](../2.sao_ke.md#L43)"
+    },
+    {
+      "row": [
+        "PK",
+        "11/09/2026",
+        "095",
+        "",
+        "",
+        "",
+        "0304384823",
+        "Tinh Hà \"Say Hi\" Concert - Đêm 2 - VIP B HĐ số 62542",
+        "64277",
+        "331",
+        "VND",
+        "1",
+        "8000000",
+        "8000000"
+      ],
+      "source": "[Hóa đơn STT 24](../1.danh_sach_hoa_don.md#L30)"
+    },
+    {
+      "row": [
+        "BN",
+        "11/09/2026",
+        "096",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 38",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "5000000",
+        "5000000"
+      ],
+      "source": "[Sao kê GD 38](../2.sao_ke.md#L44); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "11/09/2026",
+        "097",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 39",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "8000000",
+        "8000000"
+      ],
+      "source": "[Sao kê GD 39](../2.sao_ke.md#L45); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "PK",
+        "14/09/2026",
+        "098",
+        "",
+        "",
+        "",
+        "0318751209",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 0808-2026/HĐDV/GL-HQA ký ngày 08/08/2026 kèm Biên bản nghiệm thu ký ngày 14/09/2026 HĐ số 19",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Hóa đơn STT 43](../1.danh_sach_hoa_don.md#L49)"
+    },
+    {
+      "row": [
+        "PK",
+        "14/09/2026",
+        "099",
+        "",
+        "",
+        "",
+        "0318751209",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 0808-2026/HĐDV/GL-HQA ký ngày 08/08/2026 kèm Biên bản nghiệm thu ký ngày 14/09/2026 HĐ số 19",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "100000",
+        "100000"
+      ],
+      "source": "[Hóa đơn STT 43](../1.danh_sach_hoa_don.md#L49)"
+    },
+    {
+      "row": [
+        "PK",
+        "14/09/2026",
+        "100",
+        "",
+        "",
+        "",
+        "0317251806",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 11-092602/HĐDV-TTH ký ngày 11/09/2026 kèm Biên bản nghiệm thu ký ngày 14/09/2026 HĐ số 18",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Hóa đơn STT 44](../1.danh_sach_hoa_don.md#L50)"
+    },
+    {
+      "row": [
+        "PK",
+        "14/09/2026",
+        "101",
+        "",
+        "",
+        "",
+        "0317251806",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 11-092602/HĐDV-TTH ký ngày 11/09/2026 kèm Biên bản nghiệm thu ký ngày 14/09/2026 HĐ số 18",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "100000",
+        "100000"
+      ],
+      "source": "[Hóa đơn STT 44](../1.danh_sach_hoa_don.md#L50)"
+    },
+    {
+      "row": [
+        "BN",
+        "14/09/2026",
+        "102",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 40",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "2500000",
+        "2500000"
+      ],
+      "source": "[Sao kê GD 40](../2.sao_ke.md#L46); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "PK",
+        "16/09/2026",
+        "103",
+        "",
+        "",
+        "",
+        "0318678340",
+        "Thanh toán 100% phí dịch vụ chiến dịch 3CE - KOC Hub MECP Sep - Video - Scope 3 - 300926 SOW số 62514/2025/WPP-BTL-LO ID Tiktok: quanhdayo HĐ số 20",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "18888889",
+        "18888889"
+      ],
+      "source": "[Hóa đơn STT 45](../1.danh_sach_hoa_don.md#L51)"
+    },
+    {
+      "row": [
+        "PK",
+        "16/09/2026",
+        "104",
+        "",
+        "",
+        "",
+        "0318678340",
+        "Điều chỉnh giảm Thanh toán 100% phí dịch vụ chiến dịch 3CE - KOC Hub MECP Sep - Video - Scope 3 - 300926 SOW số 62514/2025/WPP-BTL-LO ID Tiktok: quanhdayo HĐ số 20",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "188889",
+        "188889"
+      ],
+      "source": "[Hóa đơn STT 45](../1.danh_sach_hoa_don.md#L51)"
+    },
+    {
+      "row": [
+        "BC",
+        "17/09/2026",
+        "105",
+        "",
+        "",
+        "",
+        "0318751209",
+        "928D60917ASEV6CP CTY GLORIE BEAUTY THANH TOAN HD 19",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "9900000",
+        "9900000"
+      ],
+      "source": "[Sao kê GD 42](../2.sao_ke.md#L48)"
+    },
+    {
+      "row": [
+        "BN",
+        "17/09/2026",
+        "106",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 41",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "20000000",
+        "20000000"
+      ],
+      "source": "[Sao kê GD 41](../2.sao_ke.md#L47); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "18/09/2026",
+        "107",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 43",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Sao kê GD 43](../2.sao_ke.md#L49); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "PK",
+        "22/09/2026",
+        "108",
+        "",
+        "",
+        "",
+        "0314724148",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 1109/2026/HDDV/BR/DM&C-HKDHQA ký ngày 11/09/2026 HĐ số 21",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Hóa đơn STT 46](../1.danh_sach_hoa_don.md#L52)"
+    },
+    {
+      "row": [
+        "PK",
+        "22/09/2026",
+        "109",
+        "",
+        "",
+        "",
+        "0314724148",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 1109/2026/HDDV/BR/DM&C-HKDHQA ký ngày 11/09/2026 HĐ số 21",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "100000",
+        "100000"
+      ],
+      "source": "[Hóa đơn STT 46](../1.danh_sach_hoa_don.md#L52)"
+    },
+    {
+      "row": [
+        "PK",
+        "25/09/2026",
+        "110",
+        "",
+        "",
+        "",
+        "0318716846",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 070926/HĐDV/APERIRE-HKDSANDY ký ngày 07/09/2026 kèm Biên bản nghiệm thu và thanh lý ký ngày 25/09/2026 HĐ số 22",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Hóa đơn STT 47](../1.danh_sach_hoa_don.md#L53)"
+    },
+    {
+      "row": [
+        "PK",
+        "25/09/2026",
+        "111",
+        "",
+        "",
+        "",
+        "0318716846",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số 070926/HĐDV/APERIRE-HKDSANDY ký ngày 07/09/2026 kèm Biên bản nghiệm thu và thanh lý ký ngày 25/09/2026 HĐ số 22",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "100000",
+        "100000"
+      ],
+      "source": "[Hóa đơn STT 47](../1.danh_sach_hoa_don.md#L53)"
+    },
+    {
+      "row": [
+        "BC",
+        "29/09/2026",
+        "112",
+        "",
+        "",
+        "",
+        "0314724148",
+        "928D60929MEJZSEQ DM AND C - TT PHI BOOK KOL/KOC REVIEW SP BR THEO HOP DONG SO 1109 /2026/HDDV/BR/DMC- HKDHQA",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "9900000",
+        "9900000"
+      ],
+      "source": "[Sao kê GD 44](../2.sao_ke.md#L50)"
+    },
+    {
+      "row": [
+        "BC",
+        "29/09/2026",
+        "113",
+        "",
+        "",
+        "",
+        "TIKTOK",
+        "TikTok Shop",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "5952644",
+        "5952644"
+      ],
+      "source": "[Sao kê GD 46](../2.sao_ke.md#L52)"
+    },
+    {
+      "row": [
+        "BN",
+        "29/09/2026",
+        "114",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 45",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "5000000",
+        "5000000"
+      ],
+      "source": "[Sao kê GD 45](../2.sao_ke.md#L51); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "BN",
+        "29/09/2026",
+        "115",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Rút tiền mặt nhập quỹ; chuyển Hà Quỳnh Anh; GD 47",
+        "1111",
+        "112111",
+        "VND",
+        "1",
+        "5000000",
+        "5000000"
+      ],
+      "source": "[Sao kê GD 47](../2.sao_ke.md#L53); người dùng xác nhận rút tiền mặt, hạch toán 1111"
+    },
+    {
+      "row": [
+        "PK",
+        "30/09/2026",
+        "116",
+        "",
+        "",
+        "",
+        "0106639692",
+        "Dịch vụ quảng cáo và truyền thông theo Hợp đồng số T16MPD26HDDV-0243-2499 quanhdayo ngày 17/09/2026 kèm Biên bản nghiệm thu ngày 30/09/2026 HĐ số 24",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "10000000",
+        "10000000"
+      ],
+      "source": "[Hóa đơn STT 48](../1.danh_sach_hoa_don.md#L54)"
+    },
+    {
+      "row": [
+        "PK",
+        "30/09/2026",
+        "117",
+        "",
+        "",
+        "",
+        "0106639692",
+        "Điều chỉnh giảm Dịch vụ quảng cáo và truyền thông theo Hợp đồng số T16MPD26HDDV-0243-2499 quanhdayo ngày 17/09/2026 kèm Biên bản nghiệm thu ngày 30/09/2026 HĐ số 24",
+        "333821",
+        "131",
+        "VND",
+        "1",
+        "100000",
+        "100000"
+      ],
+      "source": "[Hóa đơn STT 48](../1.danh_sach_hoa_don.md#L54)"
+    },
+    {
+      "row": [
+        "PK",
+        "30/09/2026",
+        "118",
+        "",
+        "",
+        "",
+        "TIKTOK",
+        "Hoa hồng tiếp thị liên kết (Affiliate Marketing Commission) HĐ số 23",
+        "131",
+        "5118",
+        "VND",
+        "1",
+        "6075763",
+        "6075763"
+      ],
+      "source": "[Hóa đơn STT 49](../1.danh_sach_hoa_don.md#L55)"
+    },
+    {
+      "row": [
+        "PK",
+        "30/09/2026",
+        "119",
+        "",
+        "",
+        "",
+        "TIKTOK",
+        "Điều chỉnh giảm Hoa hồng tiếp thị liên kết (Affiliate Marketing Commission) HĐ số 23",
+        "333822",
+        "131",
+        "VND",
+        "1",
+        "60758",
+        "60758"
+      ],
+      "source": "[Hóa đơn STT 49](../1.danh_sach_hoa_don.md#L55)"
+    },
+    {
+      "row": [
+        "BC",
+        "30/09/2026",
+        "120",
+        "",
+        "",
+        "",
+        "079302005740",
+        "Thu lãi tiền gửi DDA",
+        "112111",
+        "5154",
+        "VND",
+        "1",
+        "923",
+        "923"
+      ],
+      "source": "[Sao kê GD 48](../2.sao_ke.md#L54)"
+    },
+    {
+      "row": [
+        "BC",
+        "30/09/2026",
+        "121",
+        "",
+        "",
+        "",
+        "0317251806",
+        "CT DEN: 928T2691ESBGET6T CTY TTH TT CHO KOL HA QUYNH ANH",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "9900000",
+        "9900000"
+      ],
+      "source": "[Sao kê GD 49](../2.sao_ke.md#L55)"
+    },
+    {
+      "row": [
+        "BC",
+        "30/09/2026",
+        "122",
+        "",
+        "",
+        "",
+        "0318678340",
+        "928D609309S651P5 3CE - KOC Hub MECP Sep - Video - Scope 3 - 300926 - quanhdayo - HO KIN",
+        "112111",
+        "131",
+        "VND",
+        "1",
+        "18700000",
+        "18700000"
+      ],
+      "source": "[Sao kê GD 50](../2.sao_ke.md#L56)"
+    }
+  ]
+}

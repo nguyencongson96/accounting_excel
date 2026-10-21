@@ -1,0 +1,22 @@
+{
+  "rows": 328,
+  "total": 3305828692,
+  "counts": {
+    "PK": 159,
+    "BC": 71,
+    "BN": 98
+  },
+  "pending": 0,
+  "bookedBank": 169,
+  "monthlyInsurance": 690300,
+  "insuranceMonths": 12,
+  "insuranceExpense": 8283600,
+  "insuranceClosing": 3421103,
+  "temporaryReceipts": 273835770,
+  "temporaryPayments": 16717512,
+  "meeting": 5457594,
+  "addedRows": 26,
+  "bookIn": 984891295,
+  "bookOut": 970951903,
+  "bankClosing": 13939392
+}

@@ -1,0 +1,31 @@
+{
+  "source": "1792565811005_622831143301706995_622831143301706995_39dad5196123efa21f8c3515c0e30780.jpg",
+  "account": "111625136868",
+  "currency": "VND",
+  "openingFromPriorQuarter": 482275,
+  "coverage": "Ảnh không có tiêu đề kỳ/số trang; trích toàn bộ 22 dòng nhìn thấy, giữ 3 dòng tháng 10 riêng; chưa xác nhận đủ toàn bộ giao dịch 01/07–30/09.",
+  "rows": [
+    {"id":"B01","date":"17/07/2026","time":"02:42:15","description":"DEBIT MEMO : Phi QLTK tron goi theo CASA tai khoan 111625136868 thang 07-2026","out":150000,"in":0,"balance":332275},
+    {"id":"B02","date":"17/07/2026","time":"02:42:15","description":"VAT on DEBIT MEMO : VAT","out":15000,"in":0,"balance":317275},
+    {"id":"B03","date":"17/07/2026","time":"09:48:49","description":"DEPOSIT : So GD goc: 10001332 SDVD TT TIEN THI CONG XAY DUNG TRAM TRON HUNG YEN CHO CTY NGOC QUANG","out":0,"in":500000000,"balance":500317275},
+    {"id":"B04","date":"17/07/2026","time":"09:55:32","description":"WITHDRL : CT Ngoc Quang chuyen tien thanh toan vat tu Da CT viet tiep","out":500000000,"in":0,"balance":317275,"note":"Mã giao dịch dài trên ảnh chưa xác minh từng ký tự; giữ ngày/giờ/dòng ảnh làm khóa nguồn."},
+    {"id":"B05","date":"21/07/2026","time":"09:45:09","description":"DEPOSIT : So GD goc: 10001439 SDVD TT TIEN XD TRAM CHO CTY NGOC QUANG","out":0,"in":600000000,"balance":600317275},
+    {"id":"B06","date":"21/07/2026","time":"09:51:16","description":"WITHDRL : CT Ngoc Quang chuyen tien thanh toan ct Viet Tiep","out":600000000,"in":0,"balance":317275,"note":"Mã giao dịch dài trên ảnh chưa xác minh từng ký tự; giữ ngày/giờ/dòng ảnh làm khóa nguồn."},
+    {"id":"B07","date":"22/07/2026","time":"14:21:32","description":"DEPOSIT : nop tien","out":0,"in":1000000,"balance":1317275},
+    {"id":"B08","date":"22/07/2026","time":"14:27:40","description":"DEBIT MEMO : Transfer Funds","out":22000,"in":0,"balance":1295275},
+    {"id":"B09","date":"31/07/2026","time":"01:49:10","description":"Tra lai tai khoan DDA","out":0,"in":117,"balance":1295392},
+    {"id":"B10","date":"17/08/2026","time":"02:37:03","description":"DEBIT MEMO : Phi QLTK tron goi theo CASA tai khoan 111625136868 thang 08-2026","out":150000,"in":0,"balance":1145392},
+    {"id":"B11","date":"17/08/2026","time":"02:37:03","description":"VAT on DEBIT MEMO : VAT","out":15000,"in":0,"balance":1130392},
+    {"id":"B12","date":"20/08/2026","time":"15:43:09","description":"DEPOSIT : NOP TIEN","out":0,"in":80000000,"balance":81130392},
+    {"id":"B13","date":"21/08/2026","time":"08:17:08","description":"wasadm JDBC driver : CT Ngoc Quang chuyen tien ung to doi Lam","out":41000000,"in":0,"balance":40130392},
+    {"id":"B14","date":"21/08/2026","time":"08:37:10","description":"wasadm JDBC driver : ct Ngoc Quang chuyen tien ung Luong Tiem","out":10000000,"in":0,"balance":30130392},
+    {"id":"B15","date":"21/08/2026","time":"15:40:57","description":"wasadm JDBC driver : ct Ngoc Quang chuyen tien ung to doi Lam","out":29000000,"in":0,"balance":1130392},
+    {"id":"B16","date":"31/08/2026","time":"01:43:33","description":"Tra lai tai khoan DDA","out":0,"in":646,"balance":1131038},
+    {"id":"B17","date":"17/09/2026","time":"02:42:41","description":"DEBIT MEMO : Phi QLTK tron goi theo CASA tai khoan 111625136868 thang 09-2026","out":150000,"in":0,"balance":981038},
+    {"id":"B18","date":"17/09/2026","time":"02:42:41","description":"VAT on DEBIT MEMO : VAT","out":15000,"in":0,"balance":966038},
+    {"id":"B19","date":"30/09/2026","time":"01:54:29","description":"Tra lai tai khoan DDA","out":0,"in":174,"balance":966212},
+    {"id":"X01","date":"09/10/2026","time":"16:27:09","description":"DEPOSIT : Cong Ty HNB tam ung tien cac hang muc thi cong theo Hop dong so NQ19/HDGK/2026","out":0,"in":20000000,"balance":20966212,"note":"Thuộc Q4, không hạch toán trong Q3; mã giao dịch dài cần tra lại ảnh nếu dùng."},
+    {"id":"X02","date":"17/10/2026","time":"03:02:28","description":"DEBIT MEMO : Phi QLTK tron goi theo CASA tai khoan 111625136868 thang 10-2026","out":150000,"in":0,"balance":20816212},
+    {"id":"X03","date":"17/10/2026","time":"03:02:28","description":"VAT on DEBIT MEMO : VAT","out":15000,"in":0,"balance":20801212}
+  ]
+}

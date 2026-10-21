@@ -1,0 +1,1037 @@
+[
+  {
+    "img": 30,
+    "date": "02/07/2026",
+    "time": "17:45:42",
+    "amount": 11000000,
+    "balance": 11000121,
+    "description": "thanh toan 2026OJRJ194678",
+    "uid": 115
+  },
+  {
+    "img": 30,
+    "date": "02/07/2026",
+    "time": "17:49:43",
+    "amount": -11000000,
+    "balance": 121,
+    "description": "MBBIZ6071878959.032687.rut tien mat nhap quy",
+    "uid": 114
+  },
+  {
+    "img": 30,
+    "date": "06/07/2026",
+    "time": "09:42:10",
+    "amount": 17600000,
+    "balance": 17600121,
+    "description": "IBVCB.202607035087032609.29.CTY CO PHAN Y&B TT 100% GIA TRI HOP DONG SO 13152026/HDDV/YB (HD 77 - REVIEW SP)",
+    "uid": 113
+  },
+  {
+    "img": 30,
+    "date": "06/07/2026",
+    "time": "09:52:03",
+    "amount": -17600000,
+    "balance": 121,
+    "description": "MBBIZ6072248243.020828.rut tien mat nhap quy",
+    "uid": 112
+  },
+  {
+    "img": 29,
+    "date": "09/07/2026",
+    "time": "12:33:45",
+    "amount": 22000000,
+    "balance": 22000121,
+    "description": "Thanh toan tien theo hop dong dich vu so 01062026HDDVNAVIKUNDAL hd 90 2026A9FL764794",
+    "uid": 111
+  },
+  {
+    "img": 29,
+    "date": "09/07/2026",
+    "time": "12:35:33",
+    "amount": -22000000,
+    "balance": 121,
+    "description": "MBBIZ6072750665.069475.rut tien mat nhap quy",
+    "uid": 110
+  },
+  {
+    "img": 29,
+    "date": "09/07/2026",
+    "time": "13:57:21",
+    "amount": 24200000,
+    "balance": 24200121,
+    "description": "SHGD:10002068.DD:260709.BO:CONG TY TNHH HIIP.Remark:THANH TOAN HOA DON SO: 79 HIIP THANH TOAN CHIEN DICH BOOSTER Q1.2026 CAM ON BAN 16264",
+    "uid": 109
+  },
+  {
+    "img": 29,
+    "date": "09/07/2026",
+    "time": "15:54:01",
+    "amount": 18700000,
+    "balance": 42900121,
+    "description": "6190IBT1iJEUN5YJ.OAP GLYCO REPUSH SBD JUN26 SCOPE 3 CYCLE 30.06 EXTRA thuyvinavi1602 HKD THUY VI 51730 CONG TY CO PHAN APPOTAPAY",
+    "uid": 108
+  },
+  {
+    "img": 28,
+    "date": "09/07/2026",
+    "time": "15:59:58",
+    "amount": -42900000,
+    "balance": 121,
+    "description": "MBBIZ6072794540.089235.rut tien mat nhap quy",
+    "uid": 107
+  },
+  {
+    "img": 28,
+    "date": "10/07/2026",
+    "time": "15:54:12",
+    "amount": 38500000,
+    "balance": 38500121,
+    "description": "PEXPLE THANH TOAN CHI PHI CHO CELL FUSION C Q2-2026-NAVI PEXPLE COMPANY LIMITED",
+    "uid": 106
+  },
+  {
+    "img": 28,
+    "date": "10/07/2026",
+    "time": "16:00:12",
+    "amount": -38500000,
+    "balance": 121,
+    "description": "MBBIZ6072987291.072884.rut tien mat nhap quy",
+    "uid": 105
+  },
+  {
+    "img": 27,
+    "date": "14/07/2026",
+    "time": "17:29:55",
+    "amount": 22000000,
+    "balance": 22000121,
+    "description": "BRAINAD TT CHI PHI NAVI JOB VIGO BABE Thang 5.2026 Serum BA573, HD 80 N01.07.2026 CTY TNHH TM QC SANG TAO NAO",
+    "uid": 104
+  },
+  {
+    "img": 27,
+    "date": "14/07/2026",
+    "time": "17:33:50",
+    "amount": -22000000,
+    "balance": 121,
+    "description": "MBBIZ6073471251.031764.rut tien mat nhap quy",
+    "uid": 103
+  },
+  {
+    "img": 27,
+    "date": "15/07/2026",
+    "time": "14:42:29",
+    "amount": 62700000,
+    "balance": 62700121,
+    "description": "6196ASCB02FVZTKJ.DICH VU QUANG CAO VA TRUYEN THONG THEO 02 HD SO 070626 CTY TNHH DL VIEN DONG",
+    "uid": 102
+  },
+  {
+    "img": 27,
+    "date": "15/07/2026",
+    "time": "14:53:23",
+    "amount": -62700000,
+    "balance": 121,
+    "description": "MBBIZ6073584662.087524.rut tien mat nhap quy",
+    "uid": 101
+  },
+  {
+    "img": 26,
+    "date": "16/07/2026",
+    "time": "14:17:40",
+    "amount": 12000000,
+    "balance": 12000121,
+    "description": "MBBIZ6073732551.CT TNHH AN PHIM MEDIA PRODUCTION chuyen tien dot 2 hd so 11062026/HDDV048/APMP",
+    "uid": 100
+  },
+  {
+    "img": 26,
+    "date": "16/07/2026",
+    "time": "14:27:05",
+    "amount": -12000000,
+    "balance": 121,
+    "description": "MBBIZ6073734896.066513.rut tien mat nhap quy",
+    "uid": 99
+  },
+  {
+    "img": 26,
+    "date": "16/07/2026",
+    "time": "15:00:27",
+    "amount": 22000000,
+    "balance": 22000121,
+    "description": "SHGD:10001644.DD:260716.BO:CONG TY TNHH QUANG CAO VA PHAN MEM INNITY Remark:INNITY TT HD 82 ChargeDetails OUR",
+    "uid": 98
+  },
+  {
+    "img": 26,
+    "date": "16/07/2026",
+    "time": "15:11:20",
+    "amount": -22000000,
+    "balance": 121,
+    "description": "MBBIZ6073746301.073244.rut tien mat nhap quy",
+    "uid": 97
+  },
+  {
+    "img": 6,
+    "date": "17/07/2026",
+    "time": "16:00:59",
+    "amount": 110000000,
+    "balance": 110000121,
+    "description": "IBBIZ6073903795 HKD LIEN LE thanh toan tien 7 clip cho HKD THUY VI",
+    "uid": 24
+  },
+  {
+    "img": 6,
+    "date": "17/07/2026",
+    "time": "16:07:32",
+    "amount": -110000000,
+    "balance": 121,
+    "description": "MBBIZ6073905562.055537.rut tien mat nhap quy",
+    "uid": 23
+  },
+  {
+    "img": 6,
+    "date": "17/07/2026",
+    "time": "16:21:11",
+    "amount": 22000000,
+    "balance": 22000121,
+    "description": "6198IBT1fJ2V8E8S THANH HOP DONG SO 040626/HDDV/FA-NAVI CONG TY TNHH DAU TU GMG",
+    "uid": 22
+  },
+  {
+    "img": 6,
+    "date": "17/07/2026",
+    "time": "16:42:34",
+    "amount": -22000000,
+    "balance": 121,
+    "description": "MBBIZ6073914171.060187.rut tien mat nhap quy",
+    "uid": 21
+  },
+  {
+    "img": 7,
+    "date": "19/07/2026",
+    "time": "19:45:59",
+    "amount": 20900000,
+    "balance": 20900121,
+    "description": "CTY MAKE SENSE TT HD 75 HD 06.190526.02.MS-THUYVINAVI CTY TNHH DVTRUYEN THONG MAKE SENSE",
+    "uid": 28
+  },
+  {
+    "img": 7,
+    "date": "19/07/2026",
+    "time": "19:51:55",
+    "amount": -20900000,
+    "balance": 121,
+    "description": "MBBIZ6074084515.058458.rut tien mat nhap quy",
+    "uid": 27
+  },
+  {
+    "img": 7,
+    "date": "21/07/2026",
+    "time": "19:42:24",
+    "amount": 11000000,
+    "balance": 11000121,
+    "description": "6202IBT1hW88F74F Navi - ContentLab - Elastine dot 2 CTY TNHH CONTENT LAB",
+    "uid": 26
+  },
+  {
+    "img": 7,
+    "date": "22/07/2026",
+    "time": "16:11:40",
+    "amount": 13750000,
+    "balance": 24750121,
+    "description": "CONG TY SAMANTHA CHUYEN TIEN HOP DONG KOC NAVI",
+    "uid": 25
+  },
+  {
+    "img": 8,
+    "date": "23/07/2026",
+    "time": "11:30:47",
+    "amount": -24750000,
+    "balance": 121,
+    "description": "MBBIZ6074569961.005913.rut tien mat nhap quy",
+    "uid": 32
+  },
+  {
+    "img": 8,
+    "date": "24/07/2026",
+    "time": "07:12:25",
+    "amount": 22000000,
+    "balance": 22000121,
+    "description": "0T07AM2607000435 B.O:VT COSMETICS INC",
+    "uid": 31
+  },
+  {
+    "img": 8,
+    "date": "24/07/2026",
+    "time": "15:04:26",
+    "amount": -22000000,
+    "balance": 121,
+    "description": "MBBIZ6074737581.094102.rut tien mat nhap quy",
+    "uid": 30
+  },
+  {
+    "img": 8,
+    "date": "24/07/2026",
+    "time": "15:41:49",
+    "amount": 22000000,
+    "balance": 22000121,
+    "description": "6205IBT1bJM5NXLT Ecomobi Media TT phi DV Hoa don so 100 HD MDA/20260610/3697 CONG TY CO PHAN ECOMOBI MEDIA",
+    "uid": 29
+  },
+  {
+    "img": 9,
+    "date": "24/07/2026",
+    "time": "15:44:06",
+    "amount": -22000000,
+    "balance": 121,
+    "description": "MBBIZ6074748945.097864.rut tien mat nhap quy",
+    "uid": 36
+  },
+  {
+    "img": 9,
+    "date": "25/07/2026",
+    "time": "10:36:41",
+    "amount": 20000000,
+    "balance": 20000121,
+    "description": "IBVCB.202607245087051246.39 CTY CO PHAN Y&B TT DOT 1 50% GIA TRI HOP DONG SO14622026/HDDV/YB (HD 96 - EVENT SCNS)",
+    "uid": 35
+  },
+  {
+    "img": 9,
+    "date": "25/07/2026",
+    "time": "13:27:15",
+    "amount": -20000000,
+    "balance": 121,
+    "description": "MBBIZ6074840982.051875.rut tien mat nhap quy",
+    "uid": 34
+  },
+  {
+    "img": 9,
+    "date": "27/07/2026",
+    "time": "11:48:50",
+    "amount": 20900000,
+    "balance": 20900437,
+    "description": "6208ASCB02JKE1R8 DICH VU QUANG CAO VA TRUYEN THONG THEO HD SO 280526 CTY TNHH DL VIEN DONG",
+    "uid": 33
+  },
+  {
+    "img": 10,
+    "date": "27/07/2026",
+    "time": "13:34:26",
+    "amount": -20900000,
+    "balance": 437,
+    "description": "MBBIZ6075003789.039562.rut tien mat nhap quy",
+    "uid": 40
+  },
+  {
+    "img": 10,
+    "date": "28/07/2026",
+    "time": "17:21:09",
+    "amount": 19500000,
+    "balance": 19500437,
+    "description": "IBBIZ6075197189.3BROTHERS TT AVCA T06 HO KINH DOANH THUY VI N26-592",
+    "uid": 39
+  },
+  {
+    "img": 10,
+    "date": "28/07/2026",
+    "time": "17:40:40",
+    "amount": -19500000,
+    "balance": 437,
+    "description": "MBBIZ6075209115.044043.rut tien mat nhap quy",
+    "uid": 38
+  },
+  {
+    "img": 10,
+    "date": "30/07/2026",
+    "time": "16:15:55",
+    "amount": 55000000,
+    "balance": 55000437,
+    "description": "6211ASCB02JIDGNG DICH VU QUANG CAO VA TRUYEN THONG THEO HD SO 220626, 070726, 070626 CTY TNHH DL VIEN DONG",
+    "uid": 37
+  },
+  {
+    "img": 11,
+    "date": "30/07/2026",
+    "time": "16:18:18",
+    "amount": -55000000,
+    "balance": 437,
+    "description": "MBBIZ6075478002.081202.rut tien mat nhap quy",
+    "uid": 44
+  },
+  {
+    "img": 11,
+    "date": "30/07/2026",
+    "time": "18:53:44",
+    "amount": 18700000,
+    "balance": 18700437,
+    "description": "6211IBT1iJZNKLIS OAP FULL RESIST SPRAY REPUSH JUN26 SCOPE 3 CYCLE 30.06 thuyvinavi1602 HKD THUY VI 51698 CONG TY CO PHAN APPOTAPAY",
+    "uid": 43
+  },
+  {
+    "img": 11,
+    "date": "30/07/2026",
+    "time": "18:54:51",
+    "amount": -18700000,
+    "balance": 437,
+    "description": "MBBIZ6075504373.097088.rut tien mat nhap quy",
+    "uid": 42
+  },
+  {
+    "img": 11,
+    "date": "30/07/2026",
+    "time": "18:57:48",
+    "amount": 11000000,
+    "balance": 11000437,
+    "description": "6211IBT1iJZNEPZI KIE CALENUFM VIDEO SCOPE 2 1007 thuyvinavi1602 HKD THUY VI 53789 CONG TY CO PHAN APPOTAPAY",
+    "uid": 41
+  },
+  {
+    "img": 12,
+    "date": "30/07/2026",
+    "time": "19:01:58",
+    "amount": -11000000,
+    "balance": 437,
+    "description": "MBBIZ6075504995.096797.rut tien mat nhap quy",
+    "uid": 48
+  },
+  {
+    "img": 12,
+    "date": "31/07/2026",
+    "time": "16:44:33",
+    "amount": 10231386,
+    "balance": 10231823,
+    "description": "TikTok Shop 20266EY7681992",
+    "uid": 47
+  },
+  {
+    "img": 12,
+    "date": "31/07/2026",
+    "time": "18:03:23",
+    "amount": 22000000,
+    "balance": 32231823,
+    "description": "CTY TV TT HD 99 CHO HKD THUY VI CONG TY TNHH DAU TU XNK TIN VIET",
+    "uid": 46
+  },
+  {
+    "img": 12,
+    "date": "31/07/2026",
+    "time": "21:55:13",
+    "amount": -32231000,
+    "balance": 823,
+    "description": "MBBIZ.6075670338.6212BFTVGL2U9QL9.rut tien mat nhap quy",
+    "uid": 45
+  },
+  {
+    "img": 13,
+    "date": "04/08/2026",
+    "time": "15:05:47",
+    "amount": 19800000,
+    "balance": 19800823,
+    "description": "CIDERR TT PHI DICH VU HOA DON SO 93 CIDERR MEDIA CO., LTD",
+    "uid": 52
+  },
+  {
+    "img": 13,
+    "date": "06/08/2026",
+    "time": "14:16:24",
+    "amount": 38500000,
+    "balance": 38500823,
+    "description": "SHGD:10000617.DD:260806.BO:HAKUHODO & SAIGON ADVERTISING CO., LTD.Remark:PAYMENT FOR INFLUENCER (NA VI) BOOKING FOR BIORE UV MILD LAUCHING 2026 FROM 29/05 - 08/07/2026",
+    "uid": 51
+  },
+  {
+    "img": 13,
+    "date": "06/08/2026",
+    "time": "14:18:12",
+    "amount": -38500000,
+    "balance": 823,
+    "description": "MBBIZ6076443401.003597.rut tien mat nhap quy",
+    "uid": 50
+  },
+  {
+    "img": 13,
+    "date": "06/08/2026",
+    "time": "14:24:12",
+    "amount": 20900000,
+    "balance": 20900823,
+    "description": "IBBIZ6076383716.Meishang VN COLORKEY thanh toan Chi phi KOL thuyvi quay video quang ba san pham Mat na B5 theo hoa don so 106",
+    "uid": 49
+  },
+  {
+    "img": 14,
+    "date": "06/08/2026",
+    "time": "14:36:24",
+    "amount": -20900000,
+    "balance": 823,
+    "description": "MBBIZ6076448083.005689.rut tien mat nhap quy",
+    "uid": 56
+  },
+  {
+    "img": 14,
+    "date": "10/08/2026",
+    "time": "13:52:36",
+    "amount": 9350000,
+    "balance": 9350823,
+    "description": "CT DGD PHUONG DONG TT HKD THUY VI CT TNHH TB CHAM SOC Y TE DAI GD PD",
+    "uid": 55
+  },
+  {
+    "img": 14,
+    "date": "10/08/2026",
+    "time": "14:10:52",
+    "amount": -9350000,
+    "balance": 823,
+    "description": "MBBIZ6076938069.054821.rut tien mat nhap quy",
+    "uid": 54
+  },
+  {
+    "img": 14,
+    "date": "12/08/2026",
+    "time": "10:53:50",
+    "amount": 19800000,
+    "balance": 19800823,
+    "description": "6224MSCBD29Q51ZR.MD THANH TOAN BOOKING NAVI CTY TNHH MD CARE VN",
+    "uid": 53
+  },
+  {
+    "img": 15,
+    "date": "12/08/2026",
+    "time": "15:06:17",
+    "amount": 11000000,
+    "balance": 30800823,
+    "description": "6224IBT1hW85Q6K2.Navi - Job LG dot 2 CTY TNHH CONTENT LAB",
+    "uid": 60
+  },
+  {
+    "img": 15,
+    "date": "12/08/2026",
+    "time": "15:31:22",
+    "amount": -30800000,
+    "balance": 823,
+    "description": "MBBIZ6077313705.045759.rut tien mat nhap quy",
+    "uid": 59
+  },
+  {
+    "img": 15,
+    "date": "13/08/2026",
+    "time": "15:40:31",
+    "amount": 24200000,
+    "balance": 24200823,
+    "description": "IBBIZ6077431795.3BROTHERS THANH TOAN SIMPLE SUNKISS TOP UP THANG 7 HO KINH DOANH THUY VI N26-616",
+    "uid": 58
+  },
+  {
+    "img": 15,
+    "date": "13/08/2026",
+    "time": "15:51:43",
+    "amount": -24200000,
+    "balance": 823,
+    "description": "MBBIZ6077457986.023075.rut tien mat nhap quy",
+    "uid": 57
+  },
+  {
+    "img": 16,
+    "date": "14/08/2026",
+    "time": "18:43:45",
+    "amount": 36300000,
+    "balance": 36300823,
+    "description": "PEXPLE THANH TOAN CHI PHI CHO T0G-CELLFUSIONT7-2026-060726-NAVI PEXPLE COMPANY LIMITED",
+    "uid": 64
+  },
+  {
+    "img": 16,
+    "date": "14/08/2026",
+    "time": "18:49:16",
+    "amount": -36300000,
+    "balance": 823,
+    "description": "MBBIZ6077637441.014590.rut tien nhap quy",
+    "uid": 63
+  },
+  {
+    "img": 16,
+    "date": "17/08/2026",
+    "time": "08:55:34",
+    "amount": 24200000,
+    "balance": 24200823,
+    "description": "SHGD:10000478.DD:260817.BO:CONG TY TNHH WALDENCAST VIET NAM.Remark:Waldencast thanh toan chi phi booking KOL Thuyvi Navi review san pham Obagi Retinol PHA Relaunching 21/07/2026 / Inv 113",
+    "uid": 62
+  },
+  {
+    "img": 16,
+    "date": "17/08/2026",
+    "time": "09:40:43",
+    "amount": -24200000,
+    "balance": 823,
+    "description": "MBBIZ6077848791.030253.rut tien mat nhap quy",
+    "uid": 61
+  },
+  {
+    "img": 3,
+    "date": "17/08/2026",
+    "time": "15:30:00",
+    "amount": 22000000,
+    "balance": 22000823,
+    "description": "6229IBT1aWRFUJD5 UJU ASIA TT DV QUANG CAO, INV :120 UJU ASIA",
+    "uid": 12
+  },
+  {
+    "img": 3,
+    "date": "17/08/2026",
+    "time": "15:57:52",
+    "amount": -22000000,
+    "balance": 823,
+    "description": "MBBIZ6077918091.063617.rut tien mat nhap quy",
+    "uid": 11
+  },
+  {
+    "img": 3,
+    "date": "18/08/2026",
+    "time": "18:13:33",
+    "amount": 22000000,
+    "balance": 22000823,
+    "description": "6230IBT1iJT8V226 THANH TOAN THEO HOP DONG DICH VU SO 0526.HDDV.UNICORN-WJ.thuyvinavi1602 CONG TY TNHH TRUYEN THONG UNICORN",
+    "uid": 10
+  },
+  {
+    "img": 3,
+    "date": "18/08/2026",
+    "time": "20:06:39",
+    "amount": -22000000,
+    "balance": 823,
+    "description": "MBBIZ6078111762.065284.rut tien mat nhap quy",
+    "uid": 9
+  },
+  {
+    "img": 2,
+    "date": "20/08/2026",
+    "time": "11:25:22",
+    "amount": 27500000,
+    "balance": 27500823,
+    "description": "VIGO TT CP hop tac truyen thong - HD 122 THE VIGO",
+    "uid": 8
+  },
+  {
+    "img": 2,
+    "date": "20/08/2026",
+    "time": "11:29:06",
+    "amount": -27500000,
+    "balance": 823,
+    "description": "MBBIZ6078304175.067173.rut tien mat nhap quy",
+    "uid": 7
+  },
+  {
+    "img": 2,
+    "date": "20/08/2026",
+    "time": "14:08:19",
+    "amount": 11000000,
+    "balance": 11000823,
+    "description": "6232ASCB02ZPJXMV DICH VU QUANG CAO VA TRUYEN THONG THEO HD SO 070726 CTY TNHH DL VIEN DONG",
+    "uid": 6
+  },
+  {
+    "img": 2,
+    "date": "20/08/2026",
+    "time": "14:43:04",
+    "amount": 22000000,
+    "balance": 33000823,
+    "description": "Toskani thanh toan KOC Navi 2026HW8D794254",
+    "uid": 5
+  },
+  {
+    "img": 1,
+    "date": "20/08/2026",
+    "time": "15:19:17",
+    "amount": -33000000,
+    "balance": 823,
+    "description": "MBBIZ6078343992.086762.rut tien mat nhap quy",
+    "uid": 4
+  },
+  {
+    "img": 1,
+    "date": "21/08/2026",
+    "time": "08:08:35",
+    "amount": 22000000,
+    "balance": 22000823,
+    "description": "0T07AM2608000330 B.O:VT COSMETICS INC",
+    "uid": 3
+  },
+  {
+    "img": 1,
+    "date": "21/08/2026",
+    "time": "09:00:43",
+    "amount": -22000000,
+    "balance": 823,
+    "description": "MBBIZ6078417330.027088.rut tien mat nhap quy",
+    "uid": 2
+  },
+  {
+    "img": 1,
+    "date": "22/08/2026",
+    "time": "09:07:36",
+    "amount": 88000000,
+    "balance": 88000823,
+    "description": "SE TT 100 cho NAVI hd 108 P S YVES POST EVENT KOLS SPREATOUTS",
+    "uid": 1
+  },
+  {
+    "img": 4,
+    "date": "22/08/2026",
+    "time": "09:58:16",
+    "amount": -88000000,
+    "balance": 823,
+    "description": "MBBIZ6078563501.006368.rut tien mat nhap quy",
+    "uid": 16
+  },
+  {
+    "img": 4,
+    "date": "26/08/2026",
+    "time": "09:17:31",
+    "amount": 20000000,
+    "balance": 20000823,
+    "description": "IBVCB.202608265087077890.22 CTY CO PHAN Y&B TT DOT 2 THEO THOA THUAN HOP DONG SO14622026/HDDV/YB (HD 127 - REVIEW SP)",
+    "uid": 15
+  },
+  {
+    "img": 4,
+    "date": "26/08/2026",
+    "time": "09:26:43",
+    "amount": -20000000,
+    "balance": 823,
+    "description": "MBBIZ6079005368.043298.rut tien mat nhap quy",
+    "uid": 14
+  },
+  {
+    "img": 4,
+    "date": "26/08/2026",
+    "time": "14:43:45",
+    "amount": 16500000,
+    "balance": 16500823,
+    "description": "6238BIDVe2i7QiV1 VTT thanh toan dich vu quang cao truyen thong theo hoa don so 65 15062026 CTY TNHH CHUOI CUNG UNG VAN THUONG THONG",
+    "uid": 13
+  },
+  {
+    "img": 5,
+    "date": "26/08/2026",
+    "time": "17:21:01",
+    "amount": -16500000,
+    "balance": 823,
+    "description": "MBBIZ6079106481.091855.rut tien mat nhap quy",
+    "uid": 20
+  },
+  {
+    "img": 5,
+    "date": "27/08/2026",
+    "time": "15:09:29",
+    "amount": 20900000,
+    "balance": 20900823,
+    "description": "CTY DETOX TT HDDV01.08-HKD THUY VI- CHI PHI BOOKING TIKTOK CONG TY TNHH DETOX BLANC",
+    "uid": 19
+  },
+  {
+    "img": 5,
+    "date": "27/08/2026",
+    "time": "15:12:48",
+    "amount": -20900000,
+    "balance": 823,
+    "description": "MBBIZ6079218562.048382.rut tien mat nhap quy",
+    "uid": 18
+  },
+  {
+    "img": 5,
+    "date": "28/08/2026",
+    "time": "11:53:50",
+    "amount": 2776693,
+    "balance": 2777516,
+    "description": "PARTNER.DIRECT_DEBITS_VCB.9PAY.V722DE5B202608285564426170.20260828.TikTok Shop",
+    "uid": 17
+  },
+  {
+    "img": 17,
+    "date": "28/08/2026",
+    "time": "14:23:48",
+    "amount": 19800000,
+    "balance": 22577516,
+    "description": "RUTOP CT TNHH XNK RUTOP VIETNAM",
+    "uid": 68
+  },
+  {
+    "img": 17,
+    "date": "28/08/2026",
+    "time": "14:53:19",
+    "amount": -22577000,
+    "balance": 516,
+    "description": "MBBIZ6079398353.028554.rut tien mat nhap quy",
+    "uid": 67
+  },
+  {
+    "img": 17,
+    "date": "28/08/2026",
+    "time": "15:59:00",
+    "amount": 29150000,
+    "balance": 29150516,
+    "description": "IBVCB.2808260760251003.AnyMind Media inv 128_270826 vat0 tt 100% cho HO KINH DOANH THUY VI CAM0091487 st 29,150,000 job PG_Head&Shoulders_Plus_2026 CAM0091487-PO07709",
+    "uid": 66
+  },
+  {
+    "img": 17,
+    "date": "28/08/2026",
+    "time": "16:39:50",
+    "amount": 6600000,
+    "balance": 35750516,
+    "description": "SAL2026240S037025667014 SE TT CP Booking Navi ToT 07.08",
+    "uid": 65
+  },
+  {
+    "img": 23,
+    "date": "28/08/2026",
+    "time": "16:45:02",
+    "amount": -35750000,
+    "balance": 516,
+    "description": "MBBIZ6079437924.045874.rut tien mat nhap quy",
+    "uid": 92
+  },
+  {
+    "img": 23,
+    "date": "01/09/2026",
+    "time": "10:47:57",
+    "amount": 18700000,
+    "balance": 18700516,
+    "description": "MBBIZ6079816163.CTY TNHH DUOC SI TIEN chuyen tien 100% - HDg so: 1507/2026/HDDV-BOOKING/DST-NAVI",
+    "uid": 91
+  },
+  {
+    "img": 23,
+    "date": "01/09/2026",
+    "time": "12:52:26",
+    "amount": -18700000,
+    "balance": 516,
+    "description": "MBBIZ6079824789.060664.rut tien mat nhap quy",
+    "uid": 90
+  },
+  {
+    "img": 23,
+    "date": "03/09/2026",
+    "time": "17:36:15",
+    "amount": 16500000,
+    "balance": 16500516,
+    "description": "6246IBT1bJM3VBTE.KIEHL S AWO JUL 26 - thuyvinavi1602 - HO KINH DOANH THUY VI (55923) CONG TY TNHH MINDO SOLUTIONS",
+    "uid": 89
+  },
+  {
+    "img": 21,
+    "date": "03/09/2026",
+    "time": "18:15:01",
+    "amount": -16500000,
+    "balance": 516,
+    "description": "MBBIZ6080042075.066253.rut tien mat nhap quy",
+    "uid": 84
+  },
+  {
+    "img": 21,
+    "date": "07/09/2026",
+    "time": "16:31:37",
+    "amount": 21000000,
+    "balance": 21000516,
+    "description": "Co Mem tt booking KOL HKD Thuy Vi CT CP MY PHAM THIEN NHIEN CO MEM",
+    "uid": 83
+  },
+  {
+    "img": 21,
+    "date": "07/09/2026",
+    "time": "17:19:44",
+    "amount": -21000000,
+    "balance": 516,
+    "description": "MBBIZ6080596326.046884.rut tien mat nhap quy",
+    "uid": 82
+  },
+  {
+    "img": 21,
+    "date": "10/09/2026",
+    "time": "11:08:38",
+    "amount": 22550000,
+    "balance": 22550516,
+    "description": "IBBIZ6080997588.Z&A Media thanh toan HO KINH DOANH THUY VI Cellology",
+    "uid": 81
+  },
+  {
+    "img": 20,
+    "date": "10/09/2026",
+    "time": "11:11:41",
+    "amount": 20900000,
+    "balance": 43450516,
+    "description": "IBBIZ6080998050.Z&A Media thanh toan HO KINH DOANH THUY VI NeerG",
+    "uid": 80
+  },
+  {
+    "img": 20,
+    "date": "10/09/2026",
+    "time": "11:29:34",
+    "amount": -43450000,
+    "balance": 516,
+    "description": "MBBIZ6081004328.049098.rut tien mat nhap quy",
+    "uid": 79
+  },
+  {
+    "img": 20,
+    "date": "21/09/2026",
+    "time": "09:48:31",
+    "amount": 22000000,
+    "balance": 22000516,
+    "description": "SAL2026264S037025667002 SE TT Thanh toan 100 cho KOL Navi hd 137 AHC KOL BOOKING NEEDLE SHOT CAMPAIGN",
+    "uid": 78
+  },
+  {
+    "img": 20,
+    "date": "21/09/2026",
+    "time": "12:38:47",
+    "amount": -22000000,
+    "balance": 516,
+    "description": "MBBIZ6082436767.097624.rut tien mat nhap quy",
+    "uid": 77
+  },
+  {
+    "img": 18,
+    "date": "23/09/2026",
+    "time": "07:40:22",
+    "amount": 22000000,
+    "balance": 22000516,
+    "description": "0T07AM2609000443 B.O:VT COSMETICS INC",
+    "uid": 72
+  },
+  {
+    "img": 18,
+    "date": "23/09/2026",
+    "time": "10:27:06",
+    "amount": -22000000,
+    "balance": 516,
+    "description": "MBBIZ6082700192.364486.rut tien mat nhap quy",
+    "uid": 71
+  },
+  {
+    "img": 18,
+    "date": "26/09/2026",
+    "time": "19:22:04",
+    "amount": 19800000,
+    "balance": 19800516,
+    "description": "IBBIZ6083180987.CONG TY TNHH ASTRA MEDIA chuyen tien thanh toan 100 phan tram so tien trong hop dong du an XSOMM 202609260008",
+    "uid": 70
+  },
+  {
+    "img": 18,
+    "date": "26/09/2026",
+    "time": "19:29:43",
+    "amount": -19800000,
+    "balance": 516,
+    "description": "MBBIZ6083184315.088412.rut tien mat nhap quy",
+    "uid": 69
+  },
+  {
+    "img": 19,
+    "date": "29/09/2026",
+    "time": "17:46:03",
+    "amount": 22000000,
+    "balance": 22000516,
+    "description": "IBBIZ6083543666.CONG TY TNHH CHICMAX VIET NAM chuyen tien phi KOL cua HO KINH DOANH THUY VI -hoa don 146 -HWDWYWZZFKSPD-20260925000450",
+    "uid": 76
+  },
+  {
+    "img": 19,
+    "date": "29/09/2026",
+    "time": "17:51:06",
+    "amount": -22000000,
+    "balance": 516,
+    "description": "MBBIZ.6083544746.6272BFTVGL1UKNRJ.rut tien mat nhap quy",
+    "uid": 75
+  },
+  {
+    "img": 19,
+    "date": "30/09/2026",
+    "time": "08:45:26",
+    "amount": 22000000,
+    "balance": 22000516,
+    "description": "SHGD:10000034.DD:260930.BO:CONG TY CO PHAN METUB VIET NAM.Remark:METUB TT 100PT HD SO HD.3364.2026.METUB 3.2.2026.54 202609110096 ChargeDetails OUR",
+    "uid": 74
+  },
+  {
+    "img": 19,
+    "date": "30/09/2026",
+    "time": "10:21:38",
+    "amount": -22000000,
+    "balance": 516,
+    "description": "MBBIZ.6083608998.6273BFTVGL1EFX3V.rut tien mat nhap quy",
+    "uid": 73
+  },
+  {
+    "img": 22,
+    "date": "30/09/2026",
+    "time": "12:00:30",
+    "amount": 8829940,
+    "balance": 8830456,
+    "description": "PARTNER.DIRECT_DEBITS_VCB.9PAY.053GQVRK202609305844759010.20260930.TikTok Shop",
+    "uid": 88
+  },
+  {
+    "img": 22,
+    "date": "30/09/2026",
+    "time": "12:02:21",
+    "amount": -8830000,
+    "balance": 456,
+    "description": "MBBIZ.6083636880.6273BFTVGL1ESGR5.rut tien mat nhap quy",
+    "uid": 87
+  },
+  {
+    "img": 22,
+    "date": "30/09/2026",
+    "time": "15:00:27",
+    "amount": 22000000,
+    "balance": 22000456,
+    "description": "SHGD:10002428.DD:260930.BO:CONG TY TNHH WALDENCAST VIET NAM.Remark:Waldencast thanh toan chi phi booking KOL Thuyvi Navi Livestream Shopee 8/9/2026 / Inv 141",
+    "uid": 86
+  },
+  {
+    "img": 22,
+    "date": "30/09/2026",
+    "time": "15:33:40",
+    "amount": -22000000,
+    "balance": 456,
+    "description": "MBBIZ.6083691091.6273BFTVGL1GZBY6.xuat tien mat nhap quy",
+    "uid": 85
+  },
+  {
+    "img": 24,
+    "date": "30/09/2026",
+    "time": "17:06:52",
+    "amount": 20500000,
+    "balance": 20500456,
+    "description": "IBVCB.202609305087006466.5.CTY CO PHAN Y&B TT DOT 3 PHAN CON LAI CHI PHI THEO THOA THUAN HOP DONG SO14622026/HDDV/YB (HD 145- REVIEW SP)",
+    "uid": 96
+  },
+  {
+    "img": 24,
+    "date": "30/09/2026",
+    "time": "17:27:53",
+    "amount": -20500000,
+    "balance": 456,
+    "description": "MBBIZ.6083732183.6273BFTVGL1GIJYV.rut tien mat nhap quy",
+    "uid": 95
+  },
+  {
+    "img": 24,
+    "date": "30/09/2026",
+    "time": "23:32:11",
+    "amount": 18700000,
+    "balance": 18700456,
+    "description": "6273IBT1bJI1RMYG.OAP - Gloss Hair KOC Hub Sep 26 - SCOPE 2 - CYCLE 3009 - PO4001616462 CONG TY TNHH MINDO SOLUTIONS",
+    "uid": 94
+  },
+  {
+    "img": 24,
+    "date": "30/09/2026",
+    "time": "23:41:03",
+    "amount": -18700000,
+    "balance": 456,
+    "description": "MBBIZ.6083772488.6273BFTVGL1KPVDB.rut tien mat nhap quy",
+    "uid": 93
+  }
+]

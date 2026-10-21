@@ -1,0 +1,28 @@
+{
+  "rows": 311,
+  "counts": {
+    "PK": 170,
+    "BN": 53,
+    "BC": 62,
+    "PC": 26
+  },
+  "total": 4773784897,
+  "newObjects": 47,
+  "newTaxCodes": 45,
+  "newManagementCodes": 2,
+  "first": 371,
+  "last": 681,
+  "bankRows": 115,
+  "bankBooked": 115,
+  "unbooked": [],
+  "unbookedTotal": 0,
+  "debtTotals": [
+    107800000,
+    32750000,
+    1711028639,
+    1478103856,
+    458974783,
+    151000000
+  ],
+  "pcTotal": 71507201
+}

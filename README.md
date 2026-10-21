@@ -8,7 +8,7 @@ Dự án này giúp tự động hóa quá trình chuyển hóa dữ liệu thô
   - `<Kỳ_kế_toán>/` (VD: `2026.Q1/`): Dữ liệu thô và kết quả xử lý của kỳ đó
     - `last_quarter_data/`: Số dư và chứng từ kỳ trước
 - **`.agents/skills/`**: Hệ thống 7 skills AI để tự động hóa từng bước xử lý
-- **`scripts/`**: Script Node.js tiện ích
+- **`.agents/skills/<skill>/scripts/`**: Các tiện ích chuyển đổi và xử lý định dạng file của từng skill
 
 ## 2. Cách sử dụng (qua AI Agent)
 
@@ -30,6 +30,8 @@ Dự án sử dụng AI Agent với hệ thống skills để tự động hóa.
 1. **Verify**: Kiểm tra file đầu vào (`1.danh_sach_hoa_don.md`, `2.sao_ke.md`, `last_quarter_data/`)
 2. **Convert**: Chuyển đổi file Excel sang Markdown nếu cần
 3. **Process**: Đọc quy trình `0.quy_trinh_tao_result.md`, xử lý hóa đơn & sao kê, sinh kết quả
+
+Phần **Process** do Agent trực tiếp đọc dữ liệu và suy luận từng bút toán theo quy trình, danh mục và chứng từ riêng của khách hàng. Không chạy `scripts/process_accounting.js`, `scripts/process.py` hoặc viết script thay thế để tự quyết định hạch toán. Script chỉ hỗ trợ thao tác cơ học như chuyển đổi Excel, tính toán, kiểm tra định dạng và ghi/xuất các dòng đã được Agent xác định. Sau khi tạo kết quả, pipeline tự động kiểm tra chéo trước khi trình duyệt; các nghiệp vụ chưa đủ căn cứ được liệt kê rõ để bổ sung thông tin.
 
 ### Các luật xử lý nổi bật:
 - Tự động tạo Phiếu Kế Toán (PK) cho từng hóa đơn mua vào/bán ra
