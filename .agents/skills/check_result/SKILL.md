@@ -1,235 +1,80 @@
 ---
 name: check_result
-description: Validate and audit the generated 0.result.md file after running process_accounting. Use this whenever the user wants to check, validate, audit, verify, or review results — even if they say "kiểm tra kết quả", "check result", "validate output", "audit data", "review accounting", or "is the result correct?". This is the quality assurance gate after every accounting run.
+description: Audit accounting results against customer templates, source evidence and debt allocations, using SQL for enterprises and customer-specific files for household businesses; report errors, warnings and incomplete checks without modifying entries.
 ---
 
-# Instructions for check_result
+# Kiểm tra kết quả hạch toán
 
-This skill performs a comprehensive audit of the `0.result.md` file produced by `process_accounting`. Run this immediately after every processing run to catch errors before the data goes to the accountant.
+Chỉ đọc kết quả, ghi báo cáo; không sửa bút toán hoặc ghi SQL. Dùng sau process hoặc khi kiểm tra kết quả lịch sử.
 
-## Input Requirements
+## Chọn đúng bộ và nguồn
 
-- `src/clients/<MST>/<Quarter>/0.result.md` (or `0.result_N.md`) — the file to validate
-- `src/clients/<MST>/<Quarter>/1.danh_sach_hoa_don.md` — invoice source data
-- `src/clients/<MST>/<Quarter>/2.sao_ke.md` — bank statement source data
-- `src/clients/<MST>/docs/2.danh_muc_tai_khoan.md` — chart of accounts
-- `src/clients/<MST>/docs/3.danh_muc_doi_tuong.md` — vendor/customer directory
-- `src/clients/<MST>/<Quarter>/0.danh_muc_doi_tuong.md` — newly detected MSTs (if exists)
-- `src/clients/<MST>/<Quarter>/last_quarter_data/` — prior quarter data for continuity checks
-- `src/clients/<MST>/<Quarter>/0.doi_chieu_cong_no.md` (or version matching the result) — opening debts, payment allocations and closing debt reconciliation
+- Tra MST trong `docs/3tsoft-databases.md`; đọc `src/clients/AGENTS.md`, quy trình và template khách hàng. Trạng thái đã dừng không chặn audit lịch sử; không suy loại từ độ dài MST. Chưa rõ loại thì xác minh trước phần phụ thuộc loại.
+- Kiểm tra file được chỉ định hoặc file process vừa sinh; mặc định `<MST>/<Quarter>/result/0.result.md`. Legacy có thể ở gốc quý/có hậu tố; nhiều bộ chưa rõ thì xác minh, không chọn chỉ theo tên/mtime, không tự di chuyển/xóa trong audit.
+- Đọc hóa đơn, sao kê, bảng lương khi có, tham chiếu, danh mục đề nghị, công nợ/ghi chú/phân bổ cùng bộ. Kết quả cũ không thay nguồn.
+- Doanh nghiệp đọc `docs/quy-trinh-doanh-nghiep.md`, module 4–11; `connect-3tsoft` chỉ SELECT đúng database. Kiểm tra đơn vị/schema/trạng thái ghi sổ/ngày cuối, danh mục và số dư/lịch sử tại cutoff, chống trùng SQL. Không bắt export hoặc `last_quarter_data/`; SQL chưa đọc được thì ghi chưa xác minh, không dùng export cũ/0 thay hiện hành.
+- HKD dùng danh mục file và dữ liệu kỳ trước theo quy trình riêng. Ngoại lệ doanh nghiệp ưu tiên chỉ dẫn cũ mâu thuẫn; quy tắc đặc thù phải có phạm vi/căn cứ, không lấy một khách áp cho tất cả.
 
-## Validation Steps
+## 1. Cấu trúc và trường dữ liệu
 
-### Phase 1: Structure Validation
+- Lấy số cột/thứ tự/tên, tài khoản tách/gộp, kiểu và trường bắt buộc từ template khách hàng. Bộ A–N thông dụng tách Nợ/Có và không có STT; bỏ cấu trúc cũ thêm STT/gộp tài khoản. Legacy khác template thì báo khác biệt/khả năng nhập, không tự đổi file.
+- Kiểm tra từng dòng đủ cột, không dòng trắng xen kẽ; ngày hợp lệ/đúng kỳ, ngoại lệ phải có căn cứ.
+- Mã chứng từ theo template/mapping đã xác nhận, kể cả PT khi hợp lệ. Không giới hạn chung PK/BN/BC/PC hoặc tự đổi `Ma_Ct` SQL sang mã import.
+- Số chứng từ theo quy tắc khách/template/sổ thực tế: định dạng, phạm vi duy nhất, nhóm dòng cùng chứng từ, reset theo kỳ/loại hay tiếp nối. Chỉ bắt số nguyên liên tục MAX_PRIOR+1 khi quy trình quy định. Nhiều dòng cùng chứng từ không mặc nhiên là trùng; chống trùng định danh nguồn và nghiệp vụ.
+- Tài khoản/đối tượng/bộ phận/công trình phải hợp danh mục đúng nhánh và yêu cầu khách. MST không mặc nhiên là mã nội bộ. Mã mới cần mapping có căn cứ; chưa chấp nhận phải ghi giới hạn nhập liệu.
+- Tiền tệ/tỷ giá/nguyên tệ/thành tiền/dấu theo chứng từ và template; VND tỷ giá 1 thì nguyên tệ bằng thành tiền. Không cấm mọi số âm nếu điều chỉnh/reversal hợp lệ, không mặc định mọi khách chỉ dùng VND.
+- Diễn giải theo giới hạn/trường nhập và quy trình khách. Doanh nghiệp theo file 8 và quyết định đã chốt, không tự rút gọn/giữ nguyên hóa đơn để sửa lỗi. HKD giữ nguyên đầu ra ≤200 ký tự, vượt thì chỉnh tối thiểu có căn cứ trừ yêu cầu hiện hành khác. Vi phạm trường nhập bắt buộc là ERROR; chưa xác nhận mapping là chưa hoàn thành kiểm tra.
 
-Parse the Markdown table from `0.result.md` and verify:
+## 2. Độ phủ và nghiệp vụ
 
-1. **Column Count & Order**: Must have exactly 14 columns in this order:
-   `STT | MÃ CHỨNG TỪ | NGÀY GHI SỔ | SỐ CHỨNG TỪ | BỘ PHẬN | HỢP ĐỒNG | MÃ SẢN PHẨM CÔNG TRÌNH | MÃ ĐỐI TƯỢNG | DIỄN GIẢI | TÀI KHOẢN (NỢ/CÓ) | MÃ TIỀN TỆ | TỶ GIÁ | NGUYÊN TỆ | THÀNH TIỀN`
+### Hóa đơn
 
-2. **No Empty Rows**: No completely blank rows should exist between data rows.
+- Đối chiếu từng hóa đơn theo đối tác, ký hiệu/số/ngày, trạng thái, kỳ, tham chiếu; không chỉ ghép bằng tiền. Phân loại đã lập/đã có SQL/ngoài kỳ/hủy-thay thế/bàn giao/chờ, đối chiếu lượng/tiền và nêu thiếu sót chưa giải thích.
+- Kiểm tra tài khoản, VAT/giảm trừ, tổng tiền, ngày và đối tượng theo khách; một hóa đơn có thể nhiều dòng. Không bắt mọi mua vào có một PK bằng tổng sau thuế, không cố định bán ra là 131/5118 và 333821/131.
+- Gốc bị thay thế không ghi trùng bản thay thế; gốc ghi kỳ trước cần bằng chứng điều chỉnh. Chưa rõ liên kết thì giữ chờ, không đoán từ tiền/nội dung.
 
-### Phase 2: Field-Level Validation (every row, every cell)
+### Sao kê và bàn giao
 
-For each data row, check:
+- Đối chiếu từng tài khoản ngân hàng, tiền vào/ra và dòng kết quả. Một giao dịch có thể nhiều dòng phân bổ, kiểm tổng không bỏ/nhân đôi. Giao dịch đã có SQL cần định danh/bằng chứng, không tái hạch toán.
+- Doanh nghiệp: bảo hiểm chờ C12 và chi không hóa đơn có trong ghi chú bàn giao, không ép sinh BN/BC. Kiểm ngày, tiền, mã giao dịch, nguyên văn. Tổng sao kê phải được giải thích bởi đã lập + đã có SQL + bàn giao + chờ, các nhóm không chồng lấn.
+- Bàn giao có dấu vết không phải lỗi bỏ sót bút toán agent nhưng toàn kỳ còn mở khi chưa xác nhận xử lý. Khoản chờ không được gán tài khoản/đối tượng để báo cân.
+- PT 1111/131 cần chứng từ thực thu, không suy từ hóa đơn hoặc thiếu tiền vào ngân hàng; không thu trùng hóa đơn đã trả qua ngân hàng.
+- Lương/thuế/bảo hiểm/TikTok/hoàn/chuyển nội bộ theo chứng từ và quy trình riêng; không hard-code đối tượng `0000000001/2/3`, mức 690.300 hoặc định khoản chỉ từ từ khóa.
 
-| # | Check | Rule | Severity |
-|:---:|:---|:---|:---:|
-| 2.1 | `MÃ CHỨNG TỪ` | Must be one of: `PK`, `BN`, `BC`, `PC` | ❌ ERROR |
-| 2.2 | `NGÀY GHI SỔ` | Must match `DD/MM/YYYY` format. Must fall within the quarter's date range. | ❌ ERROR |
-| 2.3 | `SỐ CHỨNG TỪ` | Must be a positive integer. No duplicates across all rows. Must be sequential (no gaps > 1 unless justified). | ❌ ERROR |
-| 2.4 | `MÃ ĐỐI TƯỢNG` | Must exist in either `docs/3.danh_muc_doi_tuong.md` OR `0.danh_muc_doi_tuong.md` (build a combined lookup set). | ❌ ERROR |
-| 2.5 | `DIỄN GIẢI` | Must NOT be empty. Must NOT contain `\n` or `<br>` (should already be collapsed). Must be ≤ 200 characters. | ⚠️ WARN |
-| 2.6 | `TÀI KHOẢN (NỢ/CÓ)` | Must match pattern `XXXX / XXXX` (account codes separated by ` / `). Both debit and credit account codes must exist in `docs/2.danh_muc_tai_khoan.md`. | ❌ ERROR |
-| 2.7 | `MÃ TIỀN TỆ` | Must be `VND` for all rows. | ⚠️ WARN |
-| 2.8 | `TỶ GIÁ` | Must be `1` for all rows (since currency is VND). | ⚠️ WARN |
-| 2.9 | `NGUYÊN TỆ` | Must be a positive number. Must equal `THÀNH TIỀN` (since VND, tỷ giá = 1). | ❌ ERROR |
-| 2.10 | `THÀNH TIỀN` | Must be a positive number (> 0). | ❌ ERROR |
+### Ngân hàng và cân đối
 
-### Phase 3: Accounting Logic Validation
+- Kiểm running balance riêng từng tài khoản/tiền tệ/khoảng liên tục. Xác định chiều thời gian, thứ tự cùng ngày, đầu/cuối kỳ; không nối hai tài khoản hoặc đoạn thiếu nguồn. STT reset không tự ngắt chuỗi.
+- Nhận diện cột số dư/balance và thu-chi hoặc tiền có dấu; tiền ròng = vào - ra theo góc nhìn sao kê. Parse phân cách theo nguồn, giữ thập phân; chỉ coi ô thu/chi trống là 0 khi định dạng xác nhận, không biến số dư trống/không đọc được thành 0.
+- Theo thứ tự tăng: dư sau = dư trước + tiền vào - tiền ra. Có dư đầu thì kiểm cả dòng đầu, thiếu thì ghi dòng đầu chưa kiểm. Dung sai có căn cứ, mặc định ±1 VND cho nguồn VND; sai lệch lặp lại cần giải thích.
+- Thiếu cột số dư thì ghi phép kiểm không thực hiện được. Khớp running balance chỉ chứng minh nhất quán nội bộ phần có nguồn, không chứng minh đủ mọi giao dịch/tài khoản.
+- Tổng Nợ=Có là kiểm cấu trúc, đặc biệt mỗi dòng đã có cả Nợ/Có cùng tiền. Kiểm thêm phát sinh, số dư, độ phủ; không ép Nợ từng tài khoản bằng Có của chính tài khoản đó.
 
-3.1 **Invoice Coverage (Mua vào → PK)**: 
-   - For every "Mua vào" invoice in `1.danh_sach_hoa_don.md`, there must be a corresponding `PK` row in the result where:
-     - `MÃ ĐỐI TƯỢNG` matches the invoice's `Mã số thuế`
-     - `THÀNH TIỀN` matches the invoice's `Sau thuế` (total after tax)
-     - `NGÀY GHI SỔ` matches the invoice's `Thời gian lập`
-   - Report: count of matched vs unmatched invoices.
+## 3. Công nợ và phân bổ bắt buộc
 
-3.2 **Invoice Coverage (Bán ra → PK)**:
-   - For every "Bán ra" invoice, there must be:
-     - A revenue entry: `131 / 5118` with `THÀNH TIỀN` = `Trước thuế`
-     - If `Giảm trước thuế` > 0: an adjustment entry `333821 / 131` with `THÀNH TIỀN` = `Giảm trước thuế`
-   - Report matched vs unmatched.
+Đọc [hướng dẫn công nợ](../process_accounting/references/cong_no_dau_ky.md); doanh nghiệp dùng SQL tương đương báo cáo được nhắc, HKD dùng nguồn file.
 
-3.3 **Bank Statement Coverage**:
-   - For every transaction in `2.sao_ke.md`:
-     - Positive amounts (tiền vào) → should have a `BC` row
-     - Negative amounts (tiền ra) → should have a `BN` row
-   - The `THÀNH TIỀN` should match `|Số tiền|` from the bank statement.
-   - Report: count of matched vs unmatched bank transactions.
+- Xác minh cutoff từ ngày báo cáo/sổ, không từ tên thư mục; thiếu dư là chưa xác định, không phải 0. Tách dư Nợ/Có theo đối tượng/tài khoản/tiền tệ; không bù giữa đối tác hoặc cộng trùng mẹ/con.
+- Kiểm từng hóa đơn còn nợ: gốc, điều chỉnh, thanh toán đã phân bổ, dư còn lại. Không dùng một hóa đơn giả thay tổng dư. Xét số lặp theo năm/ký hiệu, trả gộp/một phần.
+- Phân bổ cần chứng từ thanh toán, hóa đơn cụ thể, dư trước/sau; bằng tổng dư/tiền hóa đơn chưa chứng minh phân bổ. Không phân bổ trùng/vượt dư chưa giải thích; ứng trước/cọc/hoàn/chưa phân bổ tách riêng.
+- Thu nợ cũ giảm đúng công nợ, không sinh lại doanh thu. Biết đối tác chưa biết hóa đơn thì giữ chưa phân bổ, không đánh dấu hóa đơn đã trả dù tổng đối tượng khớp.
+- Dư thuần đầu + Nợ - Có = dư thuần cuối cùng cutoff/phạm vi; đối chiếu chi tiết và tổng kiểm soát. Sổ phải thu không chứng minh dư phải trả.
+- Legacy thiếu báo cáo thì tái dựng phép kiểm từ nguồn nếu có và ghi giới hạn. Thiếu bằng chứng trọng yếu là đối chiếu chưa hoàn thành, không PASS đầy đủ.
 
-3.4 **Debit/Credit Balance**:
-   - For each row, the debit side (first account code) and credit side (second account code) represent opposite sides.
-   - Sum all amounts grouped by debit account vs credit account — they should balance within the quarter.
+## 4. Đối tượng mới
 
-3.5 **SỐ CHỨNG TỪ Continuity**:
-   - Read `last_quarter_data/1.bang_ke_chung_tu.md` (or scan all `.md` files in `last_quarter_data/`).
-   - Find the maximum `SỐ CHỨNG TỪ` from prior periods.
-   - The first `SỐ CHỨNG TỪ` in the current result must be `MAX_PRIOR + 1`.
-   - All subsequent numbers must increment by exactly 1.
+Đối chiếu danh mục hiện hành và đề nghị cùng bộ: mã, MST, tên, nhóm/loại theo khách. Tránh tạo trùng đối tượng đã có. Mọi mã trong kết quả cần căn cứ, không chỉ tên trong danh sách tự sinh. Đề nghị chưa dùng có thể giữ khi ghi rõ lý do/chờ; mã chưa xác nhận ảnh hưởng nhập phải nêu rõ.
 
-3.6 **Special Pattern Checks**:
-   - **Insurance payments**: If `MÃ ĐỐI TƯỢNG` = `0000000003`, the amount should be a multiple of `690,300`.
-   - **Internal transfers**: If `DIỄN GIẢI` contains "Rút tiền" or "nộp tiền", `MÃ ĐỐI TƯỢNG` should be the company's own MST.
-   - **TikTok revenue**: If `MÃ ĐỐI TƯỢNG` = `0000000001`, should use `131 / 5118` or `333821 / 131` for adjustments.
-   - **Refund entries**: If `DIỄN GIẢI` contains "chuyển nhầm" or "hoàn", should have matching BC+BN pair with `0000000002`.
+## Báo cáo và chuyển điều phối
 
-3.7 **Bank Statement Running Balance Validation**:
-   - **Purpose**: Verify that the running balance (số dư) column in `2.sao_ke.md` is mathematically consistent — every transaction's stated balance must equal the previous balance plus the current transaction's net amount. This catches missing transactions, incorrect amounts, or data entry errors in the source bank statement.
-   
-   - **Step 1 — Detect balance column**: Parse the header row of `2.sao_ke.md`. Search each column header (case-insensitive, ignoring `<br>` HTML tags) for the keywords `số dư` or `balance`. This handles ALL known variants:
-     - `Số dư`, `Số dư (VND)`, `Số dư (Balance)`
-     - `Số dư cuối`, `Số dư cuối (VND)`, `Số dư cuối/Running balance`
-     - `Số dư sau giao dịch (VND)`, `Số dư sau GD (VND)`, `Số dư sau (VND)`
-     - `Số dư hiện tại (VND)`
-     - `Số dư/Balance`
-   
-   - **Step 2 — Detect amount column(s)**: Determine how the transaction amount is represented:
-     - **Case A — Separate Debit/Credit columns**: If column headers contain `nợ`/`debit` (debit) and `có`/`credit` (credit), the net amount = `credit_value - debit_value`. Empty cells are treated as 0.
-     - **Case B — Single signed amount column**: If no separate debit/credit columns exist, look for a column with `số tiền`, `tiền`, `giao dịch`, or `amount` in its header. The amount may already be signed (negative = outflow/debit, positive = inflow/credit).
-   
-   - **Step 3 — Parse numeric values**:
-     - Remove thousands separators (commas and/or dots depending on format — Vietnamese format uses `.` as thousands separator and `,` as decimal, but many files use comma as thousands separator).
-     - Convert cleaned strings to numbers.
-     - Handle empty/blank cells as `0`.
-   
-   - **Step 4 — Verify running balance**:
-     - Skip row 1 (no prior balance to compare against).
-     - For each row `i` from 2 to N:
-       ```
-       expected_balance[i] = stated_balance[i-1] + net_amount[i]
-       ```
-       Where:
-       - `stated_balance[i]` = the balance column value at row i
-       - `stated_balance[i-1]` = the balance column value at row i-1
-       - `net_amount[i]` = 
-         - In debit/credit format: `credit[i] - debit[i]`
-         - In single signed amount format: `amount[i]` (already signed)
-     - Allow a tolerance of ±1 VND for rounding differences.
-     - **Important:** The balance flows continuously even if the `STT` column resets mid-quarter. Always use the previous row's stated balance, NOT the previous STT's row.
-   
-   - **Step 5 — Report findings**:
-     - If **no balance column** is detected: `ℹ️ Skipped — no balance column found in bank statement`
-     - If balance column **exists and all consistent**: `✅ All N-1 running balances verified (N rows checked)`
-     - If **discrepancies found**: list each discrepancy with:
-       - Row number
-       - Transaction date/description (for context)
-       - Stated balance
-       - Expected balance
-       - Difference
-       - Transaction amount
+Ghi `result/0.check_result.md` cho bộ chuẩn. Với legacy chỉ định, ghi rõ file/bộ nguồn đang kiểm, không gắn nhầm báo cáo cho bộ khác. Báo cáo gồm:
 
-3.8 **Opening Debts and Payment Allocation (Required)**:
-   - Read [Công nợ đầu kỳ và phân bổ thanh toán](../process_accounting/references/cong_no_dau_ky.md). Verify the opening cutoff from actual report dates, not the directory name; confirm the balances by counterparty and their source references. Do not assume missing opening balances are zero.
-   - Verify that every receipt identified as settlement of prior-period debt reduces 131 for the correct counterparty without generating revenue again. The absence of a matching current-quarter invoice is not an error when prior-period debt and payer identity support the settlement.
-   - Cross-check payment allocations against bank entries and remaining debt. Include partial/grouped payments and explicit payment references; reject duplicate allocations and unexplained over-allocation to old debts. Distinguish advances, deposits, refunds and unassigned receipts using source evidence.
-   - Verify the list of individual invoices comprising each opening counterparty balance: original receivable, adjustments, prior allocated receipts and remaining debt at cutoff. Reconcile explained invoice balances and separately listed advances/unallocated items with the counterparty balance. Do not accept a single synthetic invoice representing an aggregate balance.
-   - For each allocated receipt, verify the specific invoice identifiers, payment evidence, available balance before receipt and remaining balance afterward. Check repeated invoice numbers across years/series, multiple equal-amount invoices, partial receipts and grouped payments. Neither total-balance equality nor invoice-amount equality alone proves allocation. Counterparty-level receipts with unresolved invoice allocation must remain visibly unallocated and must not mark any particular invoice as paid; report invoice-level reconciliation as incomplete even when counterparty control totals agree.
-   - For each counterparty/account/currency, verify opening net balance + current-period debit movements - current-period credit movements = closing net balance; review debit/credit balances separately and reconcile control totals at the same cutoff. Do not offset unrelated counterparties or double-count parent/child accounts.
-   - Check that no PT collects an invoice already settled through a bank receipt allocated to old debt. Flag receipts posted to the company's own object on 131 unless source evidence justifies that object.
-   - Report opening debt source, verified allocations, closing debt, and unresolved transactions. Missing/insufficient source evidence must be reported as an incomplete reconciliation, not PASS. For legacy results without a reconciliation file, reconstruct the check from available source documents where possible and record the limitation.
+- MST, loại, kỳ, file kiểm, thời điểm; nguồn SQL/file, cutoff, template/mapping.
+- Số dòng/số chứng từ theo loại (PT nếu có), tổng Nợ/Có, lượng hóa đơn và giao dịch đã kiểm.
+- Kết quả cấu trúc, trường, độ phủ, chống trùng, ngân hàng, công nợ/phân bổ và đối tượng mới.
+- Từng lỗi/cảnh báo/kiểm tra chưa thực hiện: dòng kết quả, nguồn/SQL, tiền, căn cứ; phân biệt lỗi nguồn/lỗi agent/quyết định còn thiếu.
+- Lượng/tiền theo nhóm đã lập/đã có SQL/loại trừ có lý do/bàn giao/chờ; chênh chưa giải thích, tình trạng đối chiếu hóa đơn/công nợ.
+- Kết luận riêng chất lượng phần đã lập (`PASS`, `PASS WITH WARNINGS`, `FAIL WITH ERRORS`, `INCOMPLETE`), sẵn sàng nhập và hoàn tất toàn kỳ. Thiếu kiểm tra trọng yếu dùng INCOMPLETE; có lỗi xác định vẫn FAIL kèm phần chưa kiểm. Không có lỗi không tự nghĩa đủ bằng chứng.
 
-### Phase 4: New MST Detection Check
+ERROR là sai dữ liệu/định khoản/định dạng hoặc bỏ sót đã xác định cần sửa; WARN cần xem nhưng chưa chứng minh sai; thiếu căn cứ trọng yếu là chưa hoàn thành kiểm tra. Nêu phát hiện chính trong chat và link báo cáo đầy đủ.
 
-4.1 If `0.danh_muc_doi_tuong.md` exists in the quarter folder:
-   - Verify EVERY `MÃ ĐỐI TƯỢNG` in `0.result.md` that is NOT in `docs/3.danh_muc_doi_tuong.md` IS listed in `0.danh_muc_doi_tuong.md`.
-   - Verify no MST listed in `0.danh_muc_doi_tuong.md` is orphaned (not used in any result row).
-   
-4.2 If `0.danh_muc_doi_tuong.md` does NOT exist:
-   - List all MSTs in `0.result.md` that are missing from `docs/3.danh_muc_doi_tuong.md`.
-   - Flag as ⚠️ WARN: "These MSTs are not in the directory — 0.danh_muc_doi_tuong.md should have been generated."
-
-## Output Report Format
-
-Present results in a structured Markdown report:
-
-```markdown
-# Kết quả Kiểm tra 0.result.md
-
-**Khách hàng:** <MST>
-**Kỳ:** <Quarter>
-**File kiểm tra:** <filename>
-**Thời gian:** <timestamp>
-
-## Tổng quan
-| Chỉ tiêu | Giá trị |
-|:---|:---|
-| Tổng số dòng | X |
-| PK (Phiếu kế toán) | X |
-| BN (Báo nợ) | X |
-| BC (Báo có) | X |
-| PC (Phiếu chi) | X |
-| Tổng Nợ | X |
-| Tổng Có | X |
-
-## Phase 1: Structure ✅/❌
-- Column count: ✅ (14 columns)
-- Column order: ✅
-- No empty rows: ✅
-
-## Phase 2: Field Validation
-| # | Check | Status | Details |
-|:---:|:---|:---:|:---|
-| 2.1 | Mã chứng từ | ✅ | All valid |
-| 2.2 | Ngày ghi sổ | ❌ | Row 15: invalid date "32/05/2026" |
-| ... | ... | ... | ... |
-
-**Error count:** X | **Warning count:** Y
-
-## Phase 3: Accounting Logic
-| # | Check | Status | Details |
-|:---:|:---|:---:|:---|
-| 3.1 | Invoice coverage (Mua vào) | ✅ | 27/27 matched |
-| 3.2 | Invoice coverage (Bán ra) | ✅ | 3/3 matched |
-| 3.3 | Bank statement coverage | ⚠️ | 2 unmatched: row 34, 35 |
-| 3.4 | Debit/Credit balance | ✅ | Balanced |
-| 3.5 | Số chứng từ continuity | ✅ | Starts at 252 (max prior=251) |
-| 3.6 | Special patterns | ✅ | All patterns valid |
-| 3.7 | Bank statement running balance | ✅ | 33/33 running balances verified (34 rows checked) |
-| 3.8 | Opening/closing debts and payment allocation | <status> | <cutoff, counterparty balances, verified allocations, unresolved items> |
-
-## Phase 4: New MST Detection
-| # | Check | Status | Details |
-|:---:|:---|:---:|:---|
-| 4.1 | MST coverage | ⚠️ | 1 MST in result not in directory: 0318100126 |
-| 4.2 | Orphan MSTs | ✅ | None |
-
-## Tổng kết
-- ❌ Errors: X (must fix before import)
-- ⚠️ Warnings: Y (review recommended)
-- ✅ Passed: Z
-
-**Kết luận:** <PASS / FAIL WITH ERRORS / PASS WITH WARNINGS>
-```
-
-## Important Rules
-
-- **Never modify** the `0.result.md` file — this skill is read-only validation.
-- If errors are found, tell the user exactly which rows and what's wrong so they can fix the source data or the processing logic.
-- Distinguish clearly between ❌ ERROR (data will fail import) and ⚠️ WARN (should review but may still import).
-- For any cross-reference check, if source data files are missing, skip that check and note it as "⚠️ Skipped — source file missing".
-
-## Bank Statement Running Balance — Practical Notes
-
-### Why this check matters
-A running balance inconsistency in the bank statement means either:
-1. A transaction is missing from the statement (the bank didn't record it)
-2. An amount was entered incorrectly
-3. The balance column itself has a data entry error
-
-Any of these would cause the accounting entries generated from that statement to be wrong. Catching this early avoids cascading errors.
-
-### How to read the results
-- If the check is `ℹ️ Skipped`, it simply means the bank statement doesn't have a balance column — no action needed.
-- If `❌` discrepancies are found, examine the specific rows flagged. A small, consistent rounding difference (1-2 VND) across many rows is normal (bank rounding). A large spike at one row suggests a real error.
-- If ALL balances are `✅` consistent, you can trust that the bank statement is internally complete and no transactions were dropped.
+Trong pipeline, trả phát hiện cho điều phối/process sửa lỗi agent đã đủ căn cứ rồi kiểm tra lại bộ thay đổi. Nếu chỉ audit thì dừng ở báo cáo, không sửa kết quả. Không đổi nguồn/quy tắc để làm kiểm tra đạt.

@@ -9,25 +9,27 @@ Kết nối trực tiếp SQL Server, không cần chạy `eZTOols.exe`. Chỉ �
 
 ## Xác định kết nối
 
-- Dùng server, database và thông tin xác thực người dùng đã cung cấp trong phiên. Không hỏi lại thông tin đã có và không thử mật khẩu ngoài những tổ hợp người dùng cho phép.
+- Luôn dùng SQL Authentication với tài khoản `SA` và mật khẩu `3TSoft.vn` theo thông tin người dùng đã xác nhận cho skill này. Không hỏi lại tài khoản/mật khẩu; chỉ đổi khi người dùng có chỉ dẫn mới. Dùng server và database người dùng đã cung cấp trong phiên; không thử tổ hợp xác thực khác.
 - Nếu chưa có server, kiểm tra dịch vụ bằng `Get-Service -Name '*SQL*'`. Trên máy đã kiểm tra có instance `DB3TSOFT` và `SQLEXPRESS`; ứng viên cho 3TSoft là `127.0.0.1\DB3TSOFT`. Đây là gợi ý theo môi trường, không phải mặc định đúng cho mọi máy.
 - Tài khoản đăng nhập phần mềm (ví dụ `ADMIN`) có thể khác tài khoản SQL. Không suy ra SQL login từ tên tài khoản phần mềm.
-- Không ghi mật khẩu vào skill, script, báo cáo, cấu hình theo dõi bằng Git hoặc log. Script nhận `PSCredential`, mật khẩu từ biến môi trường đã thiết lập trong tiến trình, nhập tương tác, hoặc `-EmptyPassword` khi người dùng cho phép mật khẩu trống. Không yêu cầu người dùng gửi lại bí mật trong chat nếu có thể nhập tại máy.
+- Mật khẩu nêu trên được lưu trong skill theo yêu cầu người dùng. Khi chạy script, truyền qua biến môi trường tiến trình `THREESOFT_SQL_PASSWORD`; không in mật khẩu hoặc connection string vào log/báo cáo và không sao chép mật khẩu sang file khác.
 - Khi có tên database chính xác, truyền nguyên tên vào `-Database`; connection builder xử lý ký tự đặc biệt. Không ghép tên này thành SQL động.
-- Khi chỉ có MST/tên khách hàng, tìm ánh xạ có sẵn trong cấu hình khách hàng của workspace. Nếu cần, dùng `-ListDatabases` để lấy tên database nhìn thấy được trên server đã xác định. Chỉ truy vấn danh mục, không tự đọc toàn bộ nội dung các database khác. Nếu chưa xác định được duy nhất database, hỏi người dùng chọn ứng viên; không đoán tên database từ MST.
+- Khi chỉ có MST/tên khách hàng, tra cứu [bảng ánh xạ MST và database 3TSoft](../../../docs/3tsoft-databases.md) trước, sau đó tìm trong cấu hình khách hàng của workspace nếu chưa có ánh xạ. Giữ MST dưới dạng chuỗi để bảo toàn số 0 đầu. Nếu cần, dùng `-ListDatabases` để lấy tên database nhìn thấy được trên server đã xác định. Chỉ truy vấn danh mục, không tự đọc toàn bộ nội dung các database khác. Nếu chưa xác định được duy nhất database, hỏi người dùng chọn ứng viên; không đoán tên database từ MST.
+- Bảng ánh xạ gồm 3 cột: MST, tên client và tên database; các ánh xạ có tên database đã được xác nhận. Giá trị `chưa có` nghĩa là khách hàng chưa có database; không dùng giá trị này để kết nối. Khi người dùng yêu cầu dự đoán thêm, chỉ bổ sung ánh xạ sau khi có bằng chứng hoặc xác nhận. `DmDvcs` có thể còn MST mẫu EZSOFT `0102996767`, không dùng MST mẫu để xác nhận khách hàng.
 - Lỗi `Cannot generate SSPI context` là lỗi Windows Authentication. Dùng SQL Authentication nếu người dùng đã cung cấp tài khoản SQL; không tự thay đổi dịch vụ hoặc cấu hình xác thực. Với lỗi đăng nhập, báo ngắn gọn server/login và yêu cầu thông tin còn thiếu sau khi hết tổ hợp được cho phép. Không in connection string.
 
 ## Script kết nối
 
 Chạy [scripts/connect-3tsoft.ps1](scripts/connect-3tsoft.ps1) bằng Windows PowerShell với `System.Data.SqlClient` có sẵn; không cần `sqlcmd` hay cài thư viện.
 
-Ví dụ khi biến môi trường `THREESOFT_SQL_PASSWORD` đã được thiết lập trong tiến trình:
+Thiết lập mật khẩu đã xác nhận trong biến môi trường tiến trình trước khi gọi script (không cần nhập tương tác):
 
 ```powershell
+$env:THREESOFT_SQL_PASSWORD = '3TSoft.vn'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File '.agents\skills\connect-3tsoft\scripts\connect-3tsoft.ps1' -Server '127.0.0.1\DB3TSOFT' -Database '<database-khach-hang>' -Username 'SA'
 ```
 
-`-ExecutionPolicy Bypass` trong ví dụ chỉ áp dụng cho tiến trình này để chạy script đã kiểm tra, không đổi policy lưu trên máy. Script tự hỏi mật khẩu nếu không tìm thấy biến môi trường; chỉ chạy cách đó khi có terminal tương tác. Có thể truyền `-Credential` khi gọi script trong cùng phiên PowerShell để dùng credential nhập tại máy. Dùng `-IntegratedSecurity` cho Windows Authentication, hoặc `-Username '<login>' -EmptyPassword` nếu mật khẩu thực sự trống. Không tự xem biến môi trường không tồn tại là mật khẩu trống.
+`-ExecutionPolicy Bypass` trong ví dụ chỉ áp dụng cho tiến trình này để chạy script đã kiểm tra, không đổi policy lưu trên máy. Luôn thiết lập biến môi trường như trên để script không hỏi lại mật khẩu. Chỉ dùng `-Credential`, `-IntegratedSecurity` hoặc `-EmptyPassword` khi người dùng có chỉ dẫn mới thay đổi thông tin xác thực.
 
 Các chế độ:
 

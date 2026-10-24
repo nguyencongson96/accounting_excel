@@ -2,6 +2,8 @@
 
 Dự án này giúp tự động hóa quá trình chuyển hóa dữ liệu thô kế toán (Hóa đơn, Sao kê ngân hàng) thành file kết quả chuẩn để nhập liệu lên phần mềm kế toán EZSOFT / 3TSoft.
 
+**Doanh nghiệp — cập nhật 24/10/2026:** Dùng [quy trình lấy dữ liệu trực tiếp từ 3TSoft](docs/quy-trinh-doanh-nghiep.md) và [bộ phân tích 12 doanh nghiệp](docs/phan-tich-doanh-nghiep-2026-10-24.md). Mỗi khách hàng có các module riêng trong `docs/`, bao gồm file chuyên về diễn giải. Không bắt buộc `last_quarter_data/` hoặc file danh mục export; bảo hiểm chờ C12 và chi không hóa đơn do người dùng tự làm. Diễn giải chưa có tiền lệ phải hỏi người dùng. Các mô tả luồng cũ bên dưới tiếp tục áp dụng cho hộ kinh doanh; với doanh nghiệp, tài liệu cập nhật này được ưu tiên.
+
 ## 1. Cấu trúc thư mục cốt lõi
 - **`src/clients/<Mã_số_thuế>/`**: Mỗi khách hàng có một thư mục riêng, bao gồm:
   - `docs/`: 4 file tài liệu `.md` (quy trình, template, danh mục tài khoản, danh mục đối tượng)

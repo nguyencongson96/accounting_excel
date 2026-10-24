@@ -1,96 +1,59 @@
 ---
 name: run_pipeline
-description: Run the full accounting pipeline (verify → convert excel to md → reason through each accounting entry → validate) for a specific customer and quarter. Use this whenever the user wants to "run", "execute", "process", or "do" accounting for a customer — even if they say "chạy pipeline", "xử lý dữ liệu", "run accounting for MST X", or "process Q1". The agent determines each entry from customer-specific data and rules, without an accounting generation script.
+description: Run accounting for a customer and quarter, routing enterprises to SQL and household businesses to their existing file workflow; verify, convert, review entries, validate and update tracking.
 ---
 
-# Instructions for run_pipeline
+# Điều phối hạch toán
 
-This is the Master Orchestration Skill. When triggered to run the pipeline for a specific customer (MST) and Quarter, you MUST autonomously execute the full workflow in order without needing the user to prompt for each step.
+Thực hiện toàn bộ luồng đã được yêu cầu, không chờ nhắc từng bước. Agent đọc chứng từ và xác định từng bút toán; không chạy `scripts/process_accounting.js`, `scripts/process.py` hoặc script thay thế để chọn tài khoản/đối tượng, phân loại, ghép thanh toán hay sinh bút toán, kể cả dry-run. Công cụ chỉ hỗ trợ đọc/chuyển đổi, tính toán, kiểm tra định dạng và ghi/xuất các dòng đã quyết định.
 
-## Execution Method: Agent Reasoning for Accounting
+## 0. Chọn khách hàng và nhánh
 
-- Phần hạch toán do Agent đọc dữ liệu và xác định từng bút toán theo quy trình riêng của khách hàng. Không chạy `scripts/process_accounting.js`, `scripts/process.py` hoặc script hạch toán khác, kể cả chế độ dry-run, để sinh hay quyết định bút toán.
-- Không viết script thay thế để tự phân loại nghiệp vụ, chọn tài khoản/đối tượng, ghép hóa đơn với thanh toán hoặc sinh bút toán định kỳ. Một script dùng chung không bao quát được các đặc thù của từng khách hàng.
-- Có thể dùng công cụ/script cho thao tác cơ học: chuyển đổi Excel, đọc dữ liệu, tính tổng, kiểm tra định dạng, ghi các dòng đã được Agent quyết định và xuất Excel. Các công cụ này không được tự quyết định nghiệp vụ kế toán.
-- Không lấy đầu ra script hạch toán rồi sửa một số dòng để thay cho việc xem xét từng nghiệp vụ. Kết quả lịch sử chỉ là tài liệu tham khảo, cần đối chiếu chứng từ trước khi áp dụng.
+- Tra MST nguyên dạng trong `docs/3tsoft-databases.md`, giữ số 0 đầu: xác định loại theo mục Doanh nghiệp/Hộ kinh doanh, database và trạng thái. Không suy loại theo độ dài MST hoặc tên database.
+- Hàng loạt chỉ chọn `Đang tiếp tục`, liệt kê khách `Đã dừng hạch toán` được bỏ qua. Yêu cầu đích danh MST/kỳ vẫn cho phép làm kỳ đó và nêu trạng thái hiện tại; không tự đổi trạng thái hoặc suy ngày dừng cho quá khứ. Kiểm tra lịch sử không bị chặn vì đã dừng. Chưa rõ loại thì xác minh trước phần phụ thuộc loại.
+- Đọc `src/clients/AGENTS.md`, quy trình và template khách hàng. Doanh nghiệp đọc thêm `docs/quy-trinh-doanh-nghiep.md` và module 4–11 được liên kết; HKD giữ yêu cầu nguồn và quy trình riêng hiện có.
+- Ưu tiên yêu cầu hiện hành → quyết định riêng đã xác nhận còn hiệu lực → module khách hàng → bằng chứng lịch sử → hướng dẫn chung. Ngoại lệ doanh nghiệp về SQL, diễn giải, bảo hiểm, chi không hóa đơn thay chỉ dẫn cũ mâu thuẫn.
 
-## Result Directory
+## 1. Kiểm tra và chuyển đổi nguồn
 
-- Create `src/clients/<MST>/<Quarter>/result/` for all generated result artifacts: `0.result.md`, `0.check_result.md`, new-counterparty lists, debt reconciliation, source references, payment allocation tables, result-specific supplements and exported result workbooks. Keep source invoices, bank statements, converted source Markdown and `last_quarter_data/` in their source locations.
-- Keep only the latest result and companion reports under canonical filenames without version suffixes in `result/`. On reruns or corrections, overwrite the existing generated artifacts; do not create numbered versions. This rule takes precedence over version-preservation instructions in `process_accounting` and `check_result`.
-- If legacy result artifacts exist in the quarter root or as numbered versions, identify the latest coherent result/report set, save it under canonical filenames in `result/`, and update companion and tracking links. Verify the retained files before deleting superseded generated artifacts. Never delete or overwrite source data, customer docs, or prior-period inputs. Do not use recursive cleanup; remove only identified superseded result artifacts within the target customer/quarter.
-- When following `process_accounting` or `check_result`, use this output directory even if their examples place outputs in the quarter root. Validate the exact file just generated in `result/`.
-- Resolve source references from the report location: quarter sources use `../`, customer docs use `../../docs/`, and prior-quarter sources use `../../<PriorQuarter>/`. Companion files in `result/` use their filenames directly. Preserve source line numbers.
+Thực hiện [verify_data](../verify_data/SKILL.md) theo nhánh. Loại `result/`, kết quả cũ và workbook xuất khỏi đầu vào.
 
-## Step 1: Verify Data
-Execute the logic from `verify_data` skill:
-- Scan `src/clients/<MST>/<Quarter>/` and `docs/` for mandatory files.
-- Treat `result/` as generated output, not input data; its files do not satisfy missing-source checks.
-- **Decision tree:**
-  - ✅ All `.md` files present → Go to Step 3 directly.
-  - ⚠️ Some `.md` files missing but `.xls`/`.xlsx` files exist → Proceed to Step 2.
-  - ❌ Files completely missing (no `.md` AND no Excel) → STOP and alert: *"Thiếu dữ liệu hoàn toàn cho MST <MST> kỳ <Quarter>. Vui lòng cung cấp file dữ liệu đầu vào."*
+- Luôn quét Excel chưa chuyển đổi hoặc đã thay đổi dù đủ tên Markdown; kiểm tra nội dung/phạm vi, không chỉ tồn tại file. Có Excel bất kỳ không chứng minh có nguồn tương ứng phần thiếu.
+- Tự dùng [excel-to-md](../excel_to_md/SKILL.md) trên từng workbook/thư mục nguồn đã xác minh, lưu cạnh nguồn. Không quét chuyển đổi thư mục quý nếu có thể kéo theo workbook kết quả; không ghi đè phần người dùng bổ sung mà chưa giữ được nội dung đó.
+- Xem log integrity và đối chiếu sheet/dòng/cột, ngày, MST. File tồn tại hoặc exit code 0 chưa đủ. Có `Integrity Check FAILED` thì xác định nguyên nhân; chỉ tiếp tục nếu đối chiếu trực tiếp chứng minh dữ liệu dùng để xử lý còn nguyên vẹn và ghi giới hạn. Sai khác chưa giải quyết thì chặn phần phụ thuộc.
+- Re-verify sau chuyển đổi. Thiếu nguồn cốt lõi mà quy trình nhánh bắt buộc thì dừng, nêu chính xác phần thiếu. Không coi thiếu nguồn là không phát sinh hoặc dư 0.
+- Doanh nghiệp không bị chặn bởi thiếu danh mục export hoặc `last_quarter_data/`; SQL lỗi thì ghi phần chưa xác minh, nguồn thay thế cần thiết và chỉ làm phần độc lập đủ căn cứ.
 
-## Step 2: Convert Excel to MD
-Only execute if unconverted Excel files were found in Step 1:
-- Run the `excel_to_md` skill's script on unconverted source workbooks, saving Markdown beside each source. The directory command `node .agents/skills/excel_to_md/scripts/excel_to_md.js --directory "src/clients/<MST>/<Quarter>" "src/clients/<MST>/<Quarter>"` may be used only when it cannot include generated workbooks in `result/`; otherwise convert individual source files or source subdirectories.
-- Exclude `result/` from conversion and source discovery so exported result workbooks cannot become accounting inputs or overwrite generated Markdown.
-- Also check `src/clients/<MST>/docs/` for any Excel files that need conversion.
-- After conversion, re-verify that expected `.md` files now exist. If still missing, stop and tell user which files couldn't be generated.
+## 2. Chuẩn bị dữ liệu và lập bút toán
 
-## Step 3: Process Accounting
-Read and follow the `process_accounting` skill directly; do not invoke an accounting generation script:
-- Read ALL 4 docs files (`0.quy_trinh_tao_result.md`, `1.template_output.md`, `2.danh_muc_tai_khoan.md`, `3.danh_muc_doi_tuong.md`).
-- Read all source data and prior-period data, in batches if necessary, until every source transaction has been reviewed.
-- Before matching payments, follow `process_accounting/references/cong_no_dau_ky.md`: establish opening debts by counterparty at the correct cutoff, reconcile them with historical journals and control balances, and include unpaid opening debts in receipt/payment review. Save the current `0.doi_chieu_cong_no.md` alongside the result; missing opening debt evidence is unresolved, not zero.
-- Reconstruct the individual unpaid invoices making up each counterparty's opening balance, including prior adjustments and partial settlements. Match receipts to those invoices using payment references and remaining amounts; a counterparty total is not a single invoice. Report invoice allocation separately from counterparty-level settlement, and keep ambiguous allocations unresolved.
-- For each transaction, determine its business nature, accounting period, debit/credit accounts, entity, amount and payment relationship from source evidence and customer-specific rules. Follow the per-entry review procedure in `process_accounting`.
-- **Cash receipts from customers (PT, debit 1111/credit 131):** Create this entry only when clear, reliable documentation confirms that cash was actually received and supports the amount and date. An invoice, receivable balance, expected payment, or absence of a bank deposit is not proof of a cash receipt. Without clear evidence, do not create PT 1111/131 or reduce receivables; flag the payment as unresolved and identify the evidence needed. If the source shows a bank payment, account for the actual bank transaction and do not add a PT entry.
-- For every result row derived from an outbound (Bán ra) invoice, preserve the invoice's original description verbatim in `DIỄN GIẢI` when it is at most 200 characters. Change it only if it exceeds 200 characters; then make the smallest edit needed to fit the limit while retaining the transaction meaning and distinguishing details, without adding unsupported wording. This rule takes precedence over any customer-specific instruction to rewrite that description; separate adjustment entries still follow their source evidence and customer-specific rules.
-- **Replacement invoices:** Apply the `process_accounting` rule for replaced invoices. When source evidence confirms an original invoice was replaced, do not book the original invoice; assess and book the replacement only once under the customer's rules, avoiding duplicate recognition. If the replacement relationship or status is unclear, leave the related invoice transaction unresolved and identify the missing evidence instead of guessing. If the original was booked in a prior period, follow the customer's documented correction/reversal procedure and supporting evidence.
-- Track the source reference and payment allocation for each entry so validation can identify omissions, duplicate recognition and incorrect settlements. Flag unresolved transactions explicitly instead of guessing.
-- Generate `result/0.result.md`, overwriting the existing result when present.
-- Generate or overwrite the current `result/0.danh_muc_doi_tuong.md` if any new MSTs are detected. Save all supporting reports and result-specific supplements in `result/` as well.
-- Display a summary preview to the user with:
-  - Total rows generated
-  - Number of PK (Phiếu Kế Toán), BN (Báo Nợ), BC (Báo Có), PC (Phiếu Chi) entries
-  - Number of PT (Phiếu Thu) entries, if applicable
-  - Total debit/credit amounts
-  - Number of new MSTs detected (if any)
-  - First 10 rows as a Markdown table
+Thực hiện [process_accounting](../process_accounting/SKILL.md).
 
-## Step 4: Validate Results (Automatic)
-After generating the result, **automatically** execute the `check_result` skill — do NOT ask the user for permission. This is a mandatory step in the pipeline.
+- Doanh nghiệp dùng `connect-3tsoft`, chỉ SELECT đúng database; kiểm tra đơn vị/schema/trạng thái ghi sổ/ngày cuối, đọc danh mục, số dư, lịch sử và chống trùng SQL. Pipeline không ghi SQL.
+- HKD đọc đủ danh mục và tất cả nguồn kỳ trước theo quy trình riêng; không áp ngoại lệ doanh nghiệp.
+- Dựng công nợ đúng cutoff và từng hóa đơn còn nợ theo [hướng dẫn công nợ](../process_accounting/references/cong_no_dau_ky.md); doanh nghiệp dùng SQL tương đương báo cáo, không yêu cầu xuất file. Giữ ứng trước/cọc/thanh toán một phần/chưa phân bổ; thiếu căn cứ không phải dư 0.
+- Đọc hết từng nguồn, tách ghi nhận hóa đơn và thanh toán, kiểm tra hủy/thay thế/điều chỉnh và chứng từ đã ghi sổ. Không tạo PT 1111/131 nếu chưa có bằng chứng thực thu tiền mặt.
+- Diễn giải doanh nghiệp theo `8.dien_giai.md`, kể cả đầu ra; thiếu mẫu/cần câu mới/rút gọn/chưa chọn được biến thể thì hỏi và lưu chờ, tiếp tục phần độc lập. HKD giữ nguyên đầu ra ≤200 ký tự; vượt thì chỉnh tối thiểu có căn cứ, trừ yêu cầu hiện hành khác.
+- Bảo hiểm chờ C12 và chi không hóa đơn doanh nghiệp bàn giao người dùng, không tự sinh bút toán. Ghi ngày, tiền, mã giao dịch và nguyên văn vào `result/0.ghi_chu.md`; đối chiếu đủ phần đã lập, đã có SQL, bàn giao và chờ.
 
-Execute the full `check_result` logic to perform a comprehensive audit of `result/0.result.md`, saving or overwriting the current `result/0.check_result.md` report, including:
-- Structure validation (columns, format)
-- Field-level checks (valid codes, date formats, amount consistency)
-- Cross-reference with source invoices and bank statements
-- Số chứng từ continuity check
-- Debit/credit balance verification
-- New MST detection audit
-- Opening debt reconciliation by counterparty, allocation of receipts/payments to prior/current-period debt, and closing debt roll-forward. Verify the current result and debt-reconciliation reports together.
+## 3. Quản lý kết quả
 
-Present the full check_result report to the user. If any ❌ **ERRORS** are found, record the failed validation in tracking using Step 5 before stopping and informing the user: *"Phát hiện lỗi trong file kết quả. Vui lòng kiểm tra lại dữ liệu đầu vào hoặc quy trình xử lý."* Do NOT proceed with accounting completion until the user confirms they've addressed the errors.
+- Mọi đầu ra ở `src/clients/<MST>/<Quarter>/result/`: `0.result.md`, `0.check_result.md`, `0.doi_chieu_cong_no.md`, `0.ghi_chu.md`, đối tượng mới, tham chiếu nguồn, phân bổ và workbook khi được yêu cầu. Nguồn/Markdown chuyển đổi giữ tại vị trí nguồn.
+- Chỉ một bộ hiện hành tên chuẩn, không hậu tố phiên bản. Chuẩn bị bộ thay thế nhất quán trước khi ghi đè; chưa có bộ mới thì giữ kết quả cũ, ghi lần chạy mới bị dừng. Không gắn báo cáo lần chạy mới cho kết quả cũ như thể đã kiểm tra nó.
+- Legacy ở gốc quý/có hậu tố: xác định bộ kết quả và báo cáo nhất quán, đưa vào `result/` tên chuẩn, xác minh và cập nhật link trước khi xóa bản sinh ra đã thay thế. Chỉ xóa file đã nhận diện trong đúng khách/kỳ; không dọn đệ quy, không xóa nguồn/docs/kỳ trước.
+- Template khách hàng quyết định cấu trúc. Link từ result: nguồn kỳ `../`, docs khách `../../docs/`, kỳ trước `../../<PriorQuarter>/`, báo cáo cùng thư mục dùng tên file. Giữ số dòng nguồn và định danh SQL khi có.
 
-If only ⚠️ **WARNINGS** are found, proceed but flag them to the user.
+## 4. Kiểm tra và sửa lỗi
 
-## Step 5: Update Quarter Tracking (Automatic)
+- Tự chạy [check_result](../check_result/SKILL.md) trên đúng bộ vừa lập. Process đã kiểm tra bộ không đổi thì dùng báo cáo đó, không chạy trùng.
+- Check chỉ đọc. Điều phối quay lại process sửa lỗi do agent tạo đã đủ căn cứ, cập nhật báo cáo/phân bổ liên quan rồi kiểm tra lại bộ đã sửa.
+- Dừng vòng sửa nếu không tiến triển/lỗi không đổi hoặc cần thông tin mới. Thiếu nguồn, mapping chưa xác nhận, quyết định nghiệp vụ cần người dùng thì ghi dòng bị ảnh hưởng và hỏi cụ thể; tiếp tục phần độc lập. Không đẩy lỗi cơ học của agent cho người dùng sửa.
+- Tách lỗi, cảnh báo, kiểm tra chưa thực hiện, nghiệp vụ chờ/bàn giao. Không dùng Nợ=Có để kết luận nghiệp vụ đúng hoặc báo PASS đầy đủ khi thiếu kiểm tra trọng yếu.
 
-- After validation, automatically update `docs/tracking/<Quarter>.md` without asking the user to prompt or approve this step. If processing stops earlier, record the available evidence and reason for stopping before reporting to the user.
-- Read the tracking file and its status conventions first. Find the customer by exact MST; update only that customer's row and notes, preserving other customers and any user-confirmed backup information. If the tracking file or customer row is missing, create the file or add the row using the existing tracking format and verified customer information; do not invent facts about other customers.
-- Check the actual quarter folder, invoice sources, bank sources, `last_quarter_data/` and current result. Detect the nonempty canonical `result/0.result.md` after consolidating any legacy artifacts. Link to the retained/current result and matching check report using paths relative to `docs/tracking/` (for example, `../../src/clients/<MST>/<Quarter>/result/0.result.md`).
-- Follow the tracking file's definition of `Hoàn tất`. If it means a nonempty result exists, record that status while stating validation errors, warnings or unfinished reconciliation separately in the customer's notes. Do not represent unresolved work as a fully passed pipeline. If no nonempty result exists, use `Chưa có kết quả` and note the stopping reason; if processing stops before a replacement is ready, retain the existing result and report the failed attempt in tracking; do not create a separate numbered version.
-- Add or update the customer's result note with the current result, row count, debit/credit totals, validation outcome and material outstanding issues from the matching report. Replace stale notes for that customer rather than appending duplicates.
-- Update the last-updated date and recompute overview counts from all table rows according to the tracking conventions, including completion, pending results, input availability, prior-period data and confirmed backups. Verify the counts agree with the table and the result/report links resolve.
+## 5. Tracking và báo cáo
 
-## Pipeline Completion
-After Step 5 (tracking update) completes, summarize what was done:
-- ✅ Files converted: X Excel files → Y Markdown files
-- ✅ Files processed: Z invoices, W bank transactions
-- Accounting method: Agent reviewed and determined each entry from customer-specific rules and source evidence.
-- ✅ Output: `result/0.result.md` with R rows
-- ✅ New MSTs: S new vendors/customers written to `result/0.danh_muc_doi_tuong.md`
-- ✅ Validate: check_result passed (X errors, Y warnings)
-- Tracking: `docs/tracking/<Quarter>.md` updated with the customer's status, result/report links and outstanding issues. State the actual validation outcome rather than reporting a pass when errors remain.
-- Report completion only if validation has passed and no transaction remains unresolved; otherwise state the outstanding issues and which source transactions they affect.
+- Tự cập nhật `docs/tracking/<Quarter>.md` sau kiểm tra; dừng sớm cũng ghi bằng chứng/nguyên nhân cho khách đang xử lý. Đọc quy ước trước, cập nhật đúng MST, giữ dữ liệu khách khác và backup đã xác nhận. Thiếu file/dòng thì tạo theo định dạng hiện hành bằng thông tin đã xác minh.
+- Link kết quả/báo cáo cùng bộ từ tracking; cập nhật ngày, đếm lại tổng toàn bảng, kiểm tra link. Không tự đưa khách đã dừng vào tracking kỳ mới khi chỉ quét hàng loạt.
+- Trạng thái dịch vụ khác tiến độ kỳ; không dùng ngày dừng chưa biết để xóa/sửa hồi tố lịch sử. Nếu `Hoàn tất` chỉ nghĩa có file không rỗng, giữ quy ước nhưng ghi riêng đã có kết quả, kết luận kiểm tra và phần chờ/bàn giao; không gọi toàn kỳ đã xong chỉ vì có file.
+- Doanh nghiệp ghi nguồn SQL/cutoff/mức xác minh thay vì báo thiếu dữ liệu chỉ vì không có `last_quarter_data/`; giữ cột tracking lịch sử theo đúng nghĩa hiện có.
+- Báo số file chuyển đổi, hóa đơn/giao dịch đã xem, số dòng và số chứng từ theo loại (PT nếu có), tổng Nợ/Có, đối tượng mới, link kết quả/kiểm tra/tracking và phần tồn. Có thể trình tối đa 10 dòng xem trước; phát hiện chính trong chat và báo cáo đầy đủ ở file.
+- Chỉ xác nhận hoàn tất toàn kỳ khi kiểm tra đạt và không còn nghiệp vụ chưa xử lý, kể cả phần bàn giao chưa xác nhận xong. Có thể xác nhận riêng phần agent đã lập và kiểm tra đạt khi toàn kỳ còn mở.
