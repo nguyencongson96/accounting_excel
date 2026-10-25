@@ -15,7 +15,7 @@ Giữ nguyên số 0 đầu của MST. Giá trị `chưa có` nghĩa là khách 
 | [0110840844](../src/clients/0110840844/) | CÔNG TY TNHH WNBF VIỆT NAM | `DB3TSOFT_V200_WNBF` | Đang tiếp tục |
 | [0317434197](../src/clients/0317434197/) | CÔNG TY TNHH QUẢNG CÁO VÀ TRUYỀN THÔNG GS | `DB3TSOFT_V200_GS` | Đang tiếp tục |
 | `0318393803` | CÔNG TY TNHH MỘT THÀNH VIÊN BLIVEE | `DB3TSOFT_V200_BLIVEE` | Đã dừng hạch toán |
-| `0319057868` | CÔNG TY TNHH H2P ENTERTAINMENT | `DB3TSOFT_V200_H2P` | Đang tiếp tục |
+| [0319057868](../src/clients/0319057868/) | CÔNG TY TNHH H2P ENTERTAINMENT | `DB3TSOFT_V200_H2P` | Đang tiếp tục |
 | `0319085713` | CÔNG TY TNHH MTV DỊCH VỤ DU LỊCH THIÊN ÂN CAR | `DB3TSOFT_V200_THIENANCAR` | Đang tiếp tục |
 | [4202008425](../src/clients/4202008425/) | CÔNG TY TNHH ADAYA | `DB3TSOFT_V200_ADAYA` | Đang tiếp tục |
 
@@ -25,7 +25,7 @@ Giữ nguyên số 0 đầu của MST. Giá trị `chưa có` nghĩa là khách 
 |---|---|---|---|
 | [001095012873](../src/clients/001095012873/) | HỘ KINH DOANH NGUYỄN VĂN ĐÔNG | `DB3TSOFT_V200_NGUYENVANDONG` | Đã dừng hạch toán |
 | [001196019980](../src/clients/001196019980/) | HỘ KINH DOANH GIA ĐÌNH BÁNH GIÀY | `DB3TSOFT_V200_BANHGIAY` | Đang tiếp tục |
-| [001300021928](../src/clients/001300021928/) | HỘ KINH DOANH BÙI LÊ MAI HƯƠNG | chưa có | Đang tiếp tục |
+| [001300021928](../src/clients/001300021928/) | HỘ KINH DOANH BÙI LÊ MAI HƯƠNG | `DB3TSOFT_V200_MAIHUONG` | Đang tiếp tục |
 | [001301012894](../src/clients/001301012894/) | HỘ KINH DOANH NGUYỄN THÚY QUỲNH (CMTQ) | `DB3TSOFT_V200_THUYQUYNH` | Đang tiếp tục |
 | [001304004598](../src/clients/001304004598/) | HỘ KINH DOANH PUNPUN | `DB3TSOFT_V200_PUNPUN` | Đang tiếp tục |
 | [010199006750](../src/clients/010199006750/) | HỘ KINH DOANH VŨ THANH HIỀN | `DB3TSOFT_V200_THANHHIEN` | Đang tiếp tục |

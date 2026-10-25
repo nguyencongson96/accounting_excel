@@ -7,6 +7,8 @@ description: Create a standard folder structure and initialized markdown templat
 
 When triggered to initialize or create a new customer workspace, follow these steps strictly:
 
+Read src/clients/AGENTS.md and docs/3tsoft-databases.md first. For any customer with a mapped database (enterprise or household), use connect-3tsoft for account/partner catalogs, balances and history; do not create last_quarter_data, catalog export placeholders or ask for those Excel exports. Create the process index and import template only where missing; their skeletons below are examples, not confirmed customer mappings. Mark unknown import fields as awaiting confirmation rather than assuming MST equals partner code, continuous voucher numbers or a department code. Enterprises may then use analyze-enterprise-history to build modules; household businesses retain their own rules. Only customers without a database need the relevant file-source placeholders below. Preserve existing files and confirmed decisions. For a requested quarter, follow run_pipeline/references/quarter-utilities.md and create only the missing quarter directory directly; never create an unrequested quarter.
+
 1. **Identify the Customer Tax Code (MST):** Extract the MST from the user's prompt. If the user also provides the customer's business name, note it for use in templates.
 2. **Create Directories:**
    - Go to `src/clients/` and create a directory named after the `<MST>`.

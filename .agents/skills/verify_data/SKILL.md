@@ -1,9 +1,15 @@
 ---
 name: verify_data
-description: Check accounting input readiness for a customer and quarter, selecting enterprise SQL sources or household-business file requirements and identifying missing, unconverted or stale sources.
+description: Check accounting input readiness, using 3TSoft SQL for customers with a mapped database and necessary file sources otherwise; identify missing, unconverted or stale sources.
 ---
 
 # Kiểm tra dữ liệu trước hạch toán
+
+## Nguồn SQL và lưu trữ dùng chung
+
+Đọc [quy định chung](../../../src/clients/AGENTS.md) trước khi thực hiện. Với mọi khách hàng đã có database, gồm doanh nghiệp và HKD, dùng [connect-3tsoft](../connect-3tsoft/SKILL.md) để đọc danh mục, số dư và lịch sử tại đúng cutoff; không yêu cầu hoặc tạo lại `last_quarter_data/` và bản export danh mục. Khách chưa có database dùng nguồn thay thế được quy trình riêng xác định. Phân biệt nguồn SQL với quy tắc hạch toán: HKD vẫn giữ nghiệp vụ riêng, không áp quy tắc doanh nghiệp.
+
+Thư mục `result/` chỉ giữ file kết quả và Excel/result bổ sung. Báo cáo kiểm tra, bảng công nợ/phân bổ, danh mục đề nghị, ghi chú và bản trích SQL chỉ dùng tạm trong khi xử lý. Bàn giao đầy đủ lỗi, phần chưa kiểm và khoản chờ trong chat/tracking; quyết định lâu dài đã xác nhận lưu vào docs khách hàng trước khi dọn file tạm. Không sửa cấu trúc file import để nhét ghi chú và không xóa nguồn sao kê/hóa đơn. Các yêu cầu lưu báo cáo riêng bên dưới chỉ áp dụng tạm trong phiên, trừ khi người dùng yêu cầu giữ hoặc xuất báo cáo.
 
 ## Chọn nhánh
 
@@ -12,7 +18,7 @@ Tra MST nguyên dạng trong `docs/3tsoft-databases.md` để lấy loại, data
 | Nhánh | Nguồn cần xác minh |
 |---|---|
 | Doanh nghiệp | Đọc `docs/quy-trinh-doanh-nghiep.md` và module 4–11 theo mục lục. Sao kê, hóa đơn theo phạm vi thực tế; bảng lương khi có. Dùng `connect-3tsoft` chỉ SELECT đúng database: đơn vị/schema/trạng thái ghi sổ/ngày cuối, danh mục, số dư/lịch sử tại cutoff. Không bắt danh mục export hay `last_quarter_data/`; ngoại lệ này thay yêu cầu file cũ mâu thuẫn. |
-| HKD | `1.danh_sach_hoa_don.md`, `2.sao_ke.md`, `last_quarter_data/` và từng nguồn cụ thể quy trình khách hàng yêu cầu, không chỉ một file bất kỳ trong thư mục. Docs gồm quy trình, template, danh mục tài khoản và đối tượng. Đọc ngày/phạm vi báo cáo thực tế. Giữ yêu cầu bắt buộc riêng hiện có. |
+| HKD | Hóa đơn và sao kê theo quy trình riêng; bảng lương/nguồn bổ sung khi nghiệp vụ yêu cầu. Có database: danh mục, số dư và lịch sử lấy từ SQL; chưa có database: xác minh từng nguồn file thay thế. Docs danh mục cũ chỉ tham khảo, không là điều kiện bắt buộc khi SQL đã xác minh. |
 
 ## Quét và đối chiếu
 

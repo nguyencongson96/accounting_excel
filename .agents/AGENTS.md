@@ -1,38 +1,38 @@
-# Agent Rules & Memory
+# Quy tắc agent trong dự án
 
-File này chứa các quy tắc và thông tin bối cảnh (memory) mà AI phải đọc và tuân thủ trước khi thực hiện bất kỳ hành động nào trong dự án này.
+## Skill và điều phối
 
-## Ngữ cảnh Dự án (Context)
-- **Mục đích dự án:** Tự động hóa quá trình chuyển hóa dữ liệu thô kế toán thành file Excel chuẩn để nhập liệu (import) lên phần mềm kế toán EZSOFT / 3TSoft.
-- **Hệ thống Skills:** Dự án sử dụng 7 skills chính trong `.agents/skills/` để tự động hóa từng bước. Khi cần thực hiện một tác vụ cụ thể, hãy tham chiếu skill tương ứng thay vì làm thủ công:
-  - `run_pipeline` → Chạy toàn bộ pipeline (verify → convert → process)
-  - `verify_data` → Kiểm tra dữ liệu đầu vào
-  - `excel_to_md` → Chuyển đổi Excel → Markdown
-  - `md_to_excel` → Chuyển đổi Markdown → Excel (tổng quát: mọi bảng MD, hoặc chuyên biệt: 0.result.md → Excel template)
-  - `process_accounting` → Xử lý kế toán & sinh 0.result.md
-  - `check_result` → Kiểm tra & đối chiếu file 0.result.md sau xử lý
-  - `refine_workflow` → So sánh & cập nhật quy trình
-  - `init_customer` → Khởi tạo khách hàng mới
-- **Cấu trúc thư mục cốt lõi:**
-  - **`src/clients/<Mã_số_thuế>/`**: Mỗi khách hàng (đại diện bằng Mã số thuế) sẽ có một thư mục riêng biệt. Trong mỗi thư mục khách hàng bao gồm:
-    - `docs/`: Chứa 4 file tài liệu `.md`: `0.quy_trinh_tao_result.md`, `1.template_output.md`, `2.danh_muc_tai_khoan.md`, `3.danh_muc_doi_tuong.md`.
-    - `<Kỳ_kế_toán>/` (VD: `2026.Q1/`): Chứa dữ liệu thô và kết quả xử lý của kỳ đó.
-      - `last_quarter_data/`: Chứa dữ liệu kỳ trước (số dư, bảng kê chứng từ, tổng hợp công nợ).
-  - `scripts/`: Script Node.js tiện ích (không phải script tạm — các script tạm vẫn lưu ở đây và phải xóa sau khi dùng).
-  - `.agents/skills/`: Chứa các skill definitions và script cố định (VD: `excel_to_md/scripts/excel_to_md.js`).
+Dự án có 10 skill trong `.agents/skills/`. Dùng `run_pipeline` làm đầu mối khi được yêu cầu hạch toán một khách hàng/quý; skill điều phối kiểm tra nguồn, chuyển đổi, lập bút toán, kiểm tra và bàn giao.
 
-## Quy trình Xử lý Tiêu chuẩn (Workflow)
-Khi được yêu cầu xử lý dữ liệu cho một **Mã số thuế (MST)** và **Kỳ kế toán**, sử dụng skill `run_pipeline` để chạy tự động 3 bước:
-1. **Verify:** Kiểm tra file bắt buộc (`1.danh_sach_hoa_don.md`, `2.sao_ke.md`, `last_quarter_data/*.md`). Nếu thiếu file `.md` nhưng có file `.xls`/`.xlsx`, tiếp tục bước 2.
-2. **Convert:** Dùng `excel_to_md` skill để chuyển đổi các file Excel sang Markdown.
-3. **Process:** Đọc toàn bộ `docs/` (đặc biệt `0.quy_trinh_tao_result.md`), xử lý dữ liệu, sinh `0.result.md`. Nếu phát hiện MST đối tác mới, đồng thời tạo `0.danh_muc_doi_tuong.md`.
+| Skill | Trách nhiệm |
+|---|---|
+| run_pipeline | Điều phối hạch toán; tạo thư mục quý và thống kê tiến độ qua tiện ích |
+| connect-3tsoft | Chỉ đọc database, xác minh schema, danh mục, chứng từ và số dư |
+| analyze-enterprise-history | Lập tài liệu từ lịch sử doanh nghiệp; đối chiếu kết quả và cải thiện quy trình doanh nghiệp/HKD |
+| verify_data | Xác minh độ sẵn sàng và phạm vi nguồn |
+| process_accounting | Agent xác định từng nghiệp vụ, lập kết quả theo template khách hàng |
+| check_result | Kiểm tra độc lập, không sửa bút toán |
+| excel-to-md | Đọc/chuyển đổi Excel sang Markdown, kiểm tra toàn vẹn |
+| md_to_excel | Xuất bảng Markdown/kết quả sang Excel |
+| bank-statement-to-excel | Đọc ảnh/PDF sao kê, xử lý trùng và xuất Excel |
+| init_customer | Khởi tạo tài liệu khách hàng, giữ nguyên cấu hình đã có |
 
-## Quy tắc bắt buộc (Rules)
-1. **Bảo vệ dữ liệu gốc:** KHÔNG ĐƯỢC tự ý sửa đổi, ghi đè hay xóa các dữ liệu gốc đầu vào trong thư mục `<Kỳ_kế_toán>/`. Chỉ được phép ĐỌC (Read-only).
-2. **Kiểm tra đầu vào:** Trước khi xử lý, phải kiểm tra đủ các file bắt buộc. Nếu thiếu, BẮT BUỘC DỪNG và báo User.
-3. **Bảo vệ file docs:** KHÔNG ĐƯỢC ghi đè hay làm hỏng các file trong `docs/`. Không lưu file `.xls` vào `docs/`.
-4. **Đọc toàn bộ docs:** BẮT BUỘC đọc TOÀN BỘ 4 file trong `docs/` trước khi xử lý.
-5. **Chỉ giữ kết quả mới nhất:** Lưu kết quả và báo cáo kèm trong `result/` với tên chuẩn không hậu tố (ví dụ `0.result.md`). Khi chạy lại hoặc sửa kết quả, ghi đè bộ hiện hành; không tạo phiên bản tăng dần. Kiểm tra bộ mới và cập nhật liên kết trước khi xóa các tệp kết quả cũ; không tác động dữ liệu gốc. Theo quy tắc lưu kết quả của `run_pipeline`.
-6. **Script tạm:** Tất cả script test/chạy tạm BẮT BUỘC lưu vào `scripts/` và PHẢI xóa sau khi hoàn thành.
-7. **Phát hiện MST mới:** Trong quá trình xử lý hóa đơn, nếu phát hiện MST đối tác chưa có trong `docs/3.danh_muc_doi_tuong.md`, PHẢI tạo file `0.danh_muc_doi_tuong.md` trong thư mục Kỳ kế toán với đầy đủ các cột: STT, Mã đối tượng, Tên đối tượng, Địa chỉ, Mã số thuế, Nhóm đối tượng (N002), Loại đối tượng (1=Khách hàng, 2=Nhà cung cấp).
-8. **Không viết script inline trong command line:** Nghiêm cấm viết code trực tiếp trong dòng lệnh (VD: `node -e "code..."`, `python -c "code..."`, PowerShell one-liner dài). Bash dễ bị lỗi với ký tự đặc biệt (`!`, `$`, backtick)... Luôn viết script vào file `.js`/`.py` trong `scripts/` trước, sau đó mới chạy file đó.
+Agent tạo thư mục quý và thống kê trực tiếp theo hướng dẫn run_pipeline, không phụ thuộc script cố định trong thư mục tạm. Tạo thư mục và thống kê chỉ chạy đúng tác vụ được yêu cầu, không tự chạy hạch toán. Công cụ tìm/tạo skill dùng bản cấp hệ thống/người dùng khi có, không cần bản sao trong project.
+
+## Nguồn và quy tắc nghiệp vụ
+
+- Tra MST nguyên dạng ở `docs/3tsoft-databases.md`; đọc `src/clients/AGENTS.md`, mục lục quy trình, template và các module liên quan của đúng khách hàng. Doanh nghiệp đọc thêm `docs/quy-trinh-doanh-nghiep.md`.
+- Mọi khách hàng có database, gồm doanh nghiệp/HKD, lấy danh mục, số dư và lịch sử từ SQL qua `connect-3tsoft`. Không yêu cầu hoặc tạo lại `last_quarter_data/`/danh mục export. Khách chưa có database dùng nguồn thay thế cần thiết theo quy trình riêng.
+- SQL thay nguồn dữ liệu; không thay quy tắc hạch toán riêng của HKD bằng quy tắc doanh nghiệp. Không suy số dư bằng 0 khi thiếu nguồn hoặc không kết nối được SQL.
+- Thiếu nguồn chặn phần phụ thuộc; tiếp tục phần độc lập đủ căn cứ khi quy trình cho phép. Báo rõ giới hạn và nội dung cần bổ sung.
+- Agent quyết định từng bút toán. Script chỉ đọc, chuyển đổi, tính toán, kiểm tra, ghi/xuất các dòng đã quyết định; không dùng script tự chọn tài khoản, đối tượng hoặc phân bổ nghiệp vụ.
+- Đối tượng mới phải đối chiếu danh mục hiện hành đúng khách hàng. Không mặc định MST là mã đối tượng, không cố định nhóm/loại hay bộ phận từ khách khác; nêu mã còn chờ xác nhận trong bàn giao.
+
+## Bảo vệ dữ liệu và lưu trữ
+
+- Không sửa/xóa nguồn sao kê, hóa đơn hoặc file kết quả cũ ngoài phạm vi người dùng yêu cầu. Chuyển đổi không được làm mất phần bổ sung thủ công. Sửa quy trình có căn cứ phải giữ quyết định đã xác nhận và tham chiếu nguồn; không thay quy tắc chỉ để kiểm tra đạt.
+- Tuân thủ lưu trữ ngày 25/10/2026 trong `src/clients/AGENTS.md`: `result/` chỉ giữ file kết quả và Excel/result bổ sung. Báo cáo kiểm tra, đối chiếu, ghi chú, JSON SQL và danh mục đề nghị dùng tạm khi xử lý; bàn giao lỗi/giới hạn/khoản chờ đầy đủ trong chat/tracking, lưu quyết định lâu dài vào docs trước khi dọn file tạm. Giữ báo cáo riêng khi người dùng yêu cầu.
+- Khi sửa kết quả, chuẩn bị và kiểm tra bộ mới trước khi thay bộ hiện hành, cập nhật link và bảo toàn bản cũ chưa có thay thế. Không tự xóa kết quả bổ sung hoặc di chuyển legacy nếu chưa xác định bộ nguồn nhất quán.
+- Sao kê, bản chuyển đổi sao kê và hóa đơn nguồn giữ tại vị trí nguồn. Tài liệu quy trình/template nằm trong `docs/` khách hàng; không đặt workbook đầu vào trong docs.
+- Viết script vào file, tránh one-liner dài có ký tự dễ bị shell diễn giải. Thư mục `scripts/` ở gốc chỉ chứa script tạm, dọn sau khi dùng; không tham chiếu nó như thư viện cố định. Script đóng gói bên trong từng skill được giữ theo skill đó.
+- Pipeline không ghi SQL. Có file result không đồng nghĩa kiểm tra đạt, sẵn sàng import hay hoàn tất toàn kỳ; chỉ kết luận theo bằng chứng thực tế và các khoản còn chờ.

@@ -1,11 +1,17 @@
 ---
 name: check_result
-description: Audit accounting results against customer templates, source evidence and debt allocations, using SQL for enterprises and customer-specific files for household businesses; report errors, warnings and incomplete checks without modifying entries.
+description: Audit accounting results against customer templates, source evidence, mapped 3TSoft SQL and debt allocations; report errors and incomplete checks without modifying entries.
 ---
 
 # Kiểm tra kết quả hạch toán
 
 Chỉ đọc kết quả, ghi báo cáo; không sửa bút toán hoặc ghi SQL. Dùng sau process hoặc khi kiểm tra kết quả lịch sử.
+
+## Nguồn SQL và lưu trữ dùng chung
+
+Đọc [quy định chung](../../../src/clients/AGENTS.md) trước khi thực hiện. Với mọi khách hàng đã có database, gồm doanh nghiệp và HKD, dùng [connect-3tsoft](../connect-3tsoft/SKILL.md) để đọc danh mục, số dư và lịch sử tại đúng cutoff; không yêu cầu hoặc tạo lại `last_quarter_data/` và bản export danh mục. Khách chưa có database dùng nguồn thay thế được quy trình riêng xác định. Phân biệt nguồn SQL với quy tắc hạch toán: HKD vẫn giữ nghiệp vụ riêng, không áp quy tắc doanh nghiệp.
+
+Thư mục `result/` chỉ giữ file kết quả và Excel/result bổ sung. Báo cáo kiểm tra, bảng công nợ/phân bổ, danh mục đề nghị, ghi chú và bản trích SQL chỉ dùng tạm trong khi xử lý. Bàn giao đầy đủ lỗi, phần chưa kiểm và khoản chờ trong chat/tracking; quyết định lâu dài đã xác nhận lưu vào docs khách hàng trước khi dọn file tạm. Không sửa cấu trúc file import để nhét ghi chú và không xóa nguồn sao kê/hóa đơn. Các yêu cầu lưu báo cáo riêng bên dưới chỉ áp dụng tạm trong phiên, trừ khi người dùng yêu cầu giữ hoặc xuất báo cáo.
 
 ## Chọn đúng bộ và nguồn
 
@@ -13,7 +19,7 @@ Chỉ đọc kết quả, ghi báo cáo; không sửa bút toán hoặc ghi SQL.
 - Kiểm tra file được chỉ định hoặc file process vừa sinh; mặc định `<MST>/<Quarter>/result/0.result.md`. Legacy có thể ở gốc quý/có hậu tố; nhiều bộ chưa rõ thì xác minh, không chọn chỉ theo tên/mtime, không tự di chuyển/xóa trong audit.
 - Đọc hóa đơn, sao kê, bảng lương khi có, tham chiếu, danh mục đề nghị, công nợ/ghi chú/phân bổ cùng bộ. Kết quả cũ không thay nguồn.
 - Doanh nghiệp đọc `docs/quy-trinh-doanh-nghiep.md`, module 4–11; `connect-3tsoft` chỉ SELECT đúng database. Kiểm tra đơn vị/schema/trạng thái ghi sổ/ngày cuối, danh mục và số dư/lịch sử tại cutoff, chống trùng SQL. Không bắt export hoặc `last_quarter_data/`; SQL chưa đọc được thì ghi chưa xác minh, không dùng export cũ/0 thay hiện hành.
-- HKD dùng danh mục file và dữ liệu kỳ trước theo quy trình riêng. Ngoại lệ doanh nghiệp ưu tiên chỉ dẫn cũ mâu thuẫn; quy tắc đặc thù phải có phạm vi/căn cứ, không lấy một khách áp cho tất cả.
+- HKD dùng danh mục/số dư/lịch sử SQL khi có database, nguồn file thay thế khi chưa có. Quy tắc hạch toán đặc thù phải có phạm vi/căn cứ, không lấy một khách áp cho tất cả.
 
 ## 1. Cấu trúc và trường dữ liệu
 
@@ -51,7 +57,7 @@ Chỉ đọc kết quả, ghi báo cáo; không sửa bút toán hoặc ghi SQL.
 
 ## 3. Công nợ và phân bổ bắt buộc
 
-Đọc [hướng dẫn công nợ](../process_accounting/references/cong_no_dau_ky.md); doanh nghiệp dùng SQL tương đương báo cáo được nhắc, HKD dùng nguồn file.
+Đọc [hướng dẫn công nợ](../process_accounting/references/cong_no_dau_ky.md); khách hàng có database dùng SQL tương đương báo cáo được nhắc, khách chưa có database dùng nguồn file.
 
 - Xác minh cutoff từ ngày báo cáo/sổ, không từ tên thư mục; thiếu dư là chưa xác định, không phải 0. Tách dư Nợ/Có theo đối tượng/tài khoản/tiền tệ; không bù giữa đối tác hoặc cộng trùng mẹ/con.
 - Kiểm từng hóa đơn còn nợ: gốc, điều chỉnh, thanh toán đã phân bổ, dư còn lại. Không dùng một hóa đơn giả thay tổng dư. Xét số lặp theo năm/ký hiệu, trả gộp/một phần.

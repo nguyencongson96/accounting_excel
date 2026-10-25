@@ -8,7 +8,7 @@ description: Convert any Markdown table (.md) to Excel (.xlsx) format. Works wit
 This skill converts any Markdown table (pipe-delimited) into an Excel `.xlsx` file. It supports two modes:
 
 - **Mode 1 (General)**: Convert ANY Markdown table to Excel — just pass the file and the skill auto-detects column structure, data types, and formatting.
-- **Mode 2 (Specialized)**: Convert `0.result.md` accounting files using the dedicated script with exact column mapping for EZSOFT/3TSoft import.
+- **Mode 2 (Specialized)**: Convert `0.result.md` accounting files with the exact customer-confirmed column mapping for EZSOFT/3TSoft import, creating temporary conversion code only when needed.
 
 ## Mode 1: General Conversion (Any MD Table → Excel)
 
@@ -24,7 +24,7 @@ For each conversion task, write a small Node.js script that:
 4. **Detects column types** — try parsing each cell as number first, then date (DD/MM/YYYY), then fall back to text
 5. **Writes to Excel** using the `xlsx` library
 
-Here is a reusable template script. Save it to `scripts/` and adapt the table detection and column mapping as needed:
+Here is a reusable template script. Create it as a temporary file in a permitted location and adapt the table detection and column mapping as needed:
 
 ```javascript
 const fs = require('fs');
@@ -156,123 +156,20 @@ function autoDetect(val) {
 }
 ```
 
-### How to use the template
+### Sử dụng mẫu chuyển đổi
 
-1. Save the template as `scripts/md_to_excel_generic.js`
-2. Run: `node scripts/md_to_excel_generic.js <input.md> [output.xlsx]`
-3. The script will:
-   - Find ALL tables in the file (each becomes a separate sheet)
-   - Auto-detect numbers, dates (`DD/MM/YYYY`), and text
-   - Set appropriate column widths
-   - Preserve `&nbsp;` as empty cells
+Mẫu trên là mã tham khảo, không phải file đã cài sẵn. Khi cần, tạo file tạm từ mẫu, điều chỉnh theo bảng nguồn, chạy file vừa tạo và dọn sau khi kiểm tra đầu ra; không gọi một đường dẫn tiện ích giả định tồn tại.
 
-### Customizing the template for specific files
+## Xuất kết quả hạch toán
 
-If the auto-detection doesn't produce the right output (e.g., dates in a different format, or columns that need special handling), modify the template:
+- Đọc template của đúng khách hàng và file kết quả đã kiểm tra; mặc định ở <Quarter>/result/0.result.md, chấp nhận legacy khi đã xác định đúng bộ. Không tự đổi cấu trúc theo ví dụ chung.
+- Giữ số cột, thứ tự, trường bắt buộc, tài khoản Nợ/Có tách riêng và kiểu dữ liệu đúng mẫu import đã xác nhận. Không thêm STT, tách/gộp tài khoản hoặc đổi mã chứng từ chỉ vì mẫu tham khảo. Chưa rõ mapping thì báo giới hạn trước khi gọi là sẵn sàng import.
+- MST, mã đối tượng/vật tư, số tài khoản và mã có số 0 đầu phải giữ text. Ngày và tiền là kiểu dữ liệu Excel phù hợp; không tự chuyển mã số thành tiền, không đổi dấu hoặc làm tròn ngoài nguồn. Nội dung có dấu |, dòng mới và khoảng trắng cần xử lý đúng cấu trúc Markdown.
+- Kiểm tra bảng không mất dòng/cột, số chứng từ, tài khoản, đối tượng, nguyên văn diễn giải, ngày và tổng tiền so với Markdown trước khi bàn giao. Nếu nguồn sai hoặc không rõ kiểu, báo rõ và không tự sửa nghiệp vụ để chuyển đổi chạy được.
+- Chỉ ghi file đầu ra đúng phạm vi yêu cầu. Bản kết quả Excel nằm cùng bộ trong result/; không sửa Markdown nguồn hoặc workbook hóa đơn/sao kê. Với hàng loạt, chọn đúng nguồn đã xác minh và loại file xuất khỏi đầu vào để tránh xử lý lặp.
 
-- **Custom column mapping**: Replace `headers` array to reorder/rename columns
-- **Custom date format**: Change the regex in `autoDetect()` to match your date format
-- **Column splitting**: Add logic to split a column (e.g., `/`-separated values) into two
-- **Column filtering**: Skip unwanted columns by filtering the `headers` and `rows` arrays
-- **Multi-table selection**: Modify table detection to only pick the Nth table
+## Skill liên quan
 
-## Mode 2: Specialized Accounting Result Conversion
-
-For converting `0.result.md` (accounting output) → Excel import file, use the dedicated script:
-
-```bash
-node scripts/md_to_excel_result.js "src/clients/<MST>/<Quarter>/0.result.md"
-```
-
-This script handles the exact EZSOFT/3TSoft template with:
-- 14-column accounting table parsing (skips STT, splits TÀI KHOẢN NỢ/CÓ)
-- Date → Excel serial number conversion (`dd/mm/yyyy`)
-- Number formatting (`#,##0`)
-- Proper column widths for accounting data
-- Table boundary detection (stops at `## Tổng kết` heading)
-
-### Batch conversion (all customers, one quarter)
-
-```bash
-for f in src/clients/*/2026.Q1/0.result.md; do
-  node scripts/md_to_excel_result.js "$f"
-done
-```
-
-## Common Conversion Patterns
-
-### Pattern 1: Simple data table
-```bash
-node scripts/md_to_excel_generic.js "src/clients/<MST>/<Quarter>/1.danh_sach_hoa_don.md"
-```
-Converts any invoice/bank statement MD to Excel. Each table becomes one sheet.
-
-### Pattern 2: Excel with specific column types
-If a column contains numbers with leading zeros (like account codes `0110`), modify `autoDetect()` to preserve them as text:
-```javascript
-function autoDetect(val, colIndex) {
-    if (colIndex === 3) return val; // Column 3: keep as text
-    // ... rest of auto-detect
-}
-```
-
-### Pattern 3: Handling large tables
-For files with many rows (>10,000), process in chunks to avoid memory issues:
-```javascript
-const CHUNK_SIZE = 5000;
-for (let start = 0; start < rows.length; start += CHUNK_SIZE) {
-    const chunk = rows.slice(start, start + CHUNK_SIZE);
-    // Append to worksheet
-}
-```
-
-### Pattern 4: Converting multiple related files
-To batch-convert all MD files in a directory:
-```bash
-for f in src/clients/*/2026.Q1/*.md; do
-  if [[ "$f" != *"0.result"* ]]; then  # skip result files
-    node scripts/md_to_excel_generic.js "$f"
-  fi
-done
-```
-
-## Key Techniques
-
-### Finding tables in Markdown
-A Markdown table is defined by:
-1. A header row: `| Col1 | Col2 | Col3 |`
-2. A separator row: `| --- | --- | --- |`
-3. Data rows: `| val1 | val2 | val3 |`
-
-The general script finds ALL such tables in a file. If a file has multiple tables (e.g., a bank statement with multiple account sheets), each becomes a separate Excel sheet.
-
-### Auto-detecting cell types
-- **Numbers**: If `parseFloat()` succeeds and the string representation matches, treat as number
-- **Dates (DD/MM/YYYY)**: Convert to Excel serial date number
-- **Text**: Everything else stays as-is
-- **Empty/&nbsp;**: Return empty string
-
-### Handling date formats in Excel
-Excel stores dates as serial numbers. The formula is:
-```
-serial = (jsDate - new Date(1899, 11, 30)) / (24 * 60 * 60 * 1000)
-```
-Apply format `dd/mm/yyyy` by setting `cell.z = 'dd/mm/yyyy'`.
-
-### Preserving special characters
-- Pipe `|` inside code blocks (backtick-escaped) is handled correctly
-- Line breaks within cells should be converted to `<br>` or spaces before export
-- Leading/trailing whitespace in headers and values is preserved
-
-## File Locations
-
-| File | Purpose |
-|:---|:---|
-| `scripts/md_to_excel_result.js` | Specialized: `0.result.md` → Excel (EZSOFT template) |
-| `scripts/md_to_excel_generic.js` | General: any MD table → Excel (create from template above) |
-
-## Related Skills
-
-- **`excel_to_md`**: Reverse conversion (Excel → Markdown). Use to bring raw accounting data into the system.
-- **`check_result`**: Validates `0.result.md` before converting to Excel.
-- **`process_accounting`**: Generates the `0.result.md` that this skill converts.
+- excel-to-md: chuyển đổi ngược Excel sang Markdown.
+- check_result: kiểm tra kết quả hạch toán trước xuất.
+- process_accounting: lập các dòng bút toán theo chứng từ và quy trình riêng.

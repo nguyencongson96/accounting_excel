@@ -1,25 +1,31 @@
 ---
 name: process_accounting
-description: Review source transactions and generate accounting results from customer-specific evidence and rules, using SQL for enterprises and files for household businesses, without an accounting generation script.
+description: Review source transactions and generate accounting results from customer-specific evidence and rules, using mapped 3TSoft SQL sources without an accounting generation script.
 ---
 
 # Lập kết quả hạch toán
 
+## Nguồn SQL và lưu trữ dùng chung
+
+Đọc [quy định chung](../../../src/clients/AGENTS.md) trước khi thực hiện. Với mọi khách hàng đã có database, gồm doanh nghiệp và HKD, dùng [connect-3tsoft](../connect-3tsoft/SKILL.md) để đọc danh mục, số dư và lịch sử tại đúng cutoff; không yêu cầu hoặc tạo lại `last_quarter_data/` và bản export danh mục. Khách chưa có database dùng nguồn thay thế được quy trình riêng xác định. Phân biệt nguồn SQL với quy tắc hạch toán: HKD vẫn giữ nghiệp vụ riêng, không áp quy tắc doanh nghiệp.
+
+Thư mục `result/` chỉ giữ file kết quả và Excel/result bổ sung. Báo cáo kiểm tra, bảng công nợ/phân bổ, danh mục đề nghị, ghi chú và bản trích SQL chỉ dùng tạm trong khi xử lý. Bàn giao đầy đủ lỗi, phần chưa kiểm và khoản chờ trong chat/tracking; quyết định lâu dài đã xác nhận lưu vào docs khách hàng trước khi dọn file tạm. Không sửa cấu trúc file import để nhét ghi chú và không xóa nguồn sao kê/hóa đơn. Các yêu cầu lưu báo cáo riêng bên dưới chỉ áp dụng tạm trong phiên, trừ khi người dùng yêu cầu giữ hoặc xuất báo cáo.
+
 ## Phạm vi và phương pháp
 
-Agent trực tiếp xác định từng nghiệp vụ. Không chạy `scripts/process_accounting.js`, `scripts/process.py` hoặc script thay thế để chọn tài khoản/đối tượng, phân loại, ghép hóa đơn/thanh toán hay sinh bút toán định kỳ, kể cả dry-run. Công cụ chỉ đọc/chuyển đổi, tính toán, kiểm tra định dạng và ghi/xuất các dòng đã quyết định.
+Agent trực tiếp xác định từng nghiệp vụ. Không chạy script tự quyết định nghiệp vụ để chọn tài khoản/đối tượng, phân loại, ghép hóa đơn/thanh toán hay sinh bút toán định kỳ, kể cả dry-run. Công cụ chỉ đọc/chuyển đổi, tính toán, kiểm tra định dạng và ghi/xuất các dòng đã quyết định.
 
 - Tra MST trong `docs/3tsoft-databases.md`, đọc `src/clients/AGENTS.md` và [verify_data](../verify_data/SKILL.md). Hàng loạt bỏ qua khách đã dừng; yêu cầu đích danh MST/kỳ vẫn xử lý và nêu trạng thái, không suy ngày dừng. Chưa rõ loại thì xác minh trước phần phụ thuộc loại.
 - Đọc quy trình, template và quyết định khách hàng còn hiệu lực. Ưu tiên yêu cầu hiện hành → quyết định riêng đã xác nhận → module khách hàng → lịch sử → hướng dẫn chung. Ngoại lệ doanh nghiệp thay chỉ dẫn cũ mâu thuẫn.
 - Doanh nghiệp đọc `docs/quy-trinh-doanh-nghiep.md` và module 4–11; dùng `connect-3tsoft` chỉ SELECT đúng database, kiểm tra đơn vị/schema/trạng thái ghi sổ/ngày cuối. Lấy danh mục, số dư/lịch sử từ SQL, chống trùng chứng từ đã ghi; không bắt export hay `last_quarter_data/`, không ghi SQL.
-- HKD đọc đủ bốn docs (quy trình, template, danh mục tài khoản/đối tượng) và toàn bộ nguồn kỳ/kỳ trước theo quy trình riêng. Thiếu nguồn cốt lõi thì dừng theo verify, không áp ngoại lệ doanh nghiệp.
+- HKD đọc quy trình, template và quyết định riêng; danh mục, công nợ và lịch sử lấy từ SQL khi có database, hoặc nguồn file thay thế khi chưa có. Thiếu nguồn cốt lõi thì dừng phần phụ thuộc theo verify.
 - Đọc hết dữ liệu theo lô nếu lớn, không dùng vài dòng mẫu thay toàn nguồn. Kết quả cũ không thay chứng từ. Giữ tham chiếu nguồn và căn cứ nghiệp vụ ngắn, không xuất suy nghĩ nội bộ.
 
 ## 1. Công nợ và danh mục
 
-- Trước ghép thanh toán đọc [công nợ đầu kỳ](references/cong_no_dau_ky.md). Dựng đúng cutoff, đối tượng/tài khoản/tiền tệ và tổng kiểm soát. Doanh nghiệp dùng SQL tương đương báo cáo trong hướng dẫn; file cũ chỉ tham khảo. Thiếu căn cứ là chưa xác định, không phải 0.
+- Trước ghép thanh toán đọc [công nợ đầu kỳ](references/cong_no_dau_ky.md). Dựng đúng cutoff, đối tượng/tài khoản/tiền tệ và tổng kiểm soát. Khách hàng có database dùng SQL tương đương báo cáo trong hướng dẫn; file cũ chỉ tham khảo. Thiếu căn cứ là chưa xác định, không phải 0.
 - Dựng từng hóa đơn còn nợ, điều chỉnh, thanh toán đã phân bổ và dư còn lại; tổng đối tượng không phải một hóa đơn. Giữ riêng ứng trước/cọc/chưa phân bổ. Không bù giữa đối tác hoặc cộng trùng tài khoản mẹ/con.
-- Mã đối tượng tra danh mục đúng khách hàng (SQL `DmDt` với doanh nghiệp); MST không mặc nhiên là mã nội bộ. Xác minh đã có trước khi đề nghị mới.
+- Mã đối tượng tra danh mục đúng khách hàng (SQL `DmDt` khi có database); MST không mặc nhiên là mã nội bộ. Xác minh đã có trước khi đề nghị mới.
 - Đối tượng mới lưu `result/0.danh_muc_doi_tuong.md`: STT, Mã đối tượng, Tên đối tượng, Địa chỉ, Mã số thuế, Nhóm đối tượng, Loại đối tượng. HKD dùng quy tắc riêng, chỉ dùng MST làm mã/nhóm `N002` khi quy trình quy định. Doanh nghiệp chưa xác nhận mã/mapping thì ghi đề nghị/chờ, không tự đặt mã hoặc coi đã có SQL. Không tạo hai mã trùng chỉ vì một đối tác vừa mua vừa bán.
 
 ## 2. Xem xét từng nghiệp vụ

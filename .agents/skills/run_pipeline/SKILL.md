@@ -1,11 +1,23 @@
 ---
 name: run_pipeline
-description: Run accounting for a customer and quarter, routing enterprises to SQL and household businesses to their existing file workflow; verify, convert, review entries, validate and update tracking.
+description: Điều phối hạch toán khách hàng theo quý từ kiểm tra nguồn, đọc SQL, chuyển đổi, lập bút toán đến kiểm tra và bàn giao; cũng dùng để chuẩn bị thư mục quý hoặc thống kê khách hàng có kết quả mà không chạy hạch toán.
 ---
 
 # Điều phối hạch toán
 
-Thực hiện toàn bộ luồng đã được yêu cầu, không chờ nhắc từng bước. Agent đọc chứng từ và xác định từng bút toán; không chạy `scripts/process_accounting.js`, `scripts/process.py` hoặc script thay thế để chọn tài khoản/đối tượng, phân loại, ghép thanh toán hay sinh bút toán, kể cả dry-run. Công cụ chỉ hỗ trợ đọc/chuyển đổi, tính toán, kiểm tra định dạng và ghi/xuất các dòng đã quyết định.
+Thực hiện toàn bộ luồng đã được yêu cầu, không chờ nhắc từng bước. Agent đọc chứng từ và xác định từng bút toán; không chạy script tự quyết định nghiệp vụ để chọn tài khoản/đối tượng, phân loại, ghép thanh toán hay sinh bút toán, kể cả dry-run. Công cụ chỉ hỗ trợ đọc/chuyển đổi, tính toán, kiểm tra định dạng và ghi/xuất các dòng đã quyết định.
+
+## Chọn tác vụ
+
+- Hạch toán một khách/kỳ hoặc hàng loạt: theo luồng 0–5 bên dưới; tự tạo thư mục quý còn thiếu trong đúng phạm vi đã yêu cầu.
+- Chỉ tạo thư mục quý hoặc xem tiến độ: đọc [hướng dẫn quý](references/quarter-utilities.md), thực hiện trực tiếp thao tác thư mục và thống kê; không chuyển đổi nguồn, lập bút toán hoặc chạy SQL vì yêu cầu tiện ích.
+- Cải thiện quy trình dựa trên kết quả lịch sử: chuyển sang [analyze-enterprise-history](../analyze-enterprise-history/SKILL.md), chế độ đối chiếu; không ghi đè kết quả lịch sử.
+
+## Nguồn SQL và lưu trữ dùng chung
+
+Đọc [quy định chung](../../../src/clients/AGENTS.md) trước khi thực hiện. Với mọi khách hàng đã có database, gồm doanh nghiệp và HKD, dùng [connect-3tsoft](../connect-3tsoft/SKILL.md) để đọc danh mục, số dư và lịch sử tại đúng cutoff; không yêu cầu hoặc tạo lại `last_quarter_data/` và bản export danh mục. Khách chưa có database dùng nguồn thay thế được quy trình riêng xác định. Phân biệt nguồn SQL với quy tắc hạch toán: HKD vẫn giữ nghiệp vụ riêng, không áp quy tắc doanh nghiệp.
+
+Thư mục `result/` chỉ giữ file kết quả và Excel/result bổ sung. Báo cáo kiểm tra, bảng công nợ/phân bổ, danh mục đề nghị, ghi chú và bản trích SQL chỉ dùng tạm trong khi xử lý. Bàn giao đầy đủ lỗi, phần chưa kiểm và khoản chờ trong chat/tracking; quyết định lâu dài đã xác nhận lưu vào docs khách hàng trước khi dọn file tạm. Không sửa cấu trúc file import để nhét ghi chú và không xóa nguồn sao kê/hóa đơn. Các yêu cầu lưu báo cáo riêng bên dưới chỉ áp dụng tạm trong phiên, trừ khi người dùng yêu cầu giữ hoặc xuất báo cáo.
 
 ## 0. Chọn khách hàng và nhánh
 
@@ -29,7 +41,7 @@ Thực hiện [verify_data](../verify_data/SKILL.md) theo nhánh. Loại `result
 Thực hiện [process_accounting](../process_accounting/SKILL.md).
 
 - Doanh nghiệp dùng `connect-3tsoft`, chỉ SELECT đúng database; kiểm tra đơn vị/schema/trạng thái ghi sổ/ngày cuối, đọc danh mục, số dư, lịch sử và chống trùng SQL. Pipeline không ghi SQL.
-- HKD đọc đủ danh mục và tất cả nguồn kỳ trước theo quy trình riêng; không áp ngoại lệ doanh nghiệp.
+- HKD giữ quy tắc nghiệp vụ riêng; danh mục và lịch sử đọc SQL khi có database, chỉ yêu cầu nguồn file thay thế khi chưa có database.
 - Dựng công nợ đúng cutoff và từng hóa đơn còn nợ theo [hướng dẫn công nợ](../process_accounting/references/cong_no_dau_ky.md); doanh nghiệp dùng SQL tương đương báo cáo, không yêu cầu xuất file. Giữ ứng trước/cọc/thanh toán một phần/chưa phân bổ; thiếu căn cứ không phải dư 0.
 - Đọc hết từng nguồn, tách ghi nhận hóa đơn và thanh toán, kiểm tra hủy/thay thế/điều chỉnh và chứng từ đã ghi sổ. Không tạo PT 1111/131 nếu chưa có bằng chứng thực thu tiền mặt.
 - Diễn giải doanh nghiệp theo `8.dien_giai.md`, kể cả đầu ra; thiếu mẫu/cần câu mới/rút gọn/chưa chọn được biến thể thì hỏi và lưu chờ, tiếp tục phần độc lập. HKD giữ nguyên đầu ra ≤200 ký tự; vượt thì chỉnh tối thiểu có căn cứ, trừ yêu cầu hiện hành khác.
@@ -37,7 +49,7 @@ Thực hiện [process_accounting](../process_accounting/SKILL.md).
 
 ## 3. Quản lý kết quả
 
-- Mọi đầu ra ở `src/clients/<MST>/<Quarter>/result/`: `0.result.md`, `0.check_result.md`, `0.doi_chieu_cong_no.md`, `0.ghi_chu.md`, đối tượng mới, tham chiếu nguồn, phân bổ và workbook khi được yêu cầu. Nguồn/Markdown chuyển đổi giữ tại vị trí nguồn.
+- Đầu ra lưu lâu dài ở `src/clients/<MST>/<Quarter>/result/`: `0.result.md` và các file kết quả Excel/result bổ sung cần thiết. Báo cáo kiểm tra, công nợ, ghi chú, đề nghị đối tượng mới, tham chiếu và phân bổ chỉ dùng tạm. Nguồn/Markdown chuyển đổi giữ tại vị trí nguồn.
 - Chỉ một bộ hiện hành tên chuẩn, không hậu tố phiên bản. Chuẩn bị bộ thay thế nhất quán trước khi ghi đè; chưa có bộ mới thì giữ kết quả cũ, ghi lần chạy mới bị dừng. Không gắn báo cáo lần chạy mới cho kết quả cũ như thể đã kiểm tra nó.
 - Legacy ở gốc quý/có hậu tố: xác định bộ kết quả và báo cáo nhất quán, đưa vào `result/` tên chuẩn, xác minh và cập nhật link trước khi xóa bản sinh ra đã thay thế. Chỉ xóa file đã nhận diện trong đúng khách/kỳ; không dọn đệ quy, không xóa nguồn/docs/kỳ trước.
 - Template khách hàng quyết định cấu trúc. Link từ result: nguồn kỳ `../`, docs khách `../../docs/`, kỳ trước `../../<PriorQuarter>/`, báo cáo cùng thư mục dùng tên file. Giữ số dòng nguồn và định danh SQL khi có.
@@ -52,8 +64,8 @@ Thực hiện [process_accounting](../process_accounting/SKILL.md).
 ## 5. Tracking và báo cáo
 
 - Tự cập nhật `docs/tracking/<Quarter>.md` sau kiểm tra; dừng sớm cũng ghi bằng chứng/nguyên nhân cho khách đang xử lý. Đọc quy ước trước, cập nhật đúng MST, giữ dữ liệu khách khác và backup đã xác nhận. Thiếu file/dòng thì tạo theo định dạng hiện hành bằng thông tin đã xác minh.
-- Link kết quả/báo cáo cùng bộ từ tracking; cập nhật ngày, đếm lại tổng toàn bảng, kiểm tra link. Không tự đưa khách đã dừng vào tracking kỳ mới khi chỉ quét hàng loạt.
+- Link kết quả cùng bộ từ tracking; lưu kết luận kiểm tra, số liệu kiểm soát và khoản chờ trực tiếp trong tracking, không link file tạm sẽ xóa; cập nhật ngày, đếm lại tổng toàn bảng, kiểm tra link. Không tự đưa khách đã dừng vào tracking kỳ mới khi chỉ quét hàng loạt.
 - Trạng thái dịch vụ khác tiến độ kỳ; không dùng ngày dừng chưa biết để xóa/sửa hồi tố lịch sử. Nếu `Hoàn tất` chỉ nghĩa có file không rỗng, giữ quy ước nhưng ghi riêng đã có kết quả, kết luận kiểm tra và phần chờ/bàn giao; không gọi toàn kỳ đã xong chỉ vì có file.
 - Doanh nghiệp ghi nguồn SQL/cutoff/mức xác minh thay vì báo thiếu dữ liệu chỉ vì không có `last_quarter_data/`; giữ cột tracking lịch sử theo đúng nghĩa hiện có.
-- Báo số file chuyển đổi, hóa đơn/giao dịch đã xem, số dòng và số chứng từ theo loại (PT nếu có), tổng Nợ/Có, đối tượng mới, link kết quả/kiểm tra/tracking và phần tồn. Có thể trình tối đa 10 dòng xem trước; phát hiện chính trong chat và báo cáo đầy đủ ở file.
+- Báo số file chuyển đổi, hóa đơn/giao dịch đã xem, số dòng và số chứng từ theo loại (PT nếu có), tổng Nợ/Có, đối tượng mới, link kết quả/kiểm tra/tracking và phần tồn. Có thể trình tối đa 10 dòng xem trước; phát hiện và khoản chờ đầy đủ trong bàn giao/tracking; chỉ giữ báo cáo riêng khi người dùng yêu cầu.
 - Chỉ xác nhận hoàn tất toàn kỳ khi kiểm tra đạt và không còn nghiệp vụ chưa xử lý, kể cả phần bàn giao chưa xác nhận xong. Có thể xác nhận riêng phần agent đã lập và kiểm tra đạt khi toàn kỳ còn mở.

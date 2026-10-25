@@ -20,7 +20,7 @@ Lập danh sách mọi nguồn: tên/đường dẫn, loại tài liệu, số t
 
 Ưu tiên trích văn bản từ PDF khi có lớp văn bản sử dụng được, nhưng đối chiếu với hình trang để xác định đúng cột và dòng. Với scan/ảnh, dùng khả năng đọc ảnh hoặc OCR có sẵn; phóng to/xoay bản xem khi cần. OCR chỉ là kết quả sơ bộ, cần kiểm tra các chữ số, dấu tiền và quan hệ giữa các cột.
 
-Không sửa, ghi đè hoặc xóa nguồn. Tạo ảnh render và dữ liệu trung gian ở nơi được phép ghi. Nếu cần script tạm trong workspace này, lưu trong `scripts/`, chạy từ file và xóa đúng script tạm sau khi hoàn tất. Kiểm tra công cụ có sẵn trước khi chọn cách xử lý, không mặc định Python/OCR đã cài.
+Không sửa, ghi đè hoặc xóa nguồn. Tạo ảnh render và dữ liệu trung gian ở nơi được phép ghi. Nếu cần script tạm trong workspace này, lưu tại vị trí tạm theo quy định workspace, chạy từ file và xóa đúng script tạm sau khi hoàn tất. Kiểm tra công cụ có sẵn trước khi chọn cách xử lý, không mặc định Python/OCR đã cài.
 
 Nếu không truy cập được nguồn, nói rõ nguồn nào chưa đọc. Vẫn xử lý các nguồn độc lập truy cập được; không khẳng định đã xem file chỉ từ tên/đường dẫn. Không gửi sao kê lên dịch vụ bên ngoài nếu chưa được người dùng cho phép.
 

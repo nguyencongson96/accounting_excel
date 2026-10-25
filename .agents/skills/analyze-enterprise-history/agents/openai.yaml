@@ -1,0 +1,4 @@
+interface:
+  display_name: "Phân tích lịch sử doanh nghiệp 3TSoft"
+  short_description: "Lập quy trình và mẫu diễn giải từ lịch sử 3TSoft"
+  default_prompt: "Dùng $analyze-enterprise-history để phân tích lịch sử 3TSoft cho doanh nghiệp MST tôi cung cấp và tạo bộ tài liệu riêng theo từng logic."
